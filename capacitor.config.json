@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "conectima-mobile-app",
+  "appId": "alberto.gonzalez.conectima",
+  "appName": "Conectima",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
