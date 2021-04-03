@@ -69,7 +69,8 @@
     },
     "devDependencies": {
         "@capacitor/cli": "^3.0.0-rc.0",
-        "cypress": "^6.8.0"
+        "cypress": "^6.8.0",
+        "node-sass": "^5.0.0"
     },
     "description": "An Ionic project"
 }
