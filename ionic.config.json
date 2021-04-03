@@ -1,0 +1,7 @@
+{
+  "name": "conectima-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
