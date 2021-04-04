@@ -1,6 +1,27 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+@font-face {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400 500;
+    src: url("fonts/proximaNova/ProximaNova-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 600;
+    src: url("fonts/proximaNova/Proxima Nova Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 100;
+    src: url("fonts/proximaNova/Proxima Nova Thin.otf") format("opentype");
+}
+
 /** Ionic CSS Variables **/
 :root {
     /** primary **/
@@ -74,4 +95,7 @@ http://ionicframework.com/docs/theming/ */
     --ion-color-light-contrast-rgb: 0, 0, 0;
     --ion-color-light-shade: #d7d8da;
     --ion-color-light-tint: #f5f6f9;
+
+    // Font
+    --ion-font-family: "Proxima Nova";
 }
