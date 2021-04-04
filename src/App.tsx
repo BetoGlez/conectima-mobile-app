@@ -22,19 +22,23 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.scss";
 
+import LoggerContextProvider from "./utils/logger/LoggerContextProvider";
+
 const App: React.FC = () => (
-    <IonApp>
-        <IonReactRouter>
-            <IonRouterOutlet>
-                <Route exact path="/home">
-                    <Home />
-                </Route>
-                <Route exact path="/">
-                    <Redirect to="/home" />
-                </Route>
-            </IonRouterOutlet>
-        </IonReactRouter>
-    </IonApp>
+    <LoggerContextProvider>
+        <IonApp>
+            <IonReactRouter>
+                <IonRouterOutlet>
+                    <Route exact path="/home">
+                        <Home />
+                    </Route>
+                    <Route exact path="/">
+                        <Redirect to="/home" />
+                    </Route>
+                </IonRouterOutlet>
+            </IonReactRouter>
+        </IonApp>
+    </LoggerContextProvider>
 );
 
 export default App;

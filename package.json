@@ -26,6 +26,8 @@
         "react-scripts": "4.0.2",
         "typescript": "^4.1.3",
         "web-vitals": "^0.2.4",
+        "winston": "^3.3.3",
+        "winston-transport-browserconsole": "^1.0.5",
         "workbox-background-sync": "^5.1.4",
         "workbox-broadcast-update": "^5.1.4",
         "workbox-cacheable-response": "^5.1.4",
