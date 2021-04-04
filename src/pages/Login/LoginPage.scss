@@ -5,6 +5,18 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    .conectima-logo {
+        width: 90px;
+        height: 90px;
+        margin-top: 15%;
+    }
+    .app-name {
+        margin-top: 0px;
+        font-weight: 100;
+        text-transform: lowercase;
+        margin-bottom: 15%;
+    }
 }
