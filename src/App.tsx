@@ -21,6 +21,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.scss";
+import "./theme/global.scss";
 
 import LoggerContextProvider from "./utils/logger/LoggerContextProvider";
 
