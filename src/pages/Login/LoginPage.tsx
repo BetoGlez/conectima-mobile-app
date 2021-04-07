@@ -1,17 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { FormikHelpers } from "formik";
 
 import "./LoginPage.scss"
 import AppConfig from "../../app-constants";
 import AuthBoxComponent from "./AuthBoxComponent/AuthBoxComponent";
-import LoggerContext from "../../utils/logger/logger-context";
 import { ILoginForm } from "../../models/forms/login-form.model";
+import { useLogger } from "../../hooks/logger";
 
 const LoginPage: React.FC = () => {
 
     const { t } = useTranslation();
-    const logger = useContext(LoggerContext);
+    const logger = useLogger("LoginPage");
 
     const doLogin = (values: ILoginForm, helpers: FormikHelpers<ILoginForm>): void | Promise<any> => {
         logger.d("Login with credentials: ", values);

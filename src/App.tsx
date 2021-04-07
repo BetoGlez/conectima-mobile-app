@@ -22,25 +22,22 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.scss";
 import "./theme/global.scss";
 
-import LoggerContextProvider from "./utils/logger/LoggerContextProvider";
 import AppConfig from "./app-constants";
 import LoginPage from "./pages/Login/LoginPage";
 
 const App: React.FC = () => (
-    <LoggerContextProvider>
-        <IonApp>
-            <IonReactRouter>
-                <IonRouterOutlet>
-                    <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
-                        <LoginPage />
-                    </Route>
-                    <Route exact path="/">
-                        <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
-                    </Route>
-                </IonRouterOutlet>
-            </IonReactRouter>
-        </IonApp>
-    </LoggerContextProvider>
+    <IonApp>
+        <IonReactRouter>
+            <IonRouterOutlet>
+                <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
+                    <LoginPage />
+                </Route>
+                <Route exact path="/">
+                    <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
+                </Route>
+            </IonRouterOutlet>
+        </IonReactRouter>
+    </IonApp>
 );
 
 export default App;
