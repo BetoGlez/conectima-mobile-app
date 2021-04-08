@@ -1,0 +1,13 @@
+.profile-selector {
+
+    ion-slides {
+        height: 100%;
+        .swiper-pagination.swiper-pagination-bullets {
+            bottom: 40px;
+        }
+    }
+
+    .start-btn {
+        width: 135px;
+    }
+}
