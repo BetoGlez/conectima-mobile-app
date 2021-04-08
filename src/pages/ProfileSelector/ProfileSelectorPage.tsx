@@ -27,7 +27,7 @@ const ProfileSelectorPage: React.FC = () => {
             <IonContent>
                 <IonSlides ref={roleSlider} pager>
                     { ROLE_OPTIONS.map(roleOption => (
-                       <RoleOptionComponent key={roleOption.role} roleOption={roleOption}/>
+                        <RoleOptionComponent key={roleOption.role} roleOption={roleOption}/>
                     ))
                     }
                 </IonSlides>
@@ -41,6 +41,6 @@ const ProfileSelectorPage: React.FC = () => {
             </IonFooter>
         </IonPage>
     );
-}
+};
 
 export default ProfileSelectorPage;

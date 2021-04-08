@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { FormikHelpers } from "formik";
 
-import "./LoginPage.scss"
+import "./LoginPage.scss";
 import AppConfig from "../../app-constants";
 import AuthBoxComponent from "./AuthBoxComponent/AuthBoxComponent";
 import { ILoginForm } from "../../models/forms/login-form.model";

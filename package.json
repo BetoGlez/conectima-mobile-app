@@ -47,19 +47,17 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "eject": "react-scripts eject",
-        "e2e:headless": "cypress run --config video=false",
-        "e2e": "cypress open",
         "add:ios": "npx cap add ios",
         "run:ios": "npx cap run ios",
         "open:ios": "npx cap open ios",
         "add:android": "npx cap add android",
         "run:android": "npx cap run android",
-        "open:android": "npx cap open android"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app"
-        ]
+        "open:android": "npx cap open android",
+        "lint:tsx": "yarn eslint '**/*.{tsx,ts}'",
+        "lint": "yarn lint:tsx",
+        "verify": "yarn build",
+        "e2e": "cypress run --config video=false",
+        "cypress": "cypress open"
     },
     "browserslist": {
         "production": [
@@ -76,7 +74,15 @@
     "devDependencies": {
         "@capacitor/cli": "^3.0.0-rc.0",
         "cypress": "^6.8.0",
+        "eslint": "^7.23.0",
+        "husky": "4.3.8",
         "node-sass": "^5.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn lint",
+            "pre-push": "yarn verify"
+        }
     },
     "description": "An Ionic project"
 }
