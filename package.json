@@ -53,8 +53,9 @@
         "add:android": "npx cap add android",
         "run:android": "npx cap run android",
         "open:android": "npx cap open android",
+        "lint": "yarn lint:tsx && yarn lint:scss",
         "lint:tsx": "yarn eslint '**/*.{tsx,ts}'",
-        "lint": "yarn lint:tsx",
+        "lint:scss": "yarn stylelint '**/*.scss'",
         "verify": "yarn build",
         "e2e": "cypress run --config video=false",
         "cypress": "cypress open"
@@ -76,7 +77,10 @@
         "cypress": "^6.8.0",
         "eslint": "^7.23.0",
         "husky": "4.3.8",
-        "node-sass": "^5.0.0"
+        "node-sass": "^5.0.0",
+        "stylelint": "^13.12.0",
+        "stylelint-config-sass-guidelines": "^8.0.0",
+        "stylelint-config-standard": "^21.0.0"
     },
     "husky": {
         "hooks": {

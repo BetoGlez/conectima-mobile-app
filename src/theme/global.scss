@@ -5,6 +5,7 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
     font-size: 34px;
 }
+
 h2 {
     font-size: 24px;
 }
@@ -17,12 +18,15 @@ body {
     background-color: var(--ion-color-light);
 }
 
-ion-item.conectima-input {
-    border: 1px solid var(--ion-color-primary);
-    border-radius: 10px;
-    height: 40px;
-    ion-input {
-        --padding-top: 0px;
-        --padding-bottom: 5px;
+ion-item {
+    &.conectima-input {
+        border: 1px solid var(--ion-color-primary);
+        border-radius: 10px;
+        height: 40px;
+
+        ion-input {
+            --padding-top: 0;
+            --padding-bottom: 5px;
+        }
     }
 }

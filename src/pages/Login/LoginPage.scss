@@ -1,22 +1,24 @@
 .login-page {
+    background-position: center;
     width: 100%;
     height: 100%;
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
     .conectima-logo {
         width: 90px;
         height: 90px;
         margin-top: 15%;
     }
+
     .app-name {
-        margin-top: 0px;
         font-weight: 100;
-        text-transform: lowercase;
+        margin-top: 0;
         margin-bottom: 15%;
+        text-transform: lowercase;
     }
 }

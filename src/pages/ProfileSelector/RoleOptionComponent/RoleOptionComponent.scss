@@ -1,24 +1,25 @@
 .role-option {
-
     .role-grid {
         height: 100%;
     }
 
     .role-prefix-title-container {
         padding-left: 40px;
-        padding-bottom: 0px;
+        padding-bottom: 0;
         margin-top: 10%;
+
         .role-prefix-title {
-            margin-bottom: 0px;
+            margin-bottom: 0;
             text-align: start;
         }
     }
 
     // Larger screens
-    @media screen and (min-height: 760px){
+    @media screen and (min-height: 760px) {
         .role-prefix-title-container {
             margin-top: 20%;
         }
+
         .role-title-container {
             margin-bottom: 30%;
         }
@@ -26,11 +27,12 @@
 
     .role-title-container {
         padding-left: 40px;
-        padding-top: 0px;
+        padding-top: 0;
         margin-bottom: 20%;
+
         .role-title {
             color: var(--ion-color-primary);
-            margin-top: 0px;
+            margin-top: 0;
             text-align: start;
         }
     }
