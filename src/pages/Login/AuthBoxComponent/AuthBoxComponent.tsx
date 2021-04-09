@@ -1,4 +1,3 @@
-import React from "react";
 import { IonCard, IonCardHeader, IonCardContent, IonRow, IonCol, IonItem, IonInput, IonButton } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";

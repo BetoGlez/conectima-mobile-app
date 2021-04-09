@@ -4,6 +4,12 @@ export const en = {
             "appName": "Conectima",
             "start": "Start"
         },
+        "pages": {
+            "projects": "Projects",
+            "compare": "Compare",
+            "analytics": "Analytics",
+            "configure": "Configure"
+        },
         "auth": {
             "introduceCredentials": "Introduce your credentials",
             "email": "Email",

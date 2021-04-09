@@ -24,6 +24,8 @@ import "./theme/global.scss";
 
 import AppConfig from "./app-constants";
 import LoginPage from "./pages/Login/LoginPage";
+import MainPage from "./pages/Main/MainPage";
+import ProfileSelectorPage from "./pages/ProfileSelector/ProfileSelectorPage";
 
 const App: React.FC = () => (
     <IonApp>
@@ -32,9 +34,13 @@ const App: React.FC = () => (
                 <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
                     <LoginPage />
                 </Route>
-                <Route exact path="/">
-                    <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
+                <Route exact path={AppConfig.APP_ROUTES.PROFILE_SELECTOR}>
+                    <ProfileSelectorPage />
                 </Route>
+                <Route path={AppConfig.APP_ROUTES.HOME}>
+                    <MainPage />
+                </Route>
+                <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
             </IonRouterOutlet>
         </IonReactRouter>
     </IonApp>
