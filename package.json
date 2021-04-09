@@ -56,7 +56,6 @@
         "lint": "yarn lint:tsx && yarn lint:scss",
         "lint:tsx": "yarn eslint '**/*.{tsx,ts}'",
         "lint:scss": "yarn stylelint '**/*.scss'",
-        "verify": "yarn build",
         "e2e": "cypress run --config video=false",
         "cypress": "cypress open"
     },
@@ -84,8 +83,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn lint",
-            "pre-push": "yarn verify"
+            "pre-commit": "yarn lint"
         }
     },
     "description": "An Ionic project"
