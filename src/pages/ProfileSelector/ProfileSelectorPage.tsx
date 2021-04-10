@@ -6,7 +6,7 @@ import { useHistory } from "react-router";
 import "./ProfileSelectorPage.scss";
 import { ROLE_OPTIONS } from "./ProfileSelectorPage.constants";
 import RoleOptionComponent from "./RoleOptionComponent/RoleOptionComponent";
-import { UserRole } from "./RoleOptionComponent/RoleOptionComponent.constants";
+import { RoleName } from "../../models/user.model";
 import { useLogger } from "../../hooks/logger";
 import AppConfig from "../../app-constants";
 
@@ -20,7 +20,7 @@ const ProfileSelectorPage: React.FC = () => {
 
     const setRoleAndStart = async (): Promise<void> => {
         const activeRoleIndex = await roleSlider.current?.getActiveIndex();
-        const activeRole: UserRole = activeRoleIndex === 0 ? "manager" : "developer";
+        const activeRole: RoleName = activeRoleIndex === 0 ? "manager" : "developer";
         // TODO: Navigate to main screen
         logger.d("Selected role: ", activeRole);
         history.push(AppConfig.APP_ROUTES.HOME);
@@ -30,8 +30,8 @@ const ProfileSelectorPage: React.FC = () => {
         <IonPage className="profile-selector">
             <IonContent>
                 <IonSlides ref={roleSlider} pager>
-                    { ROLE_OPTIONS.map(roleOption => (
-                        <RoleOptionComponent key={roleOption.role} roleOption={roleOption}/>
+                    { ROLE_OPTIONS.map(userRole => (
+                        <RoleOptionComponent key={userRole.roleName} userRole={userRole}/>
                     ))
                     }
                 </IonSlides>

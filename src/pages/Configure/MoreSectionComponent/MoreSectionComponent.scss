@@ -1,0 +1,17 @@
+.more-section-component {
+    .config-group-title {
+        margin-bottom: 0;
+    }
+
+    .config-group {
+        border-radius: 10px;
+
+        ion-icon {
+            font-size: 16px;
+        }
+
+        ion-note {
+            font-size: 14px;
+        }
+    }
+}

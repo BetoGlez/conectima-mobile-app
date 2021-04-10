@@ -1,12 +1,12 @@
-import { IRoleOption } from "./RoleOptionComponent/RoleOptionComponent.constants";
+import { IUserRole } from "../../models/user.model";
 
-export const ROLE_OPTIONS: Array<IRoleOption> = [
+export const ROLE_OPTIONS: Array<IUserRole> = [
     {
-        role: "manager",
+        roleName: "manager",
         imageSrc: "/assets/images/manager-role.svg"
     },
     {
-        role: "developer",
+        roleName: "developer",
         imageSrc: "/assets/images/developer-role.svg"
     }
 ];

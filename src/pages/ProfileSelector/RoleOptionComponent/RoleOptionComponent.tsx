@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "./RoleOptionComponent.scss";
 import { IRoleOptionComponentProps } from "./RoleOptionComponent.constants";
 
-const RoleOptionComponent: React.FC<IRoleOptionComponentProps> = ({roleOption}) => {
+const RoleOptionComponent: React.FC<IRoleOptionComponentProps> = ({userRole}) => {
 
     const { t } = useTranslation();
 
@@ -18,12 +18,12 @@ const RoleOptionComponent: React.FC<IRoleOptionComponentProps> = ({roleOption}) 
                 </IonRow>
                 <IonRow>
                     <IonCol className="role-title-container">
-                        <h1 className="role-title">{t(`roles.${roleOption.role}`)}</h1>
+                        <h1 className="role-title">{t(`roles.${userRole.roleName}`)}</h1>
                     </IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol className="ion-text-center">
-                        <img className="role-img" src={roleOption.imageSrc} alt="Project Role"/>
+                        <img className="role-img" src={userRole.imageSrc} alt="Project Role"/>
                     </IonCol>
                 </IonRow>
             </IonGrid>

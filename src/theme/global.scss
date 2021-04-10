@@ -18,6 +18,14 @@ body {
     background-color: var(--ion-color-light);
 }
 
+.opacity-7 {
+    opacity: 0.7;
+}
+
+.thin-text {
+    font-weight: 100;
+}
+
 ion-item {
     &.conectima-input {
         border: 1px solid var(--ion-color-primary);
@@ -28,5 +36,13 @@ ion-item {
             --padding-top: 0;
             --padding-bottom: 5px;
         }
+    }
+}
+
+ion-toolbar {
+    --border-style: none;
+
+    ion-title {
+        font-weight: 400;
     }
 }

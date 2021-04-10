@@ -1,0 +1,13 @@
+.configure-page {
+    .config-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logout-btn {
+        --background: #ffffff;
+        --color: var(--ion-color-primary);
+        --background-activated: var(--ion-color-medium);
+        --color-activated: var(--ion-color-primary);
+    }
+}

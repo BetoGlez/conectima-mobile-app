@@ -1,0 +1,14 @@
+.current-user-component {
+    .role-image-container {
+        width: 100px;
+        height: 100px;
+        background: #ffffff;
+        border-radius: 50px;
+        padding: 16px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 10px rgba(39, 51, 66, 0.2);
+    }
+}
