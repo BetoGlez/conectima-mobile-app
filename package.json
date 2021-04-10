@@ -1,6 +1,6 @@
 {
     "name": "conectima-mobile-app",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "private": true,
     "dependencies": {
         "@capacitor/android": "^3.0.0-rc.0",

@@ -3,10 +3,15 @@ import { informationCircleOutline, phonePortraitOutline } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 
 import "./MoreSectionComponent.scss";
+import AppConfig from "../../../app-constants";
 
 const MoreSectionComponent: React.FC = () => {
 
     const { t } = useTranslation();
+
+    const showAppInfo = (): void => {
+        window.open(AppConfig.ABOUT_INFO_URL, "_blank");
+    };
 
     return (
         <div className="more-section-component">
@@ -18,7 +23,7 @@ const MoreSectionComponent: React.FC = () => {
             <IonRow>
                 <IonCol>
                     <IonList className="config-group">
-                        <IonItem lines="full" detail>
+                        <IonItem lines="full" detail onClick={showAppInfo}>
                             <IonIcon color="secondary" className="opacity-7" icon={informationCircleOutline} slot="start" />
                             <IonLabel>
                                 <p>{t("configure.appInfo")}</p>
@@ -30,7 +35,7 @@ const MoreSectionComponent: React.FC = () => {
                                 <p>{t("configure.version")}</p>
                             </IonLabel>
                             <IonNote slot="end">
-                                <p className="thin-text">Conectima 1.1.3</p>
+                                <p className="thin-text">{`${t("general.appName")} ${AppConfig.APP_VERSION}`}</p>
                             </IonNote>
                         </IonItem>
                     </IonList>

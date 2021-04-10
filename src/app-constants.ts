@@ -1,4 +1,9 @@
+import { version } from "../package.json";
+
 export default class AppConfig {
+
+    public static readonly APP_VERSION = version;
+    public static readonly ABOUT_INFO_URL = "https://github.com/BetoGlez/conectima-mobile-app";
 
     public static readonly MIN_PASSWORD_LENGTH = 8;
 
