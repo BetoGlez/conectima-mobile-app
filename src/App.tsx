@@ -1,6 +1,7 @@
 import { Redirect, Route } from "react-router-dom";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
+import { ApolloProvider } from "@apollo/client";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -22,6 +23,7 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.scss";
 import "./theme/global.scss";
 
+import apolloClient from "./apollo/apollo-config";
 import AppConfig from "./app-constants";
 import LoginPage from "./pages/Login/LoginPage";
 import MainPage from "./pages/Main/MainPage";
@@ -29,20 +31,22 @@ import ProfileSelectorPage from "./pages/ProfileSelector/ProfileSelectorPage";
 
 const App: React.FC = () => (
     <IonApp>
-        <IonReactRouter>
-            <IonRouterOutlet>
-                <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
-                    <LoginPage />
-                </Route>
-                <Route exact path={AppConfig.APP_ROUTES.PROFILE_SELECTOR}>
-                    <ProfileSelectorPage />
-                </Route>
-                <Route path={AppConfig.APP_ROUTES.HOME}>
-                    <MainPage />
-                </Route>
-                <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
-            </IonRouterOutlet>
-        </IonReactRouter>
+        <ApolloProvider client={apolloClient}>
+            <IonReactRouter>
+                <IonRouterOutlet>
+                    <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
+                        <LoginPage />
+                    </Route>
+                    <Route exact path={AppConfig.APP_ROUTES.PROFILE_SELECTOR}>
+                        <ProfileSelectorPage />
+                    </Route>
+                    <Route path={AppConfig.APP_ROUTES.HOME}>
+                        <MainPage />
+                    </Route>
+                    <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
+                </IonRouterOutlet>
+            </IonReactRouter>
+        </ApolloProvider>
     </IonApp>
 );
 

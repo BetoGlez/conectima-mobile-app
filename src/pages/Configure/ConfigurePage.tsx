@@ -28,7 +28,7 @@ const ConfigurePage: React.FC = () => {
                     <CurrentUserComponent userRole={{roleName: "manager", imageSrc: "/assets/images/manager-role.svg"}}/>
                     <GeneralSectionComponent />
                     <MoreSectionComponent />
-                    <IonRow className="ion-margin-top">
+                    <IonRow className="ion-margin-top ion-margin-bottom">
                         <IonCol>
                             <IonButton className="logout-btn" expand="block">{t("auth.logout")}</IonButton>
                         </IonCol>

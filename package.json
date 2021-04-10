@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@apollo/client": "^3.3.14",
         "@capacitor/android": "^3.0.0-rc.0",
         "@capacitor/app": "^0.3.6",
         "@capacitor/core": "^3.0.0-rc.0",
@@ -16,7 +17,9 @@
         "@types/react-dom": "^16.9.10",
         "@types/react-router": "^5.1.11",
         "@types/react-router-dom": "^5.1.7",
+        "dotenv": "^8.2.0",
         "formik": "^2.2.6",
+        "graphql": "^15.5.0",
         "i18next": "^20.1.0",
         "ionicons": "^5.4.0",
         "react": "^17.0.1",
