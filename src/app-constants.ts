@@ -6,7 +6,10 @@ export default class AppConfig {
     public static readonly APOLLOR_SERVER_URL = process.env.APOLLOR_SERVER_URL || "http://localhost:5000";
 
     public static readonly ABOUT_INFO_URL = "https://github.com/BetoGlez/conectima-mobile-app";
+
     public static readonly LOGIN_BG_IMAGE_URL = "/assets/images/login-bg.jpg";
+    public static readonly MANAGER_ROLE_IMAGE_URL = "/assets/images/manager-role.svg";
+    public static readonly DEVELOPER_ROLE_IMAGE_URL = "/assets/images/developer-role.svg";
 
     public static readonly MIN_PASSWORD_LENGTH = 8;
     public static readonly TOAST_INFO_DURATION_MS = 3000;

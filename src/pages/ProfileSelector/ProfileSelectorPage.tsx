@@ -7,22 +7,21 @@ import "./ProfileSelectorPage.scss";
 import { ROLE_OPTIONS } from "./ProfileSelectorPage.constants";
 import RoleOptionComponent from "./RoleOptionComponent/RoleOptionComponent";
 import { RoleName } from "../../models/user.model";
-import { useLogger } from "../../hooks/logger";
+import { useAuth } from "../../hooks/authentication";
 import AppConfig from "../../app-constants";
 
 const ProfileSelectorPage: React.FC = () => {
 
     const { t } = useTranslation();
-    const logger = useLogger("ProfileSelectorPage");
     const history = useHistory();
 
+    const { setLocalUserRole } = useAuth();
     const roleSlider = useRef<HTMLIonSlidesElement>(null);
 
     const setRoleAndStart = async (): Promise<void> => {
         const activeRoleIndex = await roleSlider.current?.getActiveIndex();
         const activeRole: RoleName = activeRoleIndex === 0 ? "manager" : "developer";
-        // TODO: Navigate to main screen
-        logger.d("Selected role: ", activeRole);
+        setLocalUserRole(activeRole);
         history.push(AppConfig.APP_ROUTES.HOME);
     };
 

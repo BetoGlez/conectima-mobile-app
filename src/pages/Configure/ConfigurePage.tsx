@@ -1,26 +1,17 @@
-import { useContext } from "react";
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router";
 
 import "./ConfigurePage.scss";
-import AuthContext from "../../context/auth-context";
+import { useAuth } from "../../hooks/authentication";
 import CurrentUserComponent from "./CurrentUserComponent/CurrentUserComponent";
 import GeneralSectionComponent from "./GeneralSectionComponent/GeneralSectionComponent";
 import MoreSectionComponent from "./MoreSectionComponent/MoreSectionComponent";
-import AppConfig from "../../app-constants";
 
 const ConfigurePage: React.FC = () => {
 
     const { t } = useTranslation();
-    const history = useHistory();
 
-    const authContext = useContext(AuthContext);
-
-    const doLogout = (): void => {
-        authContext.logout();
-        history.replace(AppConfig.APP_ROUTES.LOGIN);
-    };
+    const { doLocalLogout, activeUser } = useAuth();
 
     return (
         <IonPage className="configure-page">
@@ -36,12 +27,16 @@ const ConfigurePage: React.FC = () => {
                     </IonToolbar>
                 </IonHeader>
                 <IonGrid className="config-grid">
-                    <CurrentUserComponent userRole={{roleName: "manager", imageSrc: "/assets/images/manager-role.svg"}}/>
-                    <GeneralSectionComponent />
+                    { (activeUser?.role) &&
+                        <CurrentUserComponent userRole={activeUser.role}/>
+                    }
+                    { (activeUser?.role?.roleName === "manager") &&
+                        <GeneralSectionComponent />
+                    }
                     <MoreSectionComponent />
                     <IonRow className="ion-margin-top ion-margin-bottom">
                         <IonCol>
-                            <IonButton className="logout-btn" expand="block" onClick={doLogout}>{t("auth.logout")}</IonButton>
+                            <IonButton className="logout-btn" expand="block" onClick={doLocalLogout}>{t("auth.logout")}</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

@@ -1,27 +1,24 @@
-import { useContext } from "react";
 import { IonPage, useIonToast } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { FormikHelpers } from "formik";
-import { useHistory } from "react-router";
 import { ApolloError, useMutation } from "@apollo/client";
 
 import "./LoginPage.scss";
 import { ILoginResponse, LOGIN } from "./LoginPage.constants";
 import { ILoginPayload } from "../../models/queries-mutations-input.model";
 import AppConfig from "../../app-constants";
-import AuthContext from "../../context/auth-context";
 import AuthBoxComponent from "./AuthBoxComponent/AuthBoxComponent";
 import { ILoginForm } from "../../models/forms/login-form.model";
 import { useLogger } from "../../hooks/logger";
+import { useAuth } from "../../hooks/authentication";
 
 const LoginPage: React.FC = () => {
 
     const { t } = useTranslation();
     const logger = useLogger("LoginPage");
-    const history = useHistory();
 
-    const authContext = useContext(AuthContext);
     const [presentToast] = useIonToast();
+    const { doLocalLogin } = useAuth();
     const [login, { loading }] = useMutation<ILoginResponse, ILoginPayload>(LOGIN, {
         onError: (err) => handleError(err)
     });
@@ -29,10 +26,8 @@ const LoginPage: React.FC = () => {
     const doLogin = async (values: ILoginForm, helpers: FormikHelpers<ILoginForm>): Promise<void> => {
         const authUser = (await login({ variables: { email: values.email, password: values.password } }))?.data?.login;
         if (authUser) {
-            authContext.login({...authUser});
             helpers.resetForm();
-            logger.d("User logged in: ", authUser.username);
-            history.push(AppConfig.APP_ROUTES.PROFILE_SELECTOR);
+            doLocalLogin({...authUser});
         }
     };
 
