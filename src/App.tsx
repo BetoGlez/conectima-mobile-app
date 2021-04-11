@@ -25,6 +25,7 @@ import "./theme/global.scss";
 
 import apolloClient from "./apollo/apollo-config";
 import AppConfig from "./app-constants";
+import AuthContextProvider from "./context/AuthContextProvider";
 import LoginPage from "./pages/Login/LoginPage";
 import MainPage from "./pages/Main/MainPage";
 import ProfileSelectorPage from "./pages/ProfileSelector/ProfileSelectorPage";
@@ -32,20 +33,22 @@ import ProfileSelectorPage from "./pages/ProfileSelector/ProfileSelectorPage";
 const App: React.FC = () => (
     <IonApp>
         <ApolloProvider client={apolloClient}>
-            <IonReactRouter>
-                <IonRouterOutlet>
-                    <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
-                        <LoginPage />
-                    </Route>
-                    <Route exact path={AppConfig.APP_ROUTES.PROFILE_SELECTOR}>
-                        <ProfileSelectorPage />
-                    </Route>
-                    <Route path={AppConfig.APP_ROUTES.HOME}>
-                        <MainPage />
-                    </Route>
-                    <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
-                </IonRouterOutlet>
-            </IonReactRouter>
+            <AuthContextProvider>
+                <IonReactRouter>
+                    <IonRouterOutlet>
+                        <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
+                            <LoginPage />
+                        </Route>
+                        <Route exact path={AppConfig.APP_ROUTES.PROFILE_SELECTOR}>
+                            <ProfileSelectorPage />
+                        </Route>
+                        <Route path={AppConfig.APP_ROUTES.HOME}>
+                            <MainPage />
+                        </Route>
+                        <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
+                    </IonRouterOutlet>
+                </IonReactRouter>
+            </AuthContextProvider>
         </ApolloProvider>
     </IonApp>
 );

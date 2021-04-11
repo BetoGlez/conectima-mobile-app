@@ -1,4 +1,4 @@
-import { IonCard, IonCardHeader, IonCardContent, IonRow, IonCol, IonItem, IonInput, IonButton } from "@ionic/react";
+import { IonCard, IonCardHeader, IonCardContent, IonRow, IonCol, IonItem, IonInput, IonButton, IonSpinner } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
 
@@ -6,7 +6,7 @@ import "./AuthBoxComponent.scss";
 import { IAuthBoxComponentProps, INITIAL_LOGIN_FORM_VALUES, LOGIN_VALIDATION_SCHEMA } from "./AuthBoxComponent.constants";
 import { ILoginForm } from "../../../models/forms/login-form.model";
 
-const AuthBoxComponent: React.FC<IAuthBoxComponentProps> = (props) => {
+const AuthBoxComponent: React.FC<IAuthBoxComponentProps> = ({isLoading, ...props}) => {
 
     const { t } = useTranslation();
 
@@ -41,7 +41,11 @@ const AuthBoxComponent: React.FC<IAuthBoxComponentProps> = (props) => {
                     </IonRow>
                     <IonRow className="ion-margin-top">
                         <IonCol size="6" offset="3" className="ion-text-center">
-                            <IonButton expand="block" type="submit" disabled={!loginForm.isValid}>{t("auth.login")}</IonButton>
+                            { !isLoading ?
+                                <IonButton expand="block" type="submit" disabled={!loginForm.isValid}>{t("auth.login")}</IonButton>
+                                :
+                                <IonSpinner color="primary" className="ion-margin-top"/>
+                            }
                         </IonCol>
                     </IonRow>
                 </form>

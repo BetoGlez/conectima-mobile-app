@@ -1,15 +1,26 @@
+import { useContext } from "react";
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
-import React from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router";
 
 import "./ConfigurePage.scss";
+import AuthContext from "../../context/auth-context";
 import CurrentUserComponent from "./CurrentUserComponent/CurrentUserComponent";
 import GeneralSectionComponent from "./GeneralSectionComponent/GeneralSectionComponent";
 import MoreSectionComponent from "./MoreSectionComponent/MoreSectionComponent";
+import AppConfig from "../../app-constants";
 
 const ConfigurePage: React.FC = () => {
 
     const { t } = useTranslation();
+    const history = useHistory();
+
+    const authContext = useContext(AuthContext);
+
+    const doLogout = (): void => {
+        authContext.logout();
+        history.replace(AppConfig.APP_ROUTES.LOGIN);
+    };
 
     return (
         <IonPage className="configure-page">
@@ -30,7 +41,7 @@ const ConfigurePage: React.FC = () => {
                     <MoreSectionComponent />
                     <IonRow className="ion-margin-top ion-margin-bottom">
                         <IonCol>
-                            <IonButton className="logout-btn" expand="block">{t("auth.logout")}</IonButton>
+                            <IonButton className="logout-btn" expand="block" onClick={doLogout}>{t("auth.logout")}</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

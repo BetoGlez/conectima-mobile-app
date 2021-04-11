@@ -6,6 +6,10 @@ export const en = {
             "on": "On",
             "off": "Off"
         },
+        "errors": {
+            "userNotFound": "There is no user registered with this credentials",
+            "invalidCredentials": "The credentials you are using are incorrect"
+        },
         "pages": {
             "projects": "Projects",
             "compare": "Compare",

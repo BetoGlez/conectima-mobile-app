@@ -5,6 +5,7 @@ import { ILoginForm } from "../../../models/forms/login-form.model";
 import AppConfig from "../../../app-constants";
 
 export interface IAuthBoxComponentProps {
+    isLoading: boolean;
     doLogin: (values: ILoginForm, helpers: FormikHelpers<ILoginForm>) => void | Promise<any>;
 }
 

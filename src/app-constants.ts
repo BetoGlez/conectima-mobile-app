@@ -7,7 +7,9 @@ export default class AppConfig {
 
     public static readonly ABOUT_INFO_URL = "https://github.com/BetoGlez/conectima-mobile-app";
     public static readonly LOGIN_BG_IMAGE_URL = "/assets/images/login-bg.jpg";
+
     public static readonly MIN_PASSWORD_LENGTH = 8;
+    public static readonly TOAST_INFO_DURATION_MS = 3000;
 
     public static readonly APP_ROUTES = {
         LOGIN: "/login",
@@ -19,4 +21,10 @@ export default class AppConfig {
         CONFIGURE: "/home/configure"
     };
 
+    public static readonly ERROR_CODES = {
+        INFO: {
+            USER_NOT_FOUND: "userNotFound",
+            INVALID_CREDENTIALS: "invalidCredentials"
+        }
+    };
 }
