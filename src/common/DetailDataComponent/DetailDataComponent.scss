@@ -1,0 +1,19 @@
+.data-detail {
+    --padding-start: 0;
+
+    height: 30px;
+
+    ion-icon {
+        margin-right: 12px;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    ion-label {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 16px !important;
+        color: var(--ion-color-secondary) !important;
+    }
+}

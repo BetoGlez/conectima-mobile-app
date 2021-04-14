@@ -28,6 +28,14 @@ export const en = {
             "manager": "Project manager",
             "developer": "Software developer"
         },
+        "projects": {
+            "projects": "Projects",
+            "dedication": "Dedication",
+            "startedOn": "Started on {{startDate}}",
+            "ongoingFor": "Ongoing for {{timeOngoing}}",
+            "sprintVersion": "Sprint {{sprintVersion}}",
+            "editProject": "Edit Project"
+        },
         "configure": {
             "settings": "Settings",
             "general": "General",
