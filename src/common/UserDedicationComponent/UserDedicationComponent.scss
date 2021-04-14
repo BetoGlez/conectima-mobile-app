@@ -1,0 +1,41 @@
+.user-dedication {
+    width: 100%;
+    display: flex;
+
+    .percentage-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 20px;
+        background-color: var(--ion-color-medium);
+
+        .dedication-percentage {
+            margin: 0;
+            font-size: 12px;
+        }
+    }
+
+    .progress-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 16px;
+    }
+
+    .progress-data {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .username-dedication {
+            margin: 0;
+        }
+
+        .hours-dedication {
+            margin: 0;
+        }
+    }
+}

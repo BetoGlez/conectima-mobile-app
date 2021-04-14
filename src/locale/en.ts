@@ -36,6 +36,10 @@ export const en = {
             "sprintVersion": "Sprint {{sprintVersion}}",
             "editProject": "Edit Project"
         },
+        "dedication": {
+            "percentage": "{{percentage}}%",
+            "hoursPerDay": "{{hours}}h / day"
+        },
         "configure": {
             "settings": "Settings",
             "general": "General",
