@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import "./ConfigurePage.scss";
 import { useAuth } from "../../hooks/authentication";
+import { useLogout } from "../../hooks/authentication";
 import CurrentUserComponent from "./CurrentUserComponent/CurrentUserComponent";
 import GeneralSectionComponent from "./GeneralSectionComponent/GeneralSectionComponent";
 import MoreSectionComponent from "./MoreSectionComponent/MoreSectionComponent";
@@ -11,7 +12,8 @@ const ConfigurePage: React.FC = () => {
 
     const { t } = useTranslation();
 
-    const { doLocalLogout, activeUser } = useAuth();
+    const { activeUser } = useAuth();
+    const { logout } = useLogout();
 
     return (
         <IonPage className="configure-page">
@@ -36,7 +38,7 @@ const ConfigurePage: React.FC = () => {
                     <MoreSectionComponent />
                     <IonRow className="ion-margin-top ion-margin-bottom">
                         <IonCol>
-                            <IonButton className="logout-btn" expand="block" onClick={doLocalLogout}>{t("auth.logout")}</IonButton>
+                            <IonButton className="logout-btn" expand="block" onClick={logout}>{t("auth.logout")}</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

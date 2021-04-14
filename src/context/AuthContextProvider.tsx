@@ -1,5 +1,4 @@
 import { useState } from "react";
-import apolloClient from "../apollo/apollo-config";
 
 import AuthContext, { AuthContextModel } from "./auth-context";
 import { IUser, RoleName } from "../models/user.model";
@@ -14,7 +13,6 @@ const AuthContextProvider: React.FC = ({children}) => {
 
     const logout = (): void => {
         setUser(null);
-        apolloClient.resetStore();
     };
 
     const setUserRole = (roleName: RoleName): void => {

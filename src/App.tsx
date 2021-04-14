@@ -23,7 +23,7 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.scss";
 import "./theme/global.scss";
 
-import apolloClient from "./apollo/apollo-config";
+import apolloClient from "./graphql/apollo-config";
 import AppConfig from "./app-constants";
 import AuthContextProvider from "./context/AuthContextProvider";
 import AuthRoute from "./common/AuthRoute";
