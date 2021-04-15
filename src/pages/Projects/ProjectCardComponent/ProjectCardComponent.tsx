@@ -6,35 +6,39 @@ import "./ProjectCardComponent.scss";
 import DetailDataComponent from "../../../common/DetailDataComponent/DetailDataComponent";
 import DedicationListComponent from "../../../common/DedicationListComponent/DedicationListComponent";
 import { IProjectCardComponentProps } from "./ProjectCardComponent.constants";
+import { useUtils } from "../../../hooks/utils";
 
-const ProjectCardComponent: React.FC<IProjectCardComponentProps> = ({project: {name, startDate, activeSprint}}) => {
+const ProjectCardComponent: React.FC<IProjectCardComponentProps> = ({project}) => {
 
     const { t } = useTranslation();
+
+    const { getDayNumberBetweenDates, getCurrentDateString } = useUtils();
+    const activeSprintStats = project.activeSprint?.statistics;
 
     return (
         <IonCard className="project-card">
             <IonGrid>
                 <IonRow>
                     <IonCol>
-                        <h2>{name}</h2>
+                        <h2>{project.name}</h2>
                     </IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol>
                         <DetailDataComponent icon={calendarNumberOutline} text={"projects.startedOn"}
-                            textValues={{startDate}}/>
+                            textValues={{startDate: project.startDate}}/>
                     </IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol>
                         <DetailDataComponent icon={timeOutline} text={"projects.ongoingFor"}
-                            textValues={{timeOngoing: "3 weeks"}}/>
+                            textValues={{dayNumber: getDayNumberBetweenDates(project.startDate, getCurrentDateString())}}/>
                     </IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol>
                         <DetailDataComponent icon={refreshOutline} text={"projects.sprintVersion"}
-                            textValues={{sprintVersion: activeSprint?.version}}/>
+                            textValues={{sprintVersion: project.activeSprint?.version}}/>
                     </IonCol>
                 </IonRow>
                 <IonRow className="dedication-title-container">
@@ -44,7 +48,8 @@ const ProjectCardComponent: React.FC<IProjectCardComponentProps> = ({project: {n
                 </IonRow>
                 <IonRow>
                     <IonCol>
-                        <DedicationListComponent dedications={activeSprint?.dedications} totalDays={5}/>
+                        <DedicationListComponent dedications={project.activeSprint?.dedications}
+                            totalDays={getDayNumberBetweenDates(activeSprintStats?.startDate, activeSprintStats?.releaseDate)}/>
                     </IonCol>
                 </IonRow>
                 <IonRow className="ion-margin-bottom">

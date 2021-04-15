@@ -32,7 +32,7 @@ export const en = {
             "projects": "Projects",
             "dedication": "Dedication",
             "startedOn": "Started on {{startDate}}",
-            "ongoingFor": "Ongoing for {{timeOngoing}}",
+            "ongoingFor": "Ongoing for {{dayNumber}} days",
             "sprintVersion": "Sprint {{sprintVersion}}",
             "editProject": "Edit Project"
         },

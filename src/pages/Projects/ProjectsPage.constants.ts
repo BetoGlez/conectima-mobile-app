@@ -5,10 +5,14 @@ export const mockProjects: Array<IProject> = [
     {
         id: "606525597e93fe70a6877e0c",
         name: "Ipatia",
-        startDate: "26/03/2020",
+        startDate: "01/04/2021",
         activeSprint: {
             id: "606666bdb9f43182b15c42e0",
             version: "v1.0.0",
+            statistics: {
+                startDate: "15/03/2021",
+                releaseDate: "29/03/2021"
+            },
             dedications: [
                 {
                     user: "rbarriuso@tribalyte.com",
