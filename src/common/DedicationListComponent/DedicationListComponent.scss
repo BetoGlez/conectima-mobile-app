@@ -1,0 +1,21 @@
+.dedications-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .dedications {
+        width: 100%;
+    }
+
+    .dedication {
+        margin-bottom: 32px;
+    }
+
+    .no-dedication-data {
+        margin-top: 0;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+}

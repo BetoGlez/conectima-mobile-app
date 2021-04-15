@@ -4,14 +4,15 @@ import { useTranslation } from "react-i18next";
 import "./UserDedicationComponent.scss";
 import { IUserDedicationComponentProps } from "./UserDedicationComponent.constants";
 
-const UserDedicationComponent: React.FC<IUserDedicationComponentProps> = ({dedicationPercentage, user, hoursPerDay}) => {
+const UserDedicationComponent: React.FC<IUserDedicationComponentProps> = ({dedicationPercentage, user, hoursPerDay, ...props}) => {
 
     const { t } = useTranslation();
 
     return (
-        <div className="user-dedication">
+        <div className={`user-dedication ${props.className}`}>
             <div className="percentage-circle">
-                <p className="dedication-percentage">{t("dedication.percentage", {percentage: dedicationPercentage * 100})}</p>
+                <p className="dedication-percentage">
+                    {t("dedication.percentage", {percentage: Math.round(dedicationPercentage * 100)})}</p>
             </div>
             <div className="progress-container">
                 <div className="progress-data">

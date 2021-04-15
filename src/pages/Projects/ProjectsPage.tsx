@@ -1,5 +1,7 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
+
 import ProjectCardComponent from "./ProjectCardComponent/ProjectCardComponent";
+import { mockProjects } from "./ProjectsPage.constants";
 
 const ProjectsPage: React.FC = () => {
     return (
@@ -18,7 +20,7 @@ const ProjectsPage: React.FC = () => {
                 <IonGrid>
                     <IonRow>
                         <IonCol>
-                            <ProjectCardComponent />
+                            <ProjectCardComponent project={mockProjects[0]}/>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

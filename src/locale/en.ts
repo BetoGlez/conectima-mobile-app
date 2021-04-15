@@ -38,7 +38,8 @@ export const en = {
         },
         "dedication": {
             "percentage": "{{percentage}}%",
-            "hoursPerDay": "{{hours}}h / day"
+            "hoursPerDay": "{{hours}}h / day",
+            "noDedications": "No user dedication data"
         },
         "configure": {
             "settings": "Settings",

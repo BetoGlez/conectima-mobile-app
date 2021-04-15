@@ -2,25 +2,27 @@ import { IonButton, IonCard, IonCol, IonGrid, IonRow } from "@ionic/react";
 import { calendarNumberOutline, refreshOutline, timeOutline } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 
+import "./ProjectCardComponent.scss";
 import DetailDataComponent from "../../../common/DetailDataComponent/DetailDataComponent";
-import UserDedicationComponent from "../../../common/UserDedicationComponent/UserDedicationComponent";
+import DedicationListComponent from "../../../common/DedicationListComponent/DedicationListComponent";
+import { IProjectCardComponentProps } from "./ProjectCardComponent.constants";
 
-const ProjectCardComponent: React.FC = () => {
+const ProjectCardComponent: React.FC<IProjectCardComponentProps> = ({project: {name, startDate, activeSprint}}) => {
 
     const { t } = useTranslation();
 
     return (
-        <IonCard style={{paddingLeft: "8px", paddingRight: "8px"}}>
+        <IonCard className="project-card">
             <IonGrid>
                 <IonRow>
                     <IonCol>
-                        <h2>Brightbyte Cloud</h2>
+                        <h2>{name}</h2>
                     </IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol>
                         <DetailDataComponent icon={calendarNumberOutline} text={"projects.startedOn"}
-                            textValues={{startDate: "19/02/2021"}}/>
+                            textValues={{startDate}}/>
                     </IonCol>
                 </IonRow>
                 <IonRow>
@@ -32,20 +34,20 @@ const ProjectCardComponent: React.FC = () => {
                 <IonRow>
                     <IonCol>
                         <DetailDataComponent icon={refreshOutline} text={"projects.sprintVersion"}
-                            textValues={{sprintVersion: "v2.5.11"}}/>
+                            textValues={{sprintVersion: activeSprint?.version}}/>
                     </IonCol>
                 </IonRow>
-                <IonRow>
+                <IonRow className="dedication-title-container">
                     <IonCol>
                         <h2 className="thin-text">{t("projects.dedication")}</h2>
                     </IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol>
-                        <UserDedicationComponent user={"agonzalez"} dedicationPercentage={0.6} hoursPerDay={5}/>
+                        <DedicationListComponent dedications={activeSprint?.dedications} totalDays={5}/>
                     </IonCol>
                 </IonRow>
-                <IonRow className="ion-margin-top ion-margin-bottom">
+                <IonRow className="ion-margin-bottom">
                     <IonCol size="6" offset="3" className="ion-text-center">
                         <IonButton fill="outline" expand="block">{t("projects.editProject")}</IonButton>
                     </IonCol>

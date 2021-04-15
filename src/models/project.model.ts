@@ -3,10 +3,10 @@ import { ISprint } from "./sprint.model";
 
 export interface IProject {
     id: string;
-    name: string;
-    spreadSheetId: string;
-    startDate: string;
-    sprints: Array<ISprint>;
+    name?: string;
+    spreadSheetId?: string;
+    startDate?: string;
+    sprints?: Array<ISprint>;
     activeSprint?: ISprint;
-    dedications: Array<IDedication>;
+    dedications?: Array<IDedication>;
 }
