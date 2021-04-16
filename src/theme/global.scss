@@ -50,3 +50,9 @@ ion-toolbar {
         font-weight: 400;
     }
 }
+
+ion-loading.conectima-loading {
+    --background: none;
+    --spinner-color: var(--ion-color-primary);
+    --backdrop-opacity: 0.7;
+}

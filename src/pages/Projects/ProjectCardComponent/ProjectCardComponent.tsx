@@ -26,7 +26,7 @@ const ProjectCardComponent: React.FC<IProjectCardComponentProps> = ({project}) =
                 <IonRow>
                     <IonCol>
                         <DetailDataComponent icon={calendarNumberOutline} text={"projects.startedOn"}
-                            textValues={{startDate: project.startDate}}/>
+                            textValues={{startDate: project.startDate || ""}}/>
                     </IonCol>
                 </IonRow>
                 <IonRow>
@@ -38,7 +38,7 @@ const ProjectCardComponent: React.FC<IProjectCardComponentProps> = ({project}) =
                 <IonRow>
                     <IonCol>
                         <DetailDataComponent icon={refreshOutline} text={"projects.sprintVersion"}
-                            textValues={{sprintVersion: project.activeSprint?.version}}/>
+                            textValues={{sprintVersion: project.activeSprint?.version || ""}}/>
                     </IonCol>
                 </IonRow>
                 <IonRow className="dedication-title-container">

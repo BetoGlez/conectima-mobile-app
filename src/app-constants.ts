@@ -14,6 +14,7 @@ export default class AppConfig {
     public static readonly LOGIN_BG_IMAGE_URL = "/assets/images/login-bg.jpg";
     public static readonly MANAGER_ROLE_IMAGE_URL = "/assets/images/manager-role.svg";
     public static readonly DEVELOPER_ROLE_IMAGE_URL = "/assets/images/developer-role.svg";
+    public static readonly NO_DATA_IMAGE_URL = "/assets/images/no-data.svg";
 
     public static readonly APP_ROUTES = {
         LOGIN: "/login",

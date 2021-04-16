@@ -4,7 +4,8 @@ export const en = {
             "appName": "Conectima",
             "start": "Start",
             "on": "On",
-            "off": "Off"
+            "off": "Off",
+            "noData": "No data available"
         },
         "errors": {
             "userNotFound": "There is no user registered with this credentials",
