@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { IonPage } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { FormikHelpers } from "formik";
@@ -6,13 +7,18 @@ import "./LoginPage.scss";
 import AppConfig from "../../app-constants";
 import AuthBoxComponent from "./AuthBoxComponent/AuthBoxComponent";
 import { ILoginForm } from "../../models/forms/login-form.model";
-import { useLogin } from "../../hooks/authentication";
+import { useAuth, useLogin } from "../../hooks/authentication";
 
 const LoginPage: React.FC = () => {
 
     const { t } = useTranslation();
 
     const { login, isLoading } = useLogin();
+    const { checkAuthUser } = useAuth();
+
+    useEffect(() => {
+        checkAuthUser();
+    }, []);
 
     const doLogin = async (values: ILoginForm, helpers: FormikHelpers<ILoginForm>): Promise<void> => {
         const authUser = (await login({ variables: { email: values.email, password: values.password } }))?.data?.login;
