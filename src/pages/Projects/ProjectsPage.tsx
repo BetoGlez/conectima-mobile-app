@@ -1,5 +1,7 @@
 import React from "react";
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
+import { IonCol, IonContent, IonFab, IonFabButton, IonGrid, IonHeader, IonIcon, IonPage, IonRow, IonTitle,
+    IonToolbar } from "@ionic/react";
+import { addOutline } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "@apollo/client";
 
@@ -29,6 +31,11 @@ const ProjectsPage: React.FC = () => {
                             <IonTitle size="large">{t("projects.projects")}</IonTitle>
                         </IonToolbar>
                     </IonHeader>
+                    <IonFab vertical="top" horizontal="end" slot="fixed">
+                        <IonFabButton>
+                            <IonIcon icon={addOutline} />
+                        </IonFabButton>
+                    </IonFab>
                     <IonGrid>
                         { (data?.getProjects && data.getProjects.length > 0) ?
                             data?.getProjects.map(project => (
