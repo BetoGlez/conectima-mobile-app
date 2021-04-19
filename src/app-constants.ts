@@ -18,6 +18,8 @@ export default class AppConfig {
     public static readonly MANAGER_ROLE_IMAGE_URL = "/assets/images/manager-role.svg";
     public static readonly DEVELOPER_ROLE_IMAGE_URL = "/assets/images/developer-role.svg";
     public static readonly NO_DATA_IMAGE_URL = "/assets/images/no-data.svg";
+    public static readonly PROJECT_SPRINT_IMAGE_URL = "/assets/images/project_team.svg";
+    public static readonly ANALYTICS_SPRINT_IMAGE_URL = "/assets/images/sprint-analytics.svg";
 
     public static readonly APP_ROUTES = {
         LOGIN: "/login",
