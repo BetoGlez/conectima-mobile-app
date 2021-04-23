@@ -1,10 +1,14 @@
 import React from "react";
 import { IonButton, IonCard, IonCol, IonGrid, IonRow } from "@ionic/react";
+import { useTranslation } from "react-i18next";
 
 import "./SelectedSprintCardComponent.scss";
 import { ISelectedSprintCardComponentProps } from "./SelectedSprintCardComponent.constants";
 
 const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> = ({projectData, confirmText, imgUrl}) => {
+
+    const { t } = useTranslation();
+
     return (
         <IonCard className="selected-sprint-card">
             <IonGrid>
@@ -17,7 +21,8 @@ const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> =
                     <React.Fragment>
                         <IonRow>
                             <IonCol className="ion-text-center">
-                                <p className="thin-text opacity-7 ion-no-margin">Sprint {projectData.sprintVersion}</p>
+                                <p className="thin-text opacity-7 ion-no-margin">
+                                    {t("sprints.sprintVersion", {sprintVersion: projectData.sprintVersion})}</p>
                             </IonCol>
                         </IonRow>
                         <IonRow>
@@ -27,7 +32,7 @@ const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> =
                         </IonRow>
                         <IonRow>
                             <IonCol className="ion-text-center ion-margin-bottom">
-                                <IonButton>{confirmText}</IonButton>
+                                <IonButton>{t(confirmText)}</IonButton>
                             </IonCol>
                         </IonRow>
                     </React.Fragment>
@@ -35,7 +40,8 @@ const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> =
                     <React.Fragment>
                         <IonRow>
                             <IonCol className="ion-text-center">
-                                <IonButton fill="outline" className="ion-margin-bottom ion-margin-top">Select a sprint</IonButton>
+                                <IonButton fill="outline" className="ion-margin-bottom ion-margin-top">
+                                    {t("sprints.selectSprint")}</IonButton>
                             </IonCol>
                         </IonRow>
                     </React.Fragment>

@@ -37,7 +37,7 @@ const ProjectCardComponent: React.FC<IProjectCardComponentProps> = ({project}) =
                 </IonRow>
                 <IonRow>
                     <IonCol>
-                        <DetailDataComponent icon={refreshOutline} text={"projects.sprintVersion"}
+                        <DetailDataComponent icon={refreshOutline} text={"sprints.sprintVersion"}
                             textValues={{sprintVersion: project.activeSprint?.version || ""}}/>
                     </IonCol>
                 </IonRow>

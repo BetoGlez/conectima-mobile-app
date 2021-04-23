@@ -34,13 +34,20 @@ export const en = {
             "dedication": "Dedication",
             "startedOn": "Started on {{startDate}}",
             "ongoingFor": "Ongoing for {{dayNumber}} days",
-            "sprintVersion": "Sprint {{sprintVersion}}",
             "editProject": "Edit Project"
+        },
+        "sprints": {
+            "selectSprint": "Select a sprint",
+            "sprintVersion": "Sprint {{sprintVersion}}"
         },
         "dedication": {
             "percentage": "{{percentage}}%",
             "hoursPerDay": "{{hours}}h / day",
             "noDedications": "No user dedication data"
+        },
+        "analytics": {
+            "projectAnalytics": "Project analytics",
+            "seeAnalytics": "See analytics"
         },
         "configure": {
             "settings": "Settings",
