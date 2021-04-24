@@ -2,6 +2,24 @@
     "name": "conectima-mobile-app",
     "version": "0.1.0",
     "private": true,
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "eject": "react-scripts eject",
+        "build:ios": "yarn build && yarn add:ios && yarn open:ios",
+        "build:android": "yarn build && yarn add:android && yarn open:android",
+        "add:ios": "npx cap add ios || npx cap sync ios",
+        "run:ios": "npx cap run ios",
+        "open:ios": "npx cap open ios",
+        "add:android": "npx cap add android || npx cap sync android",
+        "run:android": "npx cap run android",
+        "open:android": "npx cap open android",
+        "lint": "yarn lint:tsx && yarn lint:scss",
+        "lint:tsx": "yarn eslint '**/*.{tsx,ts}'",
+        "lint:scss": "yarn stylelint '**/*.scss'",
+        "e2e": "cypress run --config video=false",
+        "cypress": "cypress open"
+    },
     "dependencies": {
         "@apollo/client": "^3.3.14",
         "@capacitor/android": "^3.0.0-rc.0",
@@ -47,23 +65,6 @@
         "workbox-strategies": "^5.1.4",
         "workbox-streams": "^5.1.4",
         "yup": "^0.32.9"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "eject": "react-scripts eject",
-        "add:ios": "npx cap add ios",
-        "run:ios": "npx cap run ios",
-        "open:ios": "npx cap open ios",
-        "add:android": "npx cap add android",
-        "run:android": "npx cap run android",
-        "open:android": "npx cap open android",
-        "capacitor:sync": "yarn build && npx cap sync",
-        "lint": "yarn lint:tsx && yarn lint:scss",
-        "lint:tsx": "yarn eslint '**/*.{tsx,ts}'",
-        "lint:scss": "yarn stylelint '**/*.scss'",
-        "e2e": "cypress run --config video=false",
-        "cypress": "cypress open"
     },
     "browserslist": {
         "production": [
