@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { Redirect, Route } from "react-router-dom";
-import { IonApp, IonRouterOutlet } from "@ionic/react";
+import { IonApp, IonRouterOutlet, isPlatform } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { ApolloProvider } from "@apollo/client";
+import { StatusBar, Style } from "@capacitor/status-bar";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -31,23 +33,37 @@ import LoginPage from "./pages/Login/LoginPage";
 import MainPage from "./pages/Main/MainPage";
 import ProfileSelectorPage from "./pages/ProfileSelector/ProfileSelectorPage";
 
-const App: React.FC = () => (
-    <IonApp>
-        <ApolloProvider client={apolloClient}>
-            <AuthContextProvider>
-                <IonReactRouter>
-                    <IonRouterOutlet>
-                        <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
-                            <LoginPage />
-                        </Route>
-                        <AuthRoute exact path={AppConfig.APP_ROUTES.PROFILE_SELECTOR} component={ProfileSelectorPage} />
-                        <AuthRoute path={AppConfig.APP_ROUTES.HOME} component={MainPage} />
-                        <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
-                    </IonRouterOutlet>
-                </IonReactRouter>
-            </AuthContextProvider>
-        </ApolloProvider>
-    </IonApp>
-);
+const App: React.FC = () => {
+
+    const configStatusBar = async (): Promise<void> => {
+        if (isPlatform("capacitor")) {
+            await StatusBar.setStyle({ style: Style.Light });
+            await StatusBar.setBackgroundColor({ color: "#ffffff" });
+        }
+    };
+
+    useEffect(() => {
+        configStatusBar();
+    }, []);
+
+    return (
+        <IonApp>
+            <ApolloProvider client={apolloClient}>
+                <AuthContextProvider>
+                    <IonReactRouter>
+                        <IonRouterOutlet>
+                            <Route exact path={AppConfig.APP_ROUTES.LOGIN}>
+                                <LoginPage />
+                            </Route>
+                            <AuthRoute exact path={AppConfig.APP_ROUTES.PROFILE_SELECTOR} component={ProfileSelectorPage} />
+                            <AuthRoute path={AppConfig.APP_ROUTES.HOME} component={MainPage} />
+                            <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
+                        </IonRouterOutlet>
+                    </IonReactRouter>
+                </AuthContextProvider>
+            </ApolloProvider>
+        </IonApp>
+    );
+};
 
 export default App;

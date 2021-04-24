@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build",
+        "build": "yarn lint && react-scripts build",
         "eject": "react-scripts eject",
         "build:ios": "yarn build && yarn add:ios && yarn open:ios",
         "build:android": "yarn build && yarn add:android && yarn open:android",
@@ -28,6 +28,7 @@
         "@capacitor/haptics": "^0.3.6",
         "@capacitor/ios": "^3.0.0-rc.0",
         "@capacitor/keyboard": "^0.5.6",
+        "@capacitor/status-bar": "^0.4.6",
         "@capacitor/storage": "^0.3.6",
         "@ionic/react": "^5.5.0",
         "@ionic/react-router": "^5.5.0",
