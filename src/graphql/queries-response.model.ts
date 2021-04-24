@@ -25,3 +25,17 @@ export interface IGetBasicProjectsDataResponse {
         name: string;
     }>;
 }
+
+export interface IGetSelectSprintModalDataResponse {
+    getSprints: Array<{
+        id: string;
+        version: string;
+        statistics: {
+            originalEstimationSp?: number;
+            workHoursPerDay?: number;
+            startDate?: string;
+            releaseDate?: string;
+        };
+        issueCount: number;
+    }>;
+}
