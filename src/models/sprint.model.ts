@@ -8,6 +8,7 @@ export interface ISprint {
     issues?: Array<IIssue>;
     issueCount?: number;
     dedications?: Array<IDedication>;
+    spsProgress?: Array<ISpProgress>;
 }
 
 export interface ISprintStatistics {
@@ -24,3 +25,8 @@ export interface ISprintStatistics {
     originalProgressPercentage?: number;
     devProgressPercentage?: number;
   }
+
+export interface ISpProgress {
+    date?: string;
+    sp?: number;
+}
