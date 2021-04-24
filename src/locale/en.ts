@@ -5,7 +5,9 @@ export const en = {
             "start": "Start",
             "on": "On",
             "off": "Off",
-            "noData": "No data available"
+            "noData": "No data available",
+            "select": "Select",
+            "cancel": "Cancel"
         },
         "errors": {
             "userNotFound": "There is no user registered with this credentials",
@@ -38,7 +40,11 @@ export const en = {
         },
         "sprints": {
             "selectSprint": "Select a sprint",
-            "sprintVersion": "Sprint {{sprintVersion}}"
+            "changeSprint": "Change sprint",
+            "sprintVersion": "Sprint {{sprintVersion}}",
+            "issues": "{{issueNumber}} issues",
+            "sp": "{{sp}} sp",
+            "duration": "{{days}} days - {{hoursPerDay}}h / day"
         },
         "dedication": {
             "percentage": "{{percentage}}%",
