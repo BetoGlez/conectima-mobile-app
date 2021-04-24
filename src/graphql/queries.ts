@@ -22,3 +22,12 @@ export const GET_PROJECTS_CARDS_DATA = gql`
         }
     }
 `;
+
+export const GET_BASIC_PROJECTS_DATA = gql`
+    query {
+        getProjects {
+            id
+            name
+        }
+    }
+`;

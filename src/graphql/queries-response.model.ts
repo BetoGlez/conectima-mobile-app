@@ -18,3 +18,10 @@ export interface IGetProjectsCardsDataResponse {
         };
     }>;
 }
+
+export interface IGetBasicProjectsDataResponse {
+    getProjects: Array<{
+        id: string;
+        name: string;
+    }>;
+}
