@@ -1,6 +1,6 @@
-import { IPreselectedSprintData } from "../SelectedSprintCard/SelectedSprintCardComponent.constants";
+import { IPreselectedSprintData, ISelectedSprintProjectData } from "../SelectedSprintCard/SelectedSprintCardComponent.constants";
 
 export interface ISelectSprintModalProps {
-    projectId: string;
+    projectData: ISelectedSprintProjectData;
     onDismiss: (sprintData?: IPreselectedSprintData) => void;
 }

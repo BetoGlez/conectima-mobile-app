@@ -6,6 +6,7 @@ export interface ISprint {
     version?: string;
     statistics?: ISprintStatistics;
     issues?: Array<IIssue>;
+    issueCount?: number;
     dedications?: Array<IDedication>;
 }
 

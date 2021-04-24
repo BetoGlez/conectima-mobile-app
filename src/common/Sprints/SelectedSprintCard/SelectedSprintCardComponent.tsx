@@ -27,7 +27,10 @@ const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> =
     };
 
     const [presentSprintsModal, dismissSprintsModal] = useModal<ISelectSprintModalProps>(SelectSprintModal, {
-        projectId: projectData.projectId,
+        projectData: {
+            projectId: projectData.projectId,
+            projectName: projectData.projectName
+        },
         onDismiss: preSelectSprint
     });
 

@@ -1,7 +1,7 @@
 export interface IGetProjectsCardsDataResponse {
     getProjects: Array<{
         id: string;
-        name?: string;
+        name: string;
         startDate?: string;
         activeSprint?: {
             id: string;
