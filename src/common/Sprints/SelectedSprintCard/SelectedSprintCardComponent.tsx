@@ -9,7 +9,7 @@ import { IPreselectedSprintData, ISelectedSprintCardComponentProps } from "./Sel
 import { useModal } from "../../../hooks/popups";
 import { useLogger } from "../../../hooks/logger";
 import { ISprint } from "../../../models/sprint.model";
-import LoadingComponent from "../../LoadingComponent/LoadingComponent";
+import LoadingComponent from "../../generalUiState/LoadingComponent/LoadingComponent";
 import SelectSprintModal from "../SelectSprintModal/SelectSprintModal";
 import { ISelectSprintModalProps } from "../SelectSprintModal/SelectSprintModal.constants";
 import { IGetSelectSprintModalDataResponse } from "../../../graphql/queries-response.model";

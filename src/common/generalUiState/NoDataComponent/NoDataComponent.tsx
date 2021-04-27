@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import "./NoDataComponent.scss";
 import { INoDataComponentProps } from "./NoDataComponent.constants";
-import AppConfig from "../../app-constants";
+import AppConfig from "../../../app-constants";
 
 const NoDataComponent: React.FC<INoDataComponentProps> = ({className}) => {
 

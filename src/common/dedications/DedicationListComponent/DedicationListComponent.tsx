@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import "./DedicationListComponent.scss";
 import UserDedicationComponent from "../UserDedicationComponent/UserDedicationComponent";
 import { IDedicationListComponentProps } from "./DedicationListComponent.constants";
-import { useUtils } from "../../hooks/utils";
-import { useDedications } from "../../hooks/dedications";
+import { useUtils } from "../../../hooks/utils";
+import { useDedications } from "../../../hooks/dedications";
 
 const DedicationListComponent: React.FC<IDedicationListComponentProps> = ({dedications, totalDays}) => {
 

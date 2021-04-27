@@ -8,8 +8,8 @@ import { useQuery } from "@apollo/client";
 import { GET_PROJECTS_CARDS_DATA } from "../../graphql/queries";
 import { IGetProjectsCardsDataResponse } from "../../graphql/queries-response.model";
 import ProjectCardComponent from "./ProjectCardComponent/ProjectCardComponent";
-import NoDataComponent from "../../common/NoDataComponent/NoDataComponent";
-import LoadingComponent from "../../common/LoadingComponent/LoadingComponent";
+import NoDataComponent from "../../common/generalUiState/NoDataComponent/NoDataComponent";
+import LoadingComponent from "../../common/generalUiState/LoadingComponent/LoadingComponent";
 
 const ProjectsPage: React.FC = () => {
 

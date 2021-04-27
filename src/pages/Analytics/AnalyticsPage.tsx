@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import { useQuery } from "@apollo/client";
 
 import AppConfig from "../../app-constants";
-import NoDataComponent from "../../common/NoDataComponent/NoDataComponent";
-import SelectedSprintCardComponent from "../../common/Sprints/SelectedSprintCard/SelectedSprintCardComponent";
-import LoadingComponent from "../../common/LoadingComponent/LoadingComponent";
+import NoDataComponent from "../../common/generalUiState/NoDataComponent/NoDataComponent";
+import SelectedSprintCardComponent from "../../common/sprints/SelectedSprintCard/SelectedSprintCardComponent";
+import LoadingComponent from "../../common/generalUiState/LoadingComponent/LoadingComponent";
 import { GET_BASIC_PROJECTS_DATA } from "../../graphql/queries";
 import { IGetBasicProjectsDataResponse } from "../../graphql/queries-response.model";
 

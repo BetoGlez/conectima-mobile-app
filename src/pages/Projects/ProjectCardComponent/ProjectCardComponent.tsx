@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import "./ProjectCardComponent.scss";
 import DetailDataComponent from "../../../common/DetailDataComponent/DetailDataComponent";
-import DedicationListComponent from "../../../common/DedicationListComponent/DedicationListComponent";
+import DedicationListComponent from "../../../common/dedications/DedicationListComponent/DedicationListComponent";
 import { IProjectCardComponentProps } from "./ProjectCardComponent.constants";
 import { useUtils } from "../../../hooks/utils";
 

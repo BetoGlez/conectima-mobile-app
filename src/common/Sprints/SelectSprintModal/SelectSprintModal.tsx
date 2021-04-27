@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import "./SelectSprintModal.scss";
 import { ISelectSprintModalProps } from "./SelectSprintModal.constants";
 import SmallSprintCardComponent from "../SmallSprintCardComponent/SmallSprintCardComponent";
-import NoDataComponent from "../../NoDataComponent/NoDataComponent";
+import NoDataComponent from "../../generalUiState/NoDataComponent/NoDataComponent";
 
 const SelectSprintModal: React.FC<ISelectSprintModalProps> = ({projectData, projectSprints, onDismiss}) => {
 

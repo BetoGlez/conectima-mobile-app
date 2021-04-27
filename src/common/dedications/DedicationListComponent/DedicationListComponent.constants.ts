@@ -1,4 +1,4 @@
-import { IDedication } from "../../models/dedication.model";
+import { IDedication } from "../../../models/dedication.model";
 
 export interface IDedicationListComponentProps {
     dedications?: Array<IDedication>;
