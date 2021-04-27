@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IonButton, IonCard, IonCol, IonGrid, IonRow } from "@ionic/react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router";
 import { useLazyQuery } from "@apollo/client";
 
 import "./SelectedSprintCardComponent.scss";
@@ -14,11 +15,13 @@ import { ISelectSprintModalProps } from "../SelectSprintModal/SelectSprintModal.
 import { IGetSelectSprintModalDataResponse } from "../../../graphql/queries-response.model";
 import { IProjectIdPayload } from "../../../graphql/inputs-payload.model";
 import { GET_SELECT_SPRINT_MODAL_DATA } from "../../../graphql/queries";
+import AppConfig from "../../../app-constants";
 
 const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> = ({projectData, confirmText, changeText, imgUrl}) => {
 
     const logger = useLogger("SelectedSprintCardComponent");
     const { t } = useTranslation();
+    const history = useHistory();
 
     const [selectedSprintData, setSelectedSprintData] = useState<IPreselectedSprintData | null>(null);
     const [projectSprints, setProjectSprints] = useState<Array<ISprint> | undefined>(undefined);
@@ -53,6 +56,13 @@ const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> =
         onDismiss: preSelectSprint
     });
 
+    const seeAnalytics = (): void => {
+        if (selectedSprintData && selectedSprintData.version) {
+            logger.d(`Analytics for project: ${projectData.projectId}, sprint version: ${selectedSprintData.version}`);
+            history.replace(AppConfig.APP_ROUTES.CHARTS);
+        }
+    };
+
     return (
         <React.Fragment>
             <IonCard className="selected-sprint-card">
@@ -79,7 +89,7 @@ const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> =
                                 <IonCol className="ion-text-center">
                                     <IonButton className="ion-margin-end" fill="outline" onClick={() => getSprints()}>
                                         {t(changeText)}</IonButton>
-                                    <IonButton>{t(confirmText)}</IonButton>
+                                    <IonButton onClick={seeAnalytics}>{t(confirmText)}</IonButton>
                                 </IonCol>
                             </IonRow>
                         </React.Fragment>

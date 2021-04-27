@@ -17,6 +17,18 @@ import { IUser, RoleName } from "../models/user.model";
 export const useAuth = () => {
     const logger = useLogger("useAuth");
     const authContext = useContext(AuthContext);
+
+    const setLocalUserRole = (roleName: RoleName): void => {
+        authContext.setUserRole(roleName);
+        logger.d("Selected role: ", roleName);
+    };
+
+    return { setLocalUserRole, activeUser: authContext.user };
+};
+
+export const useLocalStorageAuth = () => {
+    const logger = useLogger("useLocalStorageAuth");
+    const authContext = useContext(AuthContext);
     const history = useHistory();
 
     const checkAuthUser = async () => {
@@ -35,21 +47,18 @@ export const useAuth = () => {
                     username: localStorageUser.username,
                     token: authToken
                 };
-                logger.d("Setting current user to: ", composedUser);
-                authContext.login(composedUser);
-                history.push(AppConfig.APP_ROUTES.PROFILE_SELECTOR);
+                if (composedUser.token) {
+                    logger.d("Setting current user to: ", composedUser);
+                    authContext.login(composedUser);
+                    history.push(AppConfig.APP_ROUTES.PROFILE_SELECTOR);
+                }
             }
         } else {
             logger.d("No token found in local storage");
         }
     };
 
-    const setLocalUserRole = (roleName: RoleName): void => {
-        authContext.setUserRole(roleName);
-        logger.d("Selected role: ", roleName);
-    };
-
-    return { setLocalUserRole, checkAuthUser, activeUser: authContext.user };
+    return { checkAuthUser };
 };
 
 export const useLogin = () => {
@@ -68,7 +77,7 @@ export const useLogin = () => {
         if (authUser) {
             authContext.login({...authUser});
             await Storage.set({ key: AppConfig.TOKEN_STORAGE_KEY, value: authUser.token });
-            logger.d("User logged in: ", authUser.username);
+            logger.d("User logged in: ", authUser);
             history.push(AppConfig.APP_ROUTES.PROFILE_SELECTOR);
         }
     };

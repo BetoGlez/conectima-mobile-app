@@ -4,19 +4,22 @@ import { useTranslation } from "react-i18next";
 import { FormikHelpers } from "formik";
 
 import "./LoginPage.scss";
-import AppConfig from "../../app-constants";
 import AuthBoxComponent from "./AuthBoxComponent/AuthBoxComponent";
+import AppConfig from "../../app-constants";
+import { useLogger } from "../../hooks/logger";
 import { ILoginForm } from "../../models/forms/login-form.model";
-import { useAuth, useLogin } from "../../hooks/authentication";
+import { useLocalStorageAuth, useLogin } from "../../hooks/authentication";
 
 const LoginPage: React.FC = () => {
 
+    const logger = useLogger("LoginPage");
     const { t } = useTranslation();
 
     const { login, isLoading } = useLogin();
-    const { checkAuthUser } = useAuth();
+    const { checkAuthUser } = useLocalStorageAuth();
 
     useEffect(() => {
+        logger.d("Checking for local storage user...");
         checkAuthUser();
     }, []);
 

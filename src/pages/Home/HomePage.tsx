@@ -9,7 +9,7 @@ import AnalyticsPage from "../Analytics/AnalyticsPage";
 import ConfigurePage from "../Configure/ConfigurePage";
 import AppConfig from "../../app-constants";
 
-const MainPage: React.FC = () => {
+const HomePage: React.FC = () => {
 
     const { t } = useTranslation();
 
@@ -44,4 +44,4 @@ const MainPage: React.FC = () => {
     );
 };
 
-export default MainPage;
+export default HomePage;

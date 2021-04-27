@@ -23,12 +23,13 @@ export default class AppConfig {
 
     public static readonly APP_ROUTES = {
         LOGIN: "/login",
-        PROFILE_SELECTOR: "/profile-selector",
         HOME: "/home",
         PROJECTS: "/home/projects",
         COMPARE: "/home/compare",
         ANALYTICS: "/home/analytics",
-        CONFIGURE: "/home/configure"
+        CONFIGURE: "/home/configure",
+        PROFILE_SELECTOR: "/profile-selector",
+        CHARTS: "/charts"
     };
 
     public static readonly ERROR_CODES = {
