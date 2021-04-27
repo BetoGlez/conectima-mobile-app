@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Redirect, Route } from "react-router-dom";
-import { IonApp, IonRouterOutlet, isPlatform } from "@ionic/react";
+import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { ApolloProvider } from "@apollo/client";
-import { StatusBar, Style } from "@capacitor/status-bar";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -26,6 +25,7 @@ import "./theme/variables.scss";
 import "./theme/global.scss";
 
 import apolloClient from "./graphql/apollo-config";
+import { useConfig } from "./hooks/configuration";
 import AppConfig from "./app-constants";
 import AuthContextProvider from "./context/AuthContextProvider";
 import AuthRoute from "./common/AuthRoute";
@@ -36,15 +36,11 @@ import ChartsPage from "./pages/Charts/ChartsPage";
 
 const App: React.FC = () => {
 
-    const configStatusBar = async (): Promise<void> => {
-        if (isPlatform("capacitor")) {
-            await StatusBar.setStyle({ style: Style.Light });
-            await StatusBar.setBackgroundColor({ color: "#ffffff" });
-        }
-    };
+    const { configStatusBar } = useConfig();
+    const configStatusBarRef = useRef(configStatusBar);
 
     useEffect(() => {
-        configStatusBar();
+        configStatusBarRef.current();
     }, []);
 
     return (

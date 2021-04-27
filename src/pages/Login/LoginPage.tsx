@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { IonPage } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { FormikHelpers } from "formik";
@@ -13,14 +13,16 @@ import { useLocalStorageAuth, useLogin } from "../../hooks/authentication";
 const LoginPage: React.FC = () => {
 
     const logger = useLogger("LoginPage");
+    const loggerRef = useRef(logger);
     const { t } = useTranslation();
 
     const { login, isLoading } = useLogin();
     const { checkAuthUser } = useLocalStorageAuth();
+    const checkAuthUserRef = useRef(checkAuthUser);
 
     useEffect(() => {
-        logger.d("Checking for local storage user...");
-        checkAuthUser();
+        loggerRef.current.d("Checking for local storage user...");
+        checkAuthUserRef.current();
     }, []);
 
     const doLogin = async (values: ILoginForm, helpers: FormikHelpers<ILoginForm>): Promise<void> => {
