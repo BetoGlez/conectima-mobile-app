@@ -55,6 +55,16 @@ export const en = {
             "projectAnalytics": "Project analytics",
             "seeAnalytics": "See analytics"
         },
+        charts: {
+            burndown: {
+                title: "Burndown",
+                description: "The outstanding work is often on the vertical axis, with time along the horizontal. " +
+                "Burn down charts are a run chart of outstanding work. It is useful for predicting when all of the work " +
+                "will be completed.",
+                cardTitle: "Burndown chart",
+                cardDescription: "A graphical representation of the work left to do versus time"
+            }
+        },
         "configure": {
             "settings": "Settings",
             "general": "General",

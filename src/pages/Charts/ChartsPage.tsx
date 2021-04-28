@@ -1,7 +1,9 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
+import { analyticsOutline } from "ionicons/icons";
 import { useLocation } from "react-router";
 
 import AppConfig from "../../app-constants";
+import ChartTypeCardComponent from "../../common/charts/ChartTypeCardComponent/ChartTypeCardComponent";
 
 export interface IChartsPageParams {
     projectId: string;
@@ -29,6 +31,14 @@ const ChartsPage: React.FC = () => {
                         <IonTitle size="large">{state?.projectName}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
+                <IonGrid>
+                    <IonRow>
+                        <IonCol>
+                            <ChartTypeCardComponent isActive={false} type={"charts.burndown.cardTitle"}
+                                description={"charts.burndown.cardDescription"} icon={analyticsOutline}/>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
             </IonContent>
         </IonPage>
     );
