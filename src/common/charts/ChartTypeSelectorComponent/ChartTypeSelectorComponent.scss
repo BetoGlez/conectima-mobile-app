@@ -1,0 +1,11 @@
+.chart-type-selector {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+    box-shadow: inset 10px 0 15px var(--ion-color-light), inset -10px 0 15px var(--ion-color-light);
+
+    .chart-card {
+        z-index: -1;
+    }
+}

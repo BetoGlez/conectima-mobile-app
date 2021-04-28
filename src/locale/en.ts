@@ -63,6 +63,14 @@ export const en = {
                 "will be completed.",
                 cardTitle: "Burndown chart",
                 cardDescription: "A graphical representation of the work left to do versus time"
+            },
+            deviation: {
+                cardTitle: "Deviation chart",
+                cardDescription: "Displays data about sprint deviation per each member"
+            },
+            costs: {
+                cardTitle: "Simulated sprint costs",
+                cardDescription: "The simulated cost based on team members calculation"
             }
         },
         configure: {
