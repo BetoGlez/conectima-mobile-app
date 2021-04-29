@@ -56,8 +56,12 @@ export const en = {
             seeAnalytics: "See analytics"
         },
         charts: {
+            seeCharts: "Visualize sprint charts",
+            chartsPageDetail: "In this page you will be able to visualize valuable data for the selected sprint within " +
+            "your project! Choose between the available charts above, drag and search for the chart you want to visualize " +
+            "and then just simply select it.",
             burndown: {
-                title: "Burndown",
+                type: "Burndown",
                 description: "The outstanding work is often on the vertical axis, with time along the horizontal. " +
                 "Burn down charts are a run chart of outstanding work. It is useful for predicting when all of the work " +
                 "will be completed.",
@@ -65,10 +69,18 @@ export const en = {
                 cardDescription: "A graphical representation of the work left to do versus time"
             },
             deviation: {
+                type: "Deviation",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est lacus, vulputate quis. " +
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est lacus, vulputate quis neque et " +
+                "will be completed.",
                 cardTitle: "Deviation chart",
                 cardDescription: "Displays data about sprint deviation per each member"
             },
             costs: {
+                type: "Simulated costs",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est lacus, vulputate quis. " +
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est lacus, vulputate quis neque et " +
+                "will be completed.",
                 cardTitle: "Simulated sprint costs",
                 cardDescription: "The simulated cost based on team members calculation"
             }

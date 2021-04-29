@@ -2,26 +2,27 @@ import { useState } from "react";
 
 import "./ChartTypeSelectorComponent.scss";
 import { CHART_TYPES } from "./ChartTypeSelectorComponent.constants";
-import { useLogger } from "../../../hooks/logger";
 import ChartTypeCardComponent from "../ChartTypeCardComponent/ChartTypeCardComponent";
-import { ChartCode } from "../../../models/charts";
+import { IChartType } from "../../../models/charts";
 
-const ChartTypeSelectorComponent: React.FC = () => {
+export interface IChartTypeSelectorComponentProps {
+    setActiveChart: (chart: IChartType) => void;
+}
 
-    const logger = useLogger("ChartTypeSelectorComponent");
+const ChartTypeSelectorComponent: React.FC<IChartTypeSelectorComponentProps> = ({setActiveChart}) => {
 
-    const [selectedChart, setSelectedChart] = useState<ChartCode>();
+    const [selectedChart, setSelectedChart] = useState<IChartType>();
 
-    const selectChart = (chartCode: ChartCode): void => {
-        logger.d("Selected chart: ", chartCode);
-        setSelectedChart(chartCode);
+    const selectChart = (chart: IChartType): void => {
+        setSelectedChart(chart);
+        setActiveChart(chart);
     };
 
     return(
         <div className="chart-type-selector">
             { CHART_TYPES.map(chart =>
-                <ChartTypeCardComponent key={chart.code} isActive={(selectedChart === chart.code)}
-                    type={chart.type} description={chart.description} icon={chart.icon} selectChart={() => selectChart(chart.code)}/>
+                <ChartTypeCardComponent key={chart.code} isActive={(selectedChart?.code === chart.code)} title={chart.cardTitle}
+                    description={chart.cardDescription} icon={chart.icon} selectChart={() => selectChart(chart)}/>
             )}
         </div>
     );

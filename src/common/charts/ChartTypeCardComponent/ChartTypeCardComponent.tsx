@@ -4,14 +4,14 @@ import { useTranslation } from "react-i18next";
 import "./ChartTypeCardComponent.scss";
 
 interface IChartTypeCardComponentProps {
-    type: string;
+    title: string;
     description: string;
     icon: string;
     isActive: boolean;
     selectChart: () => void,
 }
 
-const ChartTypeCardComponent: React.FC<IChartTypeCardComponentProps> = ({isActive, type, description, icon, selectChart}) => {
+const ChartTypeCardComponent: React.FC<IChartTypeCardComponentProps> = ({isActive, title, description, icon, selectChart}) => {
 
     const { t } = useTranslation();
 
@@ -20,7 +20,7 @@ const ChartTypeCardComponent: React.FC<IChartTypeCardComponentProps> = ({isActiv
             <IonGrid>
                 <IonRow>
                     <IonCol className="chart-name-container">
-                        <p className="chart-name">{t(type)}</p>
+                        <p className="chart-name">{t(title)}</p>
                     </IonCol>
                 </IonRow>
                 <IonRow>
