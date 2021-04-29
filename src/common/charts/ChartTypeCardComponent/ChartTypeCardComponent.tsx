@@ -8,15 +8,15 @@ interface IChartTypeCardComponentProps {
     description: string;
     icon: string;
     isActive: boolean;
-    className?: string;
+    selectChart: () => void,
 }
 
-const ChartTypeCardComponent: React.FC<IChartTypeCardComponentProps> = ({isActive, type, description, icon, className}) => {
+const ChartTypeCardComponent: React.FC<IChartTypeCardComponentProps> = ({isActive, type, description, icon, selectChart}) => {
 
     const { t } = useTranslation();
 
     return (
-        <IonCard className={`chart-type-card ${isActive ? "active-card" : ""} ${className}`}>
+        <IonCard onClick={selectChart} className={`chart-type-card ${isActive ? "active-card" : ""}`}>
             <IonGrid>
                 <IonRow>
                     <IonCol className="chart-name-container">

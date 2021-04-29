@@ -1,6 +1,8 @@
 .chart-type-card {
     min-width: 190px;
     min-height: 90px;
+    border: 1px solid var(--color-white);
+    transition: 0.5s all;
 
     .chart-name-container {
         padding-bottom: 0;
