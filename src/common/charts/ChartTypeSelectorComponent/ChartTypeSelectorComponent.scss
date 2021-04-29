@@ -4,8 +4,13 @@
     width: 100%;
     overflow-x: scroll;
     box-shadow: inset 10px 0 15px var(--ion-color-light), inset -10px 0 15px var(--ion-color-light);
+    -webkit-box-shadow: inset 10px 0 15px var(--ion-color-light), inset -10px 0 15px var(--ion-color-light);
 
     .chart-card {
         z-index: -1;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
     }
 }

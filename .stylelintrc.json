@@ -11,6 +11,7 @@
         "selector-no-qualifying-type": null,
         "order/properties-alphabetical-order": null,
         "number-no-trailing-zeros": null,
-        "no-missing-end-of-source-newline": null
+        "no-missing-end-of-source-newline": null,
+        "property-no-vendor-prefix": null
     }
 }
