@@ -6,7 +6,7 @@ import AppConfig from "../../app-constants";
 import { useLogger } from "../../hooks/logger";
 import ChartDescriptionComponent from "../../common/charts/ChartDescriptionComponent/ChartDescriptionComponent";
 import ChartTypeSelectorComponent from "../../common/charts/ChartTypeSelectorComponent/ChartTypeSelectorComponent";
-import NoDataComponent from "../../common/generalUiState/NoDataComponent/NoDataComponent";
+import ImageTextMessageComponent from "../../common/generalUiState/ImageTextMessageComponent/ImageTextMessageComponent";
 import { IChartType } from "../../models/charts";
 
 export interface IChartsPageParams {
@@ -46,12 +46,12 @@ const ChartsPage: React.FC = () => {
                 <IonGrid>
                     <IonRow>
                         <IonCol>
-                            <NoDataComponent />
+                            <ImageTextMessageComponent imgSrc={AppConfig.ANALYTICS_SPRINT_IMAGE_URL} message={"charts.noChartSelected"}/>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
                 <ChartTypeSelectorComponent setActiveChart={(chart) => selectChart(chart)}/>
-                <ChartDescriptionComponent sprintVersion={state?.sprintVersion} chartType={activeChart?.type}
+                <ChartDescriptionComponent className="ion-margin-top" sprintVersion={state?.sprintVersion} chartType={activeChart?.type}
                     chartDescription={activeChart?.description} icon={activeChart?.icon} />
             </IonContent>
         </IonPage>

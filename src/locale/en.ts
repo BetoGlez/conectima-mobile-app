@@ -56,6 +56,7 @@ export const en = {
             seeAnalytics: "See analytics"
         },
         charts: {
+            noChartSelected: "No chart has been selected, please select one form the list below",
             seeCharts: "Visualize sprint charts",
             chartsPageDetail: "In this page you will be able to visualize valuable data for the selected sprint within " +
             "your project! Choose between the available charts above, drag and search for the chart you want to visualize " +

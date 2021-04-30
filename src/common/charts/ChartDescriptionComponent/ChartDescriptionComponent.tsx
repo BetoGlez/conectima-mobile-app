@@ -8,14 +8,16 @@ export interface IChartDescriptionComponentProps {
     chartType?: string;
     chartDescription?: string;
     icon?: string;
+    className?: string;
 }
 
-const ChartDescriptionComponent: React.FC<IChartDescriptionComponentProps> = ({sprintVersion, chartType, chartDescription, icon}) => {
+const ChartDescriptionComponent: React.FC<IChartDescriptionComponentProps> = (
+    {sprintVersion, chartType, chartDescription, icon, className}) => {
 
     const { t } = useTranslation();
 
     return (
-        <div className="chart-description-component">
+        <div className={`chart-description-component ${className}`}>
             { (sprintVersion && chartType && chartDescription && icon) ?
                 <>
                     <div className="title-icon-container">
