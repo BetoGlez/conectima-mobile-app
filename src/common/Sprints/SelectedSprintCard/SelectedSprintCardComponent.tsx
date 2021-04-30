@@ -16,7 +16,7 @@ import { IGetSelectSprintModalDataResponse } from "../../../graphql/queries-resp
 import { IProjectIdPayload } from "../../../graphql/inputs-payload.model";
 import { GET_SELECT_SPRINT_MODAL_DATA } from "../../../graphql/queries";
 import AppConfig from "../../../app-constants";
-import { IChartsPageParams } from "../../../pages/Charts/ChartsPage";
+import { IChartsPageParams } from "../../../pages/Charts/ChartsPage.constants";
 
 const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> = ({projectData, confirmText, changeText, imgUrl}) => {
 

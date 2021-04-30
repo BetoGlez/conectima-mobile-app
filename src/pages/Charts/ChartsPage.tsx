@@ -2,18 +2,13 @@ import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonP
 import { useState } from "react";
 import { useLocation } from "react-router";
 
+import { IChartsPageParams } from "./ChartsPage.constants";
 import AppConfig from "../../app-constants";
 import { useLogger } from "../../hooks/logger";
 import ChartDescriptionComponent from "../../common/charts/ChartDescriptionComponent/ChartDescriptionComponent";
 import ChartTypeSelectorComponent from "../../common/charts/ChartTypeSelectorComponent/ChartTypeSelectorComponent";
 import ImageTextMessageComponent from "../../common/generalUiState/ImageTextMessageComponent/ImageTextMessageComponent";
 import { IChartType } from "../../models/charts";
-
-export interface IChartsPageParams {
-    projectId: string;
-    projectName: string;
-    sprintVersion: string;
-}
 
 const ChartsPage: React.FC = () => {
 
