@@ -1,36 +1,36 @@
 .chart-description-component {
     width: 100%;
-    min-height: 267px;
+    min-height: 228px;
     display: flex;
     flex-direction: column;
     background-color: var(--ion-color-dark);
     padding: 16px;
     z-index: 1;
 
-    .sprint-version {
-        margin-top: 0;
-        margin-bottom: 0;
-        color: var(--color-white);
+    .title-icon-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .sprint-version {
+            margin-top: 0;
+            margin-bottom: 0;
+            color: var(--color-white);
+        }
+
+        .chart-icon {
+            color: var(--color-white);
+            font-size: 24px;
+        }
     }
 
     .chart-type {
-        margin-top: 6px;
-        margin-bottom: 8px;
+        margin-top: 4px;
+        margin-bottom: 4px;
         color: var(--color-white);
     }
 
     .chart-description {
         color: var(--color-white);
-    }
-
-    .icon-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        .chart-icon {
-            color: var(--color-white);
-            font-size: 32px;
-        }
     }
 }

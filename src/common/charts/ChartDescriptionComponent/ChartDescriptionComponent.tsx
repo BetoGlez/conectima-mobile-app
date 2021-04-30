@@ -18,12 +18,12 @@ const ChartDescriptionComponent: React.FC<IChartDescriptionComponentProps> = ({s
         <div className="chart-description-component">
             { (sprintVersion && chartType && chartDescription && icon) ?
                 <>
-                    <h2 className="sprint-version">{t("sprints.sprintVersion", {sprintVersion})}</h2>
-                    <h2 className="thin-text chart-type">{t(chartType)}</h2>
-                    <p className="chart-description">{t(chartDescription)}</p>
-                    <div className="icon-container">
+                    <div className="title-icon-container">
+                        <h2 className="sprint-version">{t("sprints.sprintVersion", {sprintVersion})}</h2>
                         <IonIcon className="chart-icon" icon={icon}/>
                     </div>
+                    <h2 className="thin-text chart-type">{t(chartType)}</h2>
+                    <p className="chart-description">{t(chartDescription)}</p>
                 </>
                 :
                 <>
