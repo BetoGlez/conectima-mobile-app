@@ -2,6 +2,7 @@ import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonP
 import { useState } from "react";
 import { useLocation } from "react-router";
 
+import "./ChartsPage.scss";
 import { IChartsPageParams } from "./ChartsPage.constants";
 import AppConfig from "../../app-constants";
 import { useLogger } from "../../hooks/logger";
@@ -9,6 +10,7 @@ import ChartDescriptionComponent from "../../common/charts/ChartDescriptionCompo
 import ChartTypeSelectorComponent from "../../common/charts/ChartTypeSelectorComponent/ChartTypeSelectorComponent";
 import ImageTextMessageComponent from "../../common/generalUiState/ImageTextMessageComponent/ImageTextMessageComponent";
 import { IChartType } from "../../models/charts";
+import BurndownChart from "../../common/charts/BurndownChart/BurndownChart";
 
 const ChartsPage: React.FC = () => {
 
@@ -23,7 +25,7 @@ const ChartsPage: React.FC = () => {
     };
 
     return(
-        <IonPage>
+        <IonPage className="charts-page">
             <IonHeader>
                 <IonToolbar>
                     <IonTitle>{state?.projectName}</IonTitle>
@@ -40,8 +42,13 @@ const ChartsPage: React.FC = () => {
                 </IonHeader>
                 <IonGrid>
                     <IonRow>
-                        <IonCol>
-                            <ImageTextMessageComponent imgSrc={AppConfig.ANALYTICS_SPRINT_IMAGE_URL} message={"charts.noChartSelected"}/>
+                        <IonCol className="chart-container">
+                            { activeChart ?
+                                <BurndownChart />
+                                :
+                                <ImageTextMessageComponent className="no-chart-selected" imgSrc={AppConfig.ANALYTICS_SPRINT_IMAGE_URL}
+                                    message={"charts.noChartSelected"}/>
+                            }
                         </IonCol>
                     </IonRow>
                 </IonGrid>

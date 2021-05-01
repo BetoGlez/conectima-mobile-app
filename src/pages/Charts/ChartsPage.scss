@@ -1,0 +1,13 @@
+.charts-page {
+    .chart-container {
+        height: 420px;
+        background-color: var(--color-white);
+        border-radius: 5px;
+        padding-left: 0;
+        padding-right: 0;
+
+        .no-chart-selected {
+            margin-top: 80px;
+        }
+    }
+}

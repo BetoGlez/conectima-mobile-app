@@ -44,7 +44,11 @@ export const en = {
             sprintVersion: "Sprint {{sprintVersion}}",
             issues: "{{issueNumber}} issues",
             sp: "{{sp}} sp",
-            duration: "{{days}} days - {{hoursPerDay}}h / day"
+            duration: "{{days}} days - {{hoursPerDay}}h / day",
+            sprintDay: "Sprint day {{sprintDay}}",
+            dayInSprint: "Day in the sprint",
+            originalSp: "Current",
+            goalSp: "Expected"
         },
         dedication: {
             percentage: "{{percentage}}%",
