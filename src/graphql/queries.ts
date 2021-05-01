@@ -47,3 +47,18 @@ export const GET_SELECT_SPRINT_MODAL_DATA = gql`
         }
     }
 `;
+
+export const GET_BURNDOWN_CHART_DATA = gql`
+    query getSprint($projectId: String!, $sprintVersion: String!) {
+        getSprint(getSprintInput: {projectId: $projectId, sprintVersion: $sprintVersion}) {
+            id
+            statistics {
+                originalEstimationSp
+            }
+            spsProgress {
+                date
+                sp
+            }
+        }
+    }
+`;

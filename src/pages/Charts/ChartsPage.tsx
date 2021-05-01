@@ -43,8 +43,8 @@ const ChartsPage: React.FC = () => {
                 <IonGrid>
                     <IonRow>
                         <IonCol className="chart-container">
-                            { activeChart ?
-                                <BurndownChart />
+                            { activeChart && state ?
+                                <BurndownChart projectId={state.projectId} sprintVersion={state.sprintVersion}/>
                                 :
                                 <ImageTextMessageComponent className="no-chart-selected" imgSrc={AppConfig.ANALYTICS_SPRINT_IMAGE_URL}
                                     message={"charts.noChartSelected"}/>

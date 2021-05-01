@@ -39,3 +39,16 @@ export interface IGetSelectSprintModalDataResponse {
         issueCount: number;
     }>;
 }
+
+export interface IGetBurndownChartDataResponse {
+    getSprint: {
+        id: string;
+        statistics: {
+            originalEstimationSp?: number;
+        };
+        spsProgress: Array<{
+            date?: string;
+            sp?: number;
+        }>;
+    }
+}

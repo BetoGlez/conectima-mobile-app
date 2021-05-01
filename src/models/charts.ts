@@ -8,3 +8,10 @@ export interface IChartType {
     cardDescription: string;
     icon: string;
 }
+
+export interface IBurndownChartData {
+    day: number;
+    date: string;
+    originalSp: number;
+    goalSp: number;
+}

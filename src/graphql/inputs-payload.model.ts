@@ -6,3 +6,8 @@ export interface ILoginPayload {
 export interface IProjectIdPayload {
     projectId: string;
 }
+
+export interface IGetSprintPayload {
+    projectId: string;
+    sprintVersion: string;
+}
