@@ -1219,17 +1219,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@capacitor/android@^3.0.0-rc.0":
+"@capacitor/android@^3.0.0-rc.1":
   version "3.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-3.0.0-rc.1.tgz#6c7fd0f0469a6b2d8af4ce9b7e90656da9764a6a"
   integrity sha512-l3SBYd3RoFUS5+PT8o5SllLYdcEGQjDuPI1+aBGGMu2qycMQqD0CjDTdKrTwt0Ff4slI3Ssj5QrzURX3NzTJhg==
 
-"@capacitor/app@^0.3.6":
+"@capacitor/app@^0.3.7":
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/@capacitor/app/-/app-0.3.7.tgz#fc5a245c06da45033c68b2da711991ea579850ed"
   integrity sha512-y13vvtdfkETYi18Fruw60KXtT2LQzrJJ3DCNS0VSwJqMZDwqLVisNLueMZOxnjpomsL0NGKEVHCPLbzTWXwUtw==
 
-"@capacitor/cli@^3.0.0-rc.0":
+"@capacitor/cli@^3.0.0-rc.1":
   version "3.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-3.0.0-rc.1.tgz#46c9f8f856c447ee31cf1ebfa1493e5b49c5ff92"
   integrity sha512-Ur4cAf6CaT1aAKR8dY1SFRPEVCz96AcU2Kb+pm8ZhrpTVRYHyaG6cNlpmC5HcPZ3G2Ocowhpg87+P34Nh3LDmw==
@@ -1251,34 +1251,34 @@
     tslib "^2.1.0"
     xml2js "^0.4.23"
 
-"@capacitor/core@^3.0.0-rc.0":
+"@capacitor/core@^3.0.0-rc.1":
   version "3.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-3.0.0-rc.1.tgz#e2ac96e245c228b99d00c1443543a027cf4a8cac"
   integrity sha512-K6prKXqfidmCCCZVebsL9f6QWok2L/krCT4il2jToLaymuXVrekt8J/+ORBt3TNkBfXWqLIt2Q4DLVrpCFjdOQ==
   dependencies:
     tslib "^2.1.0"
 
-"@capacitor/haptics@^0.3.6":
+"@capacitor/haptics@^0.3.7":
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/@capacitor/haptics/-/haptics-0.3.7.tgz#b6ef47b0f59547248294a68ce87387349ca43dfd"
   integrity sha512-UHi+L4lHSb6S74pN5OizYbxu/gdezE1WXVLSMa15oLjWhLBDqQt2X1yQenpwXWyzfB3D9qN0ht61WFjfgsdQAQ==
 
-"@capacitor/ios@^3.0.0-rc.0":
+"@capacitor/ios@^3.0.0-rc.1":
   version "3.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-3.0.0-rc.1.tgz#3eee5895dbb3fd50adbfd058b4be18ee9b44ad3d"
   integrity sha512-DEufjddMhP7eFP2lO1fgooSC28LegE6XdRmzJfmzfyE+bsrXsjcmISDuOVxf7G2kkhtI3nVDAMDdGEh8TJI4pw==
 
-"@capacitor/keyboard@^0.5.6":
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/@capacitor/keyboard/-/keyboard-0.5.6.tgz#e6cb4fd55545e5e5cded62cf452ba7f423fc60b2"
-  integrity sha512-yNGN8yrlfL3DokK82Lhi3OaEnk7cK9Oar1CfN0793RWy1fL/9tnSVo0wtLmq5SZCSHr486Kv+uVFx+GYkE5b+Q==
+"@capacitor/keyboard@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/keyboard/-/keyboard-0.6.0.tgz#247ced50ff120132fd740fc63129da592bb0a15c"
+  integrity sha512-Zaw3KPt5n1Qd5JBJwmIQVSaeiYjybC8/O1PjvWUxWSea8VjvFv4sjzzZSF/pDRFeBJU8t7I+jDDKso6xNf2iiw==
 
-"@capacitor/status-bar@^0.4.6":
+"@capacitor/status-bar@^0.4.7":
   version "0.4.7"
   resolved "https://registry.yarnpkg.com/@capacitor/status-bar/-/status-bar-0.4.7.tgz#24ef458d3774c55ab56697c99feafe63af653b56"
   integrity sha512-BN++SHy4lZPlJJvBS/2WkBgV30Vpas0efP5wyng3QCwaKc4JtF2J2J5+meojSbOI+hE18n8YoxjXf4/wAFkC8A==
 
-"@capacitor/storage@^0.3.6":
+"@capacitor/storage@^0.3.7":
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/@capacitor/storage/-/storage-0.3.7.tgz#90f8be5a73d57120a668dd3f242ed92e30d6bdb3"
   integrity sha512-tpob79rvKvgxHo3caNJV4sYWRf12ov4khL+R1+/4ruRhc7Hpk47LFUmpnLBQwH+jT5z7YHc2JhM4ywHsxN9biw==
@@ -3685,7 +3685,7 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^4.0.0, chalk@^4.1.0:
+chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.1.tgz#c80b3fab28bf6371e6863325eee67e618b77e6ad"
   integrity sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==
@@ -5014,9 +5014,9 @@ ejs@^2.6.1:
   integrity sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.3.723:
-  version "1.3.724"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.724.tgz#2d342f2a124e6138462de9a8c87310d0fc993752"
-  integrity sha512-dvHiOuYbTs1kQ9czhBKfapWGeyq3hs469bdbHFNpw01bOeau6B6dH4d8IteGZaMEGqVGmflrvWmxNpwvS+dhkA==
+  version "1.3.725"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.725.tgz#04fc83f9189169aff50f0a00c6b4090b910cba85"
+  integrity sha512-2BbeAESz7kc6KBzs7WVrMc1BY5waUphk4D4DX5dSQXJhsc3tP5ZFaiyuL0AB7vUKzDYpIeYwTYlEfxyjsGUrhw==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -11340,9 +11340,9 @@ resolve-pathname@^3.0.0:
   integrity sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng==
 
 resolve-url-loader@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/resolve-url-loader/-/resolve-url-loader-3.1.2.tgz#235e2c28e22e3e432ba7a5d4e305c59a58edfc08"
-  integrity sha512-QEb4A76c8Mi7I3xNKXlRKQSlLBwjUV/ULFMP+G7n3/7tJZ8MG5wsZ3ucxP1Jz8Vevn6fnJsxDx9cIls+utGzPQ==
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/resolve-url-loader/-/resolve-url-loader-3.1.3.tgz#49ec68340f67d8d2ab6b401948d5def3ab2d0367"
+  integrity sha512-WbDSNFiKPPLem1ln+EVTE+bFUBdTTytfQZWbmghroaFNFaAVmGq0Saqw6F/306CwgPXsGwXVxbODE+3xAo/YbA==
   dependencies:
     adjust-sourcemap-loader "3.0.0"
     camelcase "5.3.1"
@@ -12402,15 +12402,15 @@ stylelint-scss@^3.18.0:
     postcss-value-parser "^4.1.0"
 
 stylelint@^13.12.0:
-  version "13.13.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.13.0.tgz#1a33bffde765920ac985f16ae6250ff914b27804"
-  integrity sha512-jvkM1iuH88vAvjdKPwPm6abiMP2/D/1chbfb+4GVONddOOskHuCXc0loyrLdxO1AwwH6jdnjYskkTKHQD7cXwQ==
+  version "13.13.1"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.13.1.tgz#fca9c9f5de7990ab26a00f167b8978f083a18f3c"
+  integrity sha512-Mv+BQr5XTUrKqAXmpqm6Ddli6Ief+AiPZkRsIrAoUKFuq/ElkUh9ZMYxXD0iQNZ5ADghZKLOWz1h7hTClB7zgQ==
   dependencies:
     "@stylelint/postcss-css-in-js" "^0.37.2"
     "@stylelint/postcss-markdown" "^0.36.2"
     autoprefixer "^9.8.6"
     balanced-match "^2.0.0"
-    chalk "^4.1.0"
+    chalk "^4.1.1"
     cosmiconfig "^7.0.0"
     debug "^4.3.1"
     execall "^2.0.0"
@@ -12451,7 +12451,7 @@ stylelint@^13.12.0:
     style-search "^0.1.0"
     sugarss "^2.0.0"
     svg-tags "^1.0.0"
-    table "^6.5.1"
+    table "^6.6.0"
     v8-compile-cache "^2.3.0"
     write-file-atomic "^3.0.3"
 
@@ -12540,7 +12540,7 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-table@^6.0.4, table@^6.5.1:
+table@^6.0.4, table@^6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/table/-/table-6.6.0.tgz#905654b79df98d9e9a973de1dd58682532c40e8e"
   integrity sha512-iZMtp5tUvcnAdtHpZTWLPF0M7AgiQsURR2DwmxnJwSy8I3+cY+ozzVvYha3BOLG2TB+L0CqjIz+91htuj6yCXg==
