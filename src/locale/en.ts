@@ -7,6 +7,7 @@ export const en = {
             off: "Off",
             noData: "No data available",
             select: "Select",
+            confirm: "Confirm",
             cancel: "Cancel"
         },
         errors: {
@@ -53,7 +54,9 @@ export const en = {
         dedication: {
             percentage: "{{percentage}}%",
             hoursPerDay: "{{hours}}h / day",
-            noDedications: "No user dedication data"
+            noDedications: "No user dedication data",
+            hourCost: "{{hourCost}} € / h",
+            noCostRate: "No cost rate specified"
         },
         analytics: {
             projectAnalytics: "Project analytics",

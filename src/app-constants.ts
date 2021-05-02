@@ -5,6 +5,7 @@ export default class AppConfig {
     public static readonly APP_VERSION = version;
     public static readonly APOLLOR_SERVER_URL = process.env.REACT_APP_APOLLOR_SERVER_URL || "http://localhost:5000";
     public static readonly TOKEN_STORAGE_KEY = process.env.REACT_APP_TOKEN_STORAGE_KEY || "";
+    public static readonly DEV_COST_STORAGE_KEY = process.env.REACT_APP_DEV_COST_STORAGE_KEY || "";
 
     public static readonly ABOUT_INFO_URL = "https://github.com/BetoGlez/conectima-mobile-app";
 

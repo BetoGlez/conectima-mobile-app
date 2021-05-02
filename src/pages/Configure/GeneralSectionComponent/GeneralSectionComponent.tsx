@@ -3,10 +3,13 @@ import { logoEuro, notificationsOutline } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 
 import "./GeneralSectionComponent.scss";
+import { useDevHourCost } from "../../../hooks/config-hooks";
 
 const GeneralSectionComponent: React.FC = () => {
 
     const { t } = useTranslation();
+
+    const { developerHourCost, selectDeveloperCostHour } = useDevHourCost();
 
     return (
         <div className="general-section-component">
@@ -18,11 +21,15 @@ const GeneralSectionComponent: React.FC = () => {
             <IonRow>
                 <IonCol>
                     <IonList className="config-group">
-                        <IonItem lines="full" detail>
+                        <IonItem lines="full" detail onClick={selectDeveloperCostHour}>
                             <IonIcon color="secondary" className="opacity-7" icon={logoEuro} slot="start" />
                             <IonLabel>
                                 <p>{t("configure.devCostRate")}</p>
-                                <p className="thin-text">25 € / h</p>
+                                <p className="thin-text">
+                                    {developerHourCost ?
+                                        t("dedication.hourCost", {hourCost: developerHourCost}) :
+                                        t("dedication.noCostRate")}
+                                </p>
                             </IonLabel>
                         </IonItem>
                         <IonItem lines="none">
