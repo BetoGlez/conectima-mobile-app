@@ -1,9 +1,24 @@
-import { IonPage } from "@ionic/react";
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { useTranslation } from "react-i18next";
 
 const ComparePage: React.FC = () => {
+
+    const { t } = useTranslation();
+
     return (
         <IonPage>
-            <h1>Compare page works</h1>
+            <IonHeader>
+                <IonToolbar>
+                    <IonTitle>{t("pages.compare")}</IonTitle>
+                </IonToolbar>
+            </IonHeader>
+            <IonContent color="light">
+                <IonHeader collapse="condense">
+                    <IonToolbar color="light" className="ion-margin-bottom">
+                        <IonTitle className="ion-margin-bottom" size="large">{t("pages.compare")}</IonTitle>
+                    </IonToolbar>
+                </IonHeader>
+            </IonContent>
         </IonPage>
     );
 };

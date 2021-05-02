@@ -23,13 +23,13 @@ const MoreSectionComponent: React.FC = () => {
             <IonRow>
                 <IonCol>
                     <IonList className="config-group">
-                        <IonItem lines="full" detail onClick={showAppInfo}>
+                        <IonItem className="app-info-item" lines="full" detail onClick={showAppInfo}>
                             <IonIcon color="secondary" className="opacity-7" icon={informationCircleOutline} slot="start" />
                             <IonLabel>
                                 <p>{t("configure.appInfo")}</p>
                             </IonLabel>
                         </IonItem>
-                        <IonItem lines="none">
+                        <IonItem className="app-version-item" lines="none">
                             <IonIcon color="secondary" className="opacity-7" icon={phonePortraitOutline} slot="start" />
                             <IonLabel>
                                 <p>{t("configure.version")}</p>

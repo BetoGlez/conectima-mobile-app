@@ -1,9 +1,9 @@
-import { IonRow, IonCol, IonList, IonItem, IonIcon, IonLabel, IonToggle } from "@ionic/react";
-import { logoEuro, notificationsOutline } from "ionicons/icons";
+import { IonRow, IonCol, IonList, IonItem, IonIcon, IonLabel, IonButton } from "@ionic/react";
+import { logoEuro, syncOutline } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 
 import "./GeneralSectionComponent.scss";
-import { useDevHourCost } from "../../../hooks/config-hooks";
+import { useDevHourCost } from "../../../hooks/settings-hooks";
 
 const GeneralSectionComponent: React.FC = () => {
 
@@ -21,7 +21,7 @@ const GeneralSectionComponent: React.FC = () => {
             <IonRow>
                 <IonCol>
                     <IonList className="config-group">
-                        <IonItem lines="full" detail onClick={selectDeveloperCostHour}>
+                        <IonItem className="dev-cost-rate-item" lines="full" detail onClick={selectDeveloperCostHour}>
                             <IonIcon color="secondary" className="opacity-7" icon={logoEuro} slot="start" />
                             <IonLabel>
                                 <p>{t("configure.devCostRate")}</p>
@@ -32,13 +32,13 @@ const GeneralSectionComponent: React.FC = () => {
                                 </p>
                             </IonLabel>
                         </IonItem>
-                        <IonItem lines="none">
-                            <IonIcon color="secondary" className="opacity-7" icon={notificationsOutline} slot="start" />
+                        <IonItem className="manual-sync-item" lines="none">
+                            <IonIcon color="secondary" className="opacity-7" icon={syncOutline} slot="start" />
                             <IonLabel>
-                                <p>{t("configure.emailNotifications")}</p>
-                                <p className="thin-text">{t("general.off")}</p>
+                                <p>{t("configure.syncSpreadsheets")}</p>
+                                <p className="thin-text">{t("configure.manualSync")}</p>
                             </IonLabel>
-                            <IonToggle slot="end"></IonToggle>
+                            <IonButton className="sync-button" fill="clear" slot="end">{t("configure.sync")}</IonButton>
                         </IonItem>
                     </IonList>
                 </IonCol>

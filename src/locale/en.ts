@@ -97,7 +97,9 @@ export const en = {
             settings: "Settings",
             general: "General",
             devCostRate: "Developer cost rate",
-            emailNotifications: "Email notifications",
+            syncSpreadsheets: "Sync spreadsheets",
+            manualSync: "Manual sync",
+            sync: "Sync",
             appInfo: "App information",
             version: "Version",
             more: "More"
