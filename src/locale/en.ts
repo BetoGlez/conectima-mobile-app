@@ -58,6 +58,12 @@ export const en = {
             hourCost: "{{hourCost}} € / h",
             noCostRate: "No cost rate specified"
         },
+        costs: {
+            euroAmount: "{{euroAmount}} €",
+            realCost: "Real cost",
+            expectedCost: "Expected cost",
+            developerSprintCost: "Costs per developer in sprint"
+        },
         analytics: {
             projectAnalytics: "Project analytics",
             seeAnalytics: "See analytics"

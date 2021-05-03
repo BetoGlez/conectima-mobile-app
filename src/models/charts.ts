@@ -15,3 +15,10 @@ export interface IBurndownChartData {
     originalSp: number;
     goalSp: number;
 }
+
+export interface ISimulatedCostsChartData {
+    shortName: string;
+    email: string;
+    realCost: number;
+    expectedCost: number;
+}

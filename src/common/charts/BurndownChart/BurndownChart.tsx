@@ -2,10 +2,11 @@ import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from "recharts";
 
-import { ACTIVE_DOT_RADIUS, DAY_DATA_KEY, GOAL_SP_DATA_KEY, MONOTONE_TYPE, ORIGINAL_SP_DATA_KEY, PRIMARY_HEX_COLOR,
-    SECONDARY_HEX_COLOR, X_AXIS_HEIGHT, Y_AXIS_WIDTH, IBurndownChartProps } from "./BurndownChart.constants";
+import { ACTIVE_DOT_RADIUS, DAY_DATA_KEY, GOAL_SP_DATA_KEY, MONOTONE_TYPE, ORIGINAL_SP_DATA_KEY,
+    X_AXIS_HEIGHT, Y_AXIS_WIDTH, IBurndownChartProps } from "./BurndownChart.constants";
 import { useBurndownChart } from "../../../hooks/charts-hook";
 import LoadingComponent from "../../generalUiState/LoadingComponent/LoadingComponent";
+import AppConfig from "../../../app-constants";
 
 const BurndownChart: React.FC<IBurndownChartProps> = ({projectId, sprintVersion}) => {
 
@@ -41,11 +42,11 @@ const BurndownChart: React.FC<IBurndownChartProps> = ({projectId, sprintVersion}
                         <Legend formatter={legendFormatter} />
                         <Line type={MONOTONE_TYPE}
                             dataKey={ORIGINAL_SP_DATA_KEY}
-                            stroke={SECONDARY_HEX_COLOR}
+                            stroke={AppConfig.SECONDARY_HEX_COLOR}
                             activeDot={{ r: ACTIVE_DOT_RADIUS }} />
                         <Line type={MONOTONE_TYPE}
                             dataKey={GOAL_SP_DATA_KEY}
-                            stroke={PRIMARY_HEX_COLOR}
+                            stroke={AppConfig.PRIMARY_HEX_COLOR}
                             activeDot={{ r: ACTIVE_DOT_RADIUS }} />
                     </LineChart>
                 </ResponsiveContainer>

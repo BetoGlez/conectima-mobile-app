@@ -39,4 +39,7 @@ export default class AppConfig {
             INVALID_CREDENTIALS: "invalidCredentials"
         }
     };
+
+    public static readonly PRIMARY_HEX_COLOR = "#f26f6b";
+    public static readonly SECONDARY_HEX_COLOR = "#273342";
 }

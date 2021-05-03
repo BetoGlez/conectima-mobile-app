@@ -10,7 +10,8 @@ import ChartDescriptionComponent from "../../common/charts/ChartDescriptionCompo
 import ChartTypeSelectorComponent from "../../common/charts/ChartTypeSelectorComponent/ChartTypeSelectorComponent";
 import ImageTextMessageComponent from "../../common/generalUiState/ImageTextMessageComponent/ImageTextMessageComponent";
 import { IChartType } from "../../models/charts";
-import BurndownChart from "../../common/charts/BurndownChart/BurndownChart";
+// import BurndownChart from "../../common/charts/BurndownChart/BurndownChart";
+import SimulatedCostsChart from "../../common/charts/SimulatedCostsChart/SimulatedCostsChart";
 
 const ChartsPage: React.FC = () => {
 
@@ -44,7 +45,8 @@ const ChartsPage: React.FC = () => {
                     <IonRow>
                         <IonCol className="chart-container">
                             { activeChart && state ?
-                                <BurndownChart projectId={state.projectId} sprintVersion={state.sprintVersion}/>
+                                // <BurndownChart projectId={state.projectId} sprintVersion={state.sprintVersion}/>
+                                <SimulatedCostsChart />
                                 :
                                 <ImageTextMessageComponent className="no-chart-selected" imgSrc={AppConfig.ANALYTICS_SPRINT_IMAGE_URL}
                                     message={"charts.noChartSelected"}/>
