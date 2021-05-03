@@ -3,6 +3,7 @@ import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonP
 import { useLocation } from "react-router";
 
 import "./ChartsPage.scss";
+import { PROJECT_ID_PARAM, PROJECT_NAME_PARAM, SPRINT_VERSION_PARAM } from "./ChartsPage.constants";
 import AppConfig from "../../app-constants";
 import { useLogger } from "../../hooks/logger";
 import ActiveChartComponent from "./ActiveChartComponent/ActiveChartComponent";
@@ -15,9 +16,9 @@ const ChartsPage: React.FC = () => {
 
     const logger = useLogger("ChartsPage");
     const { search } = useLocation();
-    const projectId = new URLSearchParams(search).get("projectId");
-    const projectName = new URLSearchParams(search).get("projectName");
-    const sprintVersion = new URLSearchParams(search).get("sprintVersion");
+    const projectId = new URLSearchParams(search).get(PROJECT_ID_PARAM);
+    const projectName = new URLSearchParams(search).get(PROJECT_NAME_PARAM);
+    const sprintVersion = new URLSearchParams(search).get(SPRINT_VERSION_PARAM);
 
     const [activeChart, setActiveChart] = useState<IChartType>();
 

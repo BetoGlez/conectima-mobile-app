@@ -1,5 +1,3 @@
-import React from "react";
-
 import BurndownChart from "../../../common/charts/BurndownChart/BurndownChart";
 import SimulatedCostsChart from "../../../common/charts/SimulatedCostsChart/SimulatedCostsChart";
 import { ChartCode } from "../../../models/charts";
@@ -11,17 +9,16 @@ interface IActiveChartComponentPorps {
 }
 
 const ActiveChartComponent: React.FC<IActiveChartComponentPorps> = (props) => {
-    const ConectimaChart = (chartCode: ChartCode, projectId: string, sprintVersion: string): JSX.Element => {
-        const availableCharts = {
-            BDC: <BurndownChart projectId={projectId} sprintVersion={sprintVersion}/>,
-            SCC: <SimulatedCostsChart projectId={projectId} sprintVersion={sprintVersion} />,
-            DC: <div></div>
-        };
-        return availableCharts[chartCode];
+    const availableCharts = {
+        BDC: BurndownChart,
+        SCC: SimulatedCostsChart,
+        DC: SimulatedCostsChart
     };
 
+    const ActiveChart = availableCharts[props.chartCode];
+
     return (
-        ConectimaChart(props.chartCode, props.projectId, props.sprintVersion)
+        <ActiveChart projectId={props.projectId} sprintVersion={props.sprintVersion} />
     );
 };
 

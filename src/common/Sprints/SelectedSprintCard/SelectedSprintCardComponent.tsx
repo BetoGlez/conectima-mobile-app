@@ -15,6 +15,7 @@ import { ISelectSprintModalProps } from "../SelectSprintModal/SelectSprintModal.
 import { IGetSelectSprintModalDataResponse } from "../../../graphql/queries-response.model";
 import { IProjectIdPayload } from "../../../graphql/inputs-payload.model";
 import { GET_SELECT_SPRINT_MODAL_DATA } from "../../../graphql/queries";
+import { PROJECT_ID_PARAM, PROJECT_NAME_PARAM, SPRINT_VERSION_PARAM } from "../../../pages/Charts/ChartsPage.constants";
 import AppConfig from "../../../app-constants";
 
 const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> = ({projectData, confirmText, changeText, imgUrl}) => {
@@ -60,9 +61,9 @@ const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> =
         if (selectedSprintData && selectedSprintData.version) {
             logger.d(`Analytics for project: ${projectData.projectId}, sprint version: ${selectedSprintData.version}`);
             history.replace(AppConfig.APP_ROUTES.CHARTS +
-                `?projectId=${projectData.projectId}`+
-                `&projectName=${projectData.projectName}`+
-                `&sprintVersion=${selectedSprintData.version}`);
+                `?${PROJECT_ID_PARAM}=${projectData.projectId}`+
+                `&${PROJECT_NAME_PARAM}=${projectData.projectName}`+
+                `&${SPRINT_VERSION_PARAM}=${selectedSprintData.version}`);
         }
     };
 
