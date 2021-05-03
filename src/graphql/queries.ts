@@ -62,3 +62,20 @@ export const GET_BURNDOWN_CHART_DATA = gql`
         }
     }
 `;
+
+export const GET_SIMULATED_COSTS_CHART_DATA = gql`
+    query getSprint($projectId: String!, $sprintVersion: String!) {
+        getSprint(getSprintInput: {projectId: $projectId, sprintVersion: $sprintVersion}) {
+            id
+            statistics {
+                startDate
+                releaseDate
+            }
+            dedications {
+                user
+                currentHours
+                expectedHoursPerDay
+            }
+        }
+    }
+`;

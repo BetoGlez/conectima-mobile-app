@@ -21,5 +21,9 @@ export const useUtils = () => {
         return moment().format(AppConfig.DATE_FORMAT);
     };
 
-    return { trimStringBeforeChar, getDayNumberBetweenDates, getCurrentDateString };
+    const getEmailInitials = (email: string): string => {
+        return email.slice(0, 2).toUpperCase();
+    };
+
+    return { trimStringBeforeChar, getDayNumberBetweenDates, getCurrentDateString, getEmailInitials };
 };

@@ -16,7 +16,6 @@ import { IGetSelectSprintModalDataResponse } from "../../../graphql/queries-resp
 import { IProjectIdPayload } from "../../../graphql/inputs-payload.model";
 import { GET_SELECT_SPRINT_MODAL_DATA } from "../../../graphql/queries";
 import AppConfig from "../../../app-constants";
-import { IChartsPageParams } from "../../../pages/Charts/ChartsPage.constants";
 
 const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> = ({projectData, confirmText, changeText, imgUrl}) => {
 
@@ -60,10 +59,10 @@ const SelectedSprintCardComponent: React.FC<ISelectedSprintCardComponentProps> =
     const seeAnalytics = (): void => {
         if (selectedSprintData && selectedSprintData.version) {
             logger.d(`Analytics for project: ${projectData.projectId}, sprint version: ${selectedSprintData.version}`);
-            history.replace(AppConfig.APP_ROUTES.CHARTS, {
-                projectId: projectData.projectId,
-                projectName: projectData.projectName,
-                sprintVersion: selectedSprintData.version} as IChartsPageParams);
+            history.replace(AppConfig.APP_ROUTES.CHARTS +
+                `?projectId=${projectData.projectId}`+
+                `&projectName=${projectData.projectName}`+
+                `&sprintVersion=${selectedSprintData.version}`);
         }
     };
 

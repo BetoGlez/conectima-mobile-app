@@ -52,3 +52,18 @@ export interface IGetBurndownChartDataResponse {
         }>;
     }
 }
+
+export interface IGetSimulatedCostsChartDataResponse {
+    getSprint: {
+        id: string;
+        statistics: {
+            startDate?: string;
+            releaseDate?: string;
+        };
+        dedications: Array<{
+            user?: string;
+            currentHours?: number;
+            expectedHoursPerDay?: number;
+        }>;
+    }
+}

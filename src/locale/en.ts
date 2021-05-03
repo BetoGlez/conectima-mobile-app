@@ -54,15 +54,16 @@ export const en = {
         dedication: {
             percentage: "{{percentage}}%",
             hoursPerDay: "{{hours}}h / day",
-            noDedications: "No user dedication data",
-            hourCost: "{{hourCost}} € / h",
-            noCostRate: "No cost rate specified"
+            noDedications: "No user dedication data"
         },
         costs: {
             euroAmount: "{{euroAmount}} €",
             realCost: "Real cost",
             expectedCost: "Expected cost",
-            developerSprintCost: "Costs per developer in sprint"
+            developerSprintCost: "Costs per developer in sprint",
+            hourCost: "{{hourCost}} € / h",
+            noCostRate: "No cost rate specified",
+            noCostPleaseConfigure: "No cost rate specified, please configure one"
         },
         analytics: {
             projectAnalytics: "Project analytics",

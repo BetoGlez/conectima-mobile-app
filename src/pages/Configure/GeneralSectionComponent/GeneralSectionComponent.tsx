@@ -27,8 +27,8 @@ const GeneralSectionComponent: React.FC = () => {
                                 <p>{t("configure.devCostRate")}</p>
                                 <p className="thin-text">
                                     {developerHourCost ?
-                                        t("dedication.hourCost", {hourCost: developerHourCost}) :
-                                        t("dedication.noCostRate")}
+                                        t("costs.hourCost", {hourCost: developerHourCost}) :
+                                        t("costs.noCostRate")}
                                 </p>
                             </IonLabel>
                         </IonItem>

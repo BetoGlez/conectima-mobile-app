@@ -1,22 +1,23 @@
-import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
 import { useState } from "react";
+import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
 import { useLocation } from "react-router";
 
 import "./ChartsPage.scss";
-import { IChartsPageParams } from "./ChartsPage.constants";
 import AppConfig from "../../app-constants";
 import { useLogger } from "../../hooks/logger";
+import ActiveChartComponent from "./ActiveChartComponent/ActiveChartComponent";
 import ChartDescriptionComponent from "../../common/charts/ChartDescriptionComponent/ChartDescriptionComponent";
 import ChartTypeSelectorComponent from "../../common/charts/ChartTypeSelectorComponent/ChartTypeSelectorComponent";
 import ImageTextMessageComponent from "../../common/generalUiState/ImageTextMessageComponent/ImageTextMessageComponent";
 import { IChartType } from "../../models/charts";
-import BurndownChart from "../../common/charts/BurndownChart/BurndownChart";
-import SimulatedCostsChart from "../../common/charts/SimulatedCostsChart/SimulatedCostsChart";
 
 const ChartsPage: React.FC = () => {
 
     const logger = useLogger("ChartsPage");
-    const { state } = useLocation<IChartsPageParams>();
+    const { search } = useLocation();
+    const projectId = new URLSearchParams(search).get("projectId");
+    const projectName = new URLSearchParams(search).get("projectName");
+    const sprintVersion = new URLSearchParams(search).get("sprintVersion");
 
     const [activeChart, setActiveChart] = useState<IChartType>();
 
@@ -25,17 +26,11 @@ const ChartsPage: React.FC = () => {
         logger.d("Set active chart: ", chart.code);
     };
 
-    const availableCharts = {
-        BDC: <BurndownChart projectId={state.projectId} sprintVersion={state.sprintVersion}/>,
-        SCC: <SimulatedCostsChart />,
-        DC: <div></div>
-    };
-
     return(
         <IonPage className="charts-page">
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>{state?.projectName}</IonTitle>
+                    <IonTitle>{projectName}</IonTitle>
                     <IonButtons>
                         <IonBackButton defaultHref={AppConfig.APP_ROUTES.ANALYTICS} />
                     </IonButtons>
@@ -44,14 +39,14 @@ const ChartsPage: React.FC = () => {
             <IonContent color="light" fullscreen>
                 <IonHeader collapse="condense">
                     <IonToolbar color="light">
-                        <IonTitle size="large">{state?.projectName}</IonTitle>
+                        <IonTitle size="large">{projectName}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 <IonGrid>
                     <IonRow>
                         <IonCol className="chart-container">
-                            { activeChart && state ?
-                                availableCharts[activeChart.code]
+                            { activeChart && projectId && sprintVersion ?
+                                <ActiveChartComponent chartCode={activeChart.code} projectId={projectId} sprintVersion={sprintVersion}/>
                                 :
                                 <ImageTextMessageComponent className="no-chart-selected" imgSrc={AppConfig.ANALYTICS_SPRINT_IMAGE_URL}
                                     message={"charts.noChartSelected"}/>
@@ -60,7 +55,7 @@ const ChartsPage: React.FC = () => {
                     </IonRow>
                 </IonGrid>
                 <ChartTypeSelectorComponent setActiveChart={(chart) => selectChart(chart)}/>
-                <ChartDescriptionComponent className="ion-margin-top" sprintVersion={state?.sprintVersion} chartType={activeChart?.type}
+                <ChartDescriptionComponent className="ion-margin-top" sprintVersion={sprintVersion || ""} chartType={activeChart?.type}
                     chartDescription={activeChart?.description} icon={activeChart?.icon} />
             </IonContent>
         </IonPage>
