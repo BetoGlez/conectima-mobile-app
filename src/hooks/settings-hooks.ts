@@ -58,7 +58,7 @@ export const useDevHourCost = () => {
                 { name: "thirdDigit", options: [...Array(10).keys()].map((_, index) => ({ text: index.toString(), value: index }))}
             ],
             buttons: [
-                { text: t("general.cancel"), handler: () => dismissPicker },
+                { text: t("general.cancel"), handler: () => dismissPicker() },
                 { text: t("general.confirm"), handler: (selected) => saveDeveloperHourCost(selected) }
             ]
         });
