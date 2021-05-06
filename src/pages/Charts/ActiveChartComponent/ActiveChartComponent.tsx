@@ -1,4 +1,5 @@
 import BurndownChart from "../../../common/charts/BurndownChart/BurndownChart";
+import DeviationProgressStats from "../../../common/charts/DeviationProgressStats/DeviationProgressStats";
 import SimulatedCostsChart from "../../../common/charts/SimulatedCostsChart/SimulatedCostsChart";
 import { ChartCode } from "../../../models/charts";
 
@@ -12,7 +13,7 @@ const ActiveChartComponent: React.FC<IActiveChartComponentPorps> = (props) => {
     const availableCharts = {
         BDC: BurndownChart,
         SCC: SimulatedCostsChart,
-        DC: SimulatedCostsChart
+        DC: DeviationProgressStats
     };
 
     const ActiveChart = availableCharts[props.chartCode];

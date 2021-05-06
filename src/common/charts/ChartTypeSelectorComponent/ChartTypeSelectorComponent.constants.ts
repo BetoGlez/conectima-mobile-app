@@ -1,4 +1,4 @@
-import { analyticsOutline, pieChartOutline, statsChartOutline } from "ionicons/icons";
+import { analyticsOutline, barChartOutline, statsChartOutline } from "ionicons/icons";
 
 import { IChartType } from "../../../models/charts";
 
@@ -25,6 +25,6 @@ export const CHART_TYPES: Array<IChartType> = [
         description: "charts.deviation.description",
         cardTitle: "charts.deviation.cardTitle",
         cardDescription: "charts.deviation.cardDescription",
-        icon: pieChartOutline
+        icon: barChartOutline
     }
 ];

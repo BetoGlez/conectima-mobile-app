@@ -67,7 +67,11 @@ export const en = {
         },
         analytics: {
             projectAnalytics: "Project analytics",
-            seeAnalytics: "See analytics"
+            seeAnalytics: "See analytics",
+            originalDeviation: "Original deviation",
+            devDeviation: "Dev team deviation",
+            originalProgress: "Original progress",
+            devProgress: "Dev team progress",
         },
         charts: {
             noChartSelected: "No chart has been selected, please select one form the list below",
@@ -84,12 +88,12 @@ export const en = {
                 cardDescription: "A graphical representation of the work left to do versus time"
             },
             deviation: {
-                type: "Deviation",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est lacus, vulputate quis. " +
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est lacus, vulputate quis neque et " +
-                "will be completed.",
-                cardTitle: "Deviation chart",
-                cardDescription: "Displays data about sprint deviation per each member"
+                type: "Deviation and progress",
+                description: "The deviation is represented by negative and positive numbers, a negative value indicates " +
+                "the sprint took less effort than expected (pessimistic estimation). A positive value represents the sprint " +
+                "required more effort than expected (optimistic estimation).",
+                cardTitle: "Deviation and progress",
+                cardDescription: "Displays data about sprint deviation and progress"
             },
             costs: {
                 type: "Simulated costs",
