@@ -10,6 +10,7 @@ export const GET_PROJECTS_CARDS_DATA = gql`
                 id
                 version
                 statistics {
+                    id
                     startDate
                     releaseDate
                 }
@@ -38,6 +39,7 @@ export const GET_SELECT_SPRINT_MODAL_DATA = gql`
             id
             version
             statistics {
+                id
                 originalEstimationSp
                 workHoursPerDay
                 startDate
@@ -53,6 +55,7 @@ export const GET_BURNDOWN_CHART_DATA = gql`
         getSprint(getSprintInput: {projectId: $projectId, sprintVersion: $sprintVersion}) {
             id
             statistics {
+                id
                 originalEstimationSp
             }
             spsProgress {
@@ -68,6 +71,7 @@ export const GET_SIMULATED_COSTS_CHART_DATA = gql`
         getSprint(getSprintInput: {projectId: $projectId, sprintVersion: $sprintVersion}) {
             id
             statistics {
+                id
                 startDate
                 releaseDate
             }
@@ -85,6 +89,7 @@ export const GET_DEVIATION_PROGRESS_STATS = gql`
         getSprint(getSprintInput: {projectId: $projectId, sprintVersion: $sprintVersion}) {
             id
             statistics {
+                id
                 originalDeviationPercentage
                 devDeviationPercentage
                 originalProgressPercentage

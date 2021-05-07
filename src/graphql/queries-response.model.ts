@@ -7,6 +7,7 @@ export interface IGetProjectsCardsDataResponse {
             id: string;
             version?: string;
             statistics?: {
+                id: string;
                 startDate?: string;
                 releaseDate?: string;
             };
@@ -31,6 +32,7 @@ export interface IGetSelectSprintModalDataResponse {
         id: string;
         version: string;
         statistics: {
+            id: string;
             originalEstimationSp?: number;
             workHoursPerDay?: number;
             startDate?: string;
@@ -44,6 +46,7 @@ export interface IGetBurndownChartDataResponse {
     getSprint: {
         id: string;
         statistics: {
+            id: string;
             originalEstimationSp?: number;
         };
         spsProgress: Array<{
@@ -57,6 +60,7 @@ export interface IGetSimulatedCostsChartDataResponse {
     getSprint: {
         id: string;
         statistics: {
+            id: string;
             startDate?: string;
             releaseDate?: string;
         };
@@ -72,6 +76,7 @@ export interface IGetDeviationProgressSatats {
     getSprint: {
         id: string;
         statistics: {
+            id: string;
             originalDeviationPercentage?: number;
             devDeviationPercentage?: number;
             originalProgressPercentage?: number;

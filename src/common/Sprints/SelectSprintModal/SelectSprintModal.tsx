@@ -26,11 +26,12 @@ const SelectSprintModal: React.FC<ISelectSprintModalProps> = ({projectData, proj
                         </IonCol>
                     </IonRow>
                     { (projectSprints && projectSprints.length) ?
-                        projectSprints.map(sprint => 
+                        projectSprints.map(sprint =>
                             <IonRow key={sprint.id}>
                                 <IonCol>
                                     <SmallSprintCardComponent id={sprint.id} version={sprint.version}
                                         statistics={{
+                                            id: sprint.statistics?.id || "",
                                             originalEstimationSp: sprint.statistics?.originalEstimationSp,
                                             workHoursPerDay: sprint.statistics?.workHoursPerDay,
                                             startDate: sprint.statistics?.startDate,

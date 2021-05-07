@@ -12,6 +12,7 @@ export interface ISprint {
 }
 
 export interface ISprintStatistics {
+    id: string;
     originalEstimationSp?: number;
     devEstimationSp?: number;
     originalEstimationHours?: number;
