@@ -79,3 +79,17 @@ export const GET_SIMULATED_COSTS_CHART_DATA = gql`
         }
     }
 `;
+
+export const GET_DEVIATION_PROGRESS_STATS = gql`
+     query getSprint($projectId: String!, $sprintVersion: String!) {
+        getSprint(getSprintInput: {projectId: $projectId, sprintVersion: $sprintVersion}) {
+            id
+            statistics {
+                originalDeviationPercentage
+                devDeviationPercentage
+                originalProgressPercentage
+                devProgressPercentage
+            }
+        }
+    }
+`;

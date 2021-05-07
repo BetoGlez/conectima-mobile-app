@@ -25,5 +25,13 @@ export const useUtils = () => {
         return email.slice(0, 2).toUpperCase();
     };
 
-    return { trimStringBeforeChar, getDayNumberBetweenDates, getCurrentDateString, getEmailInitials };
+    const formatDecimalToPercentage = (value?: number): number => {
+        let percentage = 0;
+        if (value) {
+            percentage = value * 100;
+        }
+        return percentage;
+    };
+
+    return { trimStringBeforeChar, getDayNumberBetweenDates, getCurrentDateString, getEmailInitials, formatDecimalToPercentage };
 };

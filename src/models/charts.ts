@@ -22,3 +22,10 @@ export interface ISimulatedCostsChartData {
     realCost: number;
     expectedCost: number;
 }
+
+export interface IDeviationProgressStats {
+    originalDeviationPercentage: number;
+    devDeviationPercentage: number;
+    originalProgressPercentage: number;
+    devProgressPercentage: number;
+}

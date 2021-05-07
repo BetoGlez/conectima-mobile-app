@@ -2,10 +2,11 @@ import { useQuery } from "@apollo/client";
 
 import { useUtils } from "./utils";
 import { useDevHourCost } from "./settings-hooks";
-import { GET_BURNDOWN_CHART_DATA, GET_SIMULATED_COSTS_CHART_DATA } from "../graphql/queries";
+import { GET_BURNDOWN_CHART_DATA, GET_DEVIATION_PROGRESS_STATS, GET_SIMULATED_COSTS_CHART_DATA } from "../graphql/queries";
 import { IGetSprintPayload } from "../graphql/inputs-payload.model";
-import { IGetBurndownChartDataResponse, IGetSimulatedCostsChartDataResponse } from "../graphql/queries-response.model";
-import { IBurndownChartData, ISimulatedCostsChartData } from "../models/charts";
+import { IGetBurndownChartDataResponse, IGetDeviationProgressSatats,
+    IGetSimulatedCostsChartDataResponse } from "../graphql/queries-response.model";
+import { IBurndownChartData, IDeviationProgressStats, ISimulatedCostsChartData } from "../models/charts";
 
 export const useBurndownChart = (projectId: string, sprintVersion: string) => {
     const {data, loading} = useQuery<IGetBurndownChartDataResponse, IGetSprintPayload>(GET_BURNDOWN_CHART_DATA, {
@@ -68,4 +69,29 @@ export const useSimulatedCostsChart = (projectId: string, sprintVersion: string)
     };
 
     return { simulatedCostsChartData: composeSimulatedCostsChartData(data), isLoading: loading };
+};
+
+export const useDeviationProgressStats = (projectId: string, sprintVersion: string) => {
+
+    const { formatDecimalToPercentage } = useUtils();
+
+    const { data, loading } = useQuery<IGetDeviationProgressSatats, IGetSprintPayload>(GET_DEVIATION_PROGRESS_STATS, {
+        variables: {projectId, sprintVersion}
+    });
+
+    const composeDeviationProgressStats = (sprintData?: IGetDeviationProgressSatats): IDeviationProgressStats => {
+        let deviationProgressStats = {} as IDeviationProgressStats;
+        if (sprintData) {
+            const sprintStats = sprintData.getSprint.statistics;
+            deviationProgressStats = {
+                originalDeviationPercentage: formatDecimalToPercentage(sprintStats.originalDeviationPercentage),
+                devDeviationPercentage: formatDecimalToPercentage(sprintStats.devDeviationPercentage),
+                originalProgressPercentage: formatDecimalToPercentage(sprintStats.originalProgressPercentage),
+                devProgressPercentage: formatDecimalToPercentage(sprintStats.devProgressPercentage)
+            };
+        }
+        return deviationProgressStats;
+    };
+
+    return { deviationProgressStats: composeDeviationProgressStats(data), isLoading: loading };
 };

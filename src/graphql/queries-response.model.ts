@@ -50,7 +50,7 @@ export interface IGetBurndownChartDataResponse {
             date?: string;
             sp?: number;
         }>;
-    }
+    };
 }
 
 export interface IGetSimulatedCostsChartDataResponse {
@@ -65,5 +65,17 @@ export interface IGetSimulatedCostsChartDataResponse {
             currentHours?: number;
             expectedHoursPerDay?: number;
         }>;
-    }
+    };
+}
+
+export interface IGetDeviationProgressSatats {
+    getSprint: {
+        id: string;
+        statistics: {
+            originalDeviationPercentage?: number;
+            devDeviationPercentage?: number;
+            originalProgressPercentage?: number;
+            devProgressPercentage?: number;
+        };
+    };
 }
