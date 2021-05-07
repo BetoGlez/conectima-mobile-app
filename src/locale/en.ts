@@ -97,9 +97,9 @@ export const en = {
             },
             costs: {
                 type: "Simulated costs",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est lacus, vulputate quis. " +
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est lacus, vulputate quis neque et " +
-                "will be completed.",
+                description: "The cost each developer represents in the selected sprint, the cost is calculated based on " +
+                "the developer cost rate (available in settings page), and the current or completed hours within the " +
+                "sprint.",
                 cardTitle: "Simulated sprint costs",
                 cardDescription: "The simulated cost based on team members calculation"
             }
