@@ -23,7 +23,7 @@ const DeviationProgressStats: React.FC<IDeviationProgressStatsProps> = ({project
                     <IonCol className="ion-text-center">
                         <IonRow>
                             <IonCol>
-                                <h1 className="deviation-percentage thin-text color-primary">
+                                <h1 className="deviation-percentage thin-text color-primary stat-value">
                                     {deviationProgressStats?.originalDeviationPercentage}%</h1>
                             </IonCol>
                         </IonRow>
@@ -36,7 +36,7 @@ const DeviationProgressStats: React.FC<IDeviationProgressStatsProps> = ({project
                     <IonCol className="ion-text-center">
                         <IonRow>
                             <IonCol>
-                                <h1 className="deviation-percentage thin-text">
+                                <h1 className="deviation-percentage thin-text stat-value">
                                     {deviationProgressStats?.devDeviationPercentage}%</h1>
                             </IonCol>
                         </IonRow>
@@ -51,7 +51,7 @@ const DeviationProgressStats: React.FC<IDeviationProgressStatsProps> = ({project
                     <IonCol className="ion-text-center">
                         <IonRow>
                             <IonCol>
-                                <h1 className="deviation-percentage thin-text color-primary">
+                                <h1 className="deviation-percentage thin-text color-primary stat-value">
                                     {deviationProgressStats?.originalProgressPercentage}%</h1>
                             </IonCol>
                         </IonRow>
@@ -64,7 +64,7 @@ const DeviationProgressStats: React.FC<IDeviationProgressStatsProps> = ({project
                     <IonCol className="ion-text-center">
                         <IonRow>
                             <IonCol>
-                                <h1 className="deviation-percentage thin-text">
+                                <h1 className="deviation-percentage thin-text stat-value">
                                     {deviationProgressStats?.devProgressPercentage}%</h1>
                             </IonCol>
                         </IonRow>

@@ -7,4 +7,19 @@
     .deviation-legend {
         margin-top: 0;
     }
+
+    .stat-value {
+        animation-name: show-element;
+        animation-duration: 1s;
+    }
+
+    @keyframes show-element {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
 }
