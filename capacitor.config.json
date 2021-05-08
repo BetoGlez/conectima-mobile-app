@@ -1,5 +1,5 @@
 {
-    "appId": "alberto.gonzalez.conectima",
+    "appId": "com.agonzalez.conectima",
     "appName": "Conectima",
     "bundledWebRuntime": false,
     "npmClient": "yarn",
