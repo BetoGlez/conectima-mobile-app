@@ -1,0 +1,20 @@
+.add-compare-sprints-component {
+    .selectable-item {
+        --padding-start: 0;
+        --padding-end: 0;
+        --inner-padding-start: 0;
+        --inner-padding-end: 0;
+    }
+
+    .select-title {
+        margin-bottom: 8px;
+        color: var(--ion-color-secondary);
+    }
+
+    .select-list {
+        color: var(--ion-color-secondary);
+        padding-left: 8px;
+        border: 1px solid var(--ion-color-primary);
+        border-radius: 10px;
+    }
+}

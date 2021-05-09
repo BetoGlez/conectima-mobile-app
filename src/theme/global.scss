@@ -64,3 +64,18 @@ ion-loading.conectima-loading {
     --spinner-color: var(--ion-color-primary);
     --backdrop-opacity: 0.7;
 }
+
+.alert-head {
+    .alert-title {
+        font-weight: 400;
+        color: var(--ion-color-secondary);
+    }
+}
+
+.alert-button.sc-ion-alert-ios:last-child {
+    font-weight: 400;
+}
+
+.picker-toolbar-button.sc-ion-picker-ios:last-child .picker-button.sc-ion-picker-ios {
+    font-weight: 400;
+}

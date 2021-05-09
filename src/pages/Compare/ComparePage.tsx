@@ -1,5 +1,7 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
 import { useTranslation } from "react-i18next";
+
+import AddCompareSprintsComponent from "./AddCompareSprintsComponent/AddCompareSprintsComponent";
 
 const ComparePage: React.FC = () => {
 
@@ -18,6 +20,13 @@ const ComparePage: React.FC = () => {
                         <IonTitle className="ion-margin-bottom" size="large">{t("pages.compare")}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
+                <IonGrid>
+                    <IonRow>
+                        <IonCol>
+                            <AddCompareSprintsComponent />
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
             </IonContent>
         </IonPage>
     );
