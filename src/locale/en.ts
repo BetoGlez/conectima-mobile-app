@@ -8,7 +8,8 @@ export const en = {
             noData: "No data available",
             select: "Select",
             confirm: "Confirm",
-            cancel: "Cancel"
+            cancel: "Cancel",
+            compare: "Compare"
         },
         errors: {
             userNotFound: "There is no user registered with this credentials",
@@ -34,12 +35,15 @@ export const en = {
         },
         projects: {
             projects: "Projects",
+            select: "Select a project",
             dedication: "Dedication",
             startedOn: "Started on {{startDate}}",
             ongoingFor: "Ongoing for {{dayNumber}} days",
             editProject: "Edit Project"
         },
         sprints: {
+            sprints: "Sprints",
+            select: "Select a sprint",
             selectSprint: "Select a sprint",
             changeSprint: "Change sprint",
             sprintVersion: "Sprint {{sprintVersion}}",
@@ -49,7 +53,8 @@ export const en = {
             sprintDay: "Sprint day {{sprintDay}}",
             dayInSprint: "Day in the sprint",
             originalSp: "Current",
-            goalSp: "Expected"
+            goalSp: "Expected",
+            addToCompare: "Add sprints to compare"
         },
         dedication: {
             percentage: "{{percentage}}%",
