@@ -33,6 +33,15 @@ export const GET_BASIC_PROJECTS_DATA = gql`
     }
 `;
 
+export const GET_BASIC_PROJECT_SPRINTS_DATA = gql`
+    query getSprints($projectId: String!) {
+        getSprints(projectIdInput: {projectId: $projectId}) {
+            id
+            version
+        }
+    }
+`;
+
 export const GET_SELECT_SPRINT_MODAL_DATA = gql`
     query getSprints($projectId: String!) {
         getSprints(projectIdInput: {projectId: $projectId}) {

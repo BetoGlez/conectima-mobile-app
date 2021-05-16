@@ -27,6 +27,13 @@ export interface IGetBasicProjectsDataResponse {
     }>;
 }
 
+export interface IGetBasicProjectSprintsDataResponse {
+    getSprints: Array<{
+        id: string;
+        version: string;
+    }>;
+}
+
 export interface IGetSelectSprintModalDataResponse {
     getSprints: Array<{
         id: string;

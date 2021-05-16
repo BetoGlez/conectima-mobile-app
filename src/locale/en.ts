@@ -54,7 +54,8 @@ export const en = {
             dayInSprint: "Day in the sprint",
             originalSp: "Current",
             goalSp: "Expected",
-            addToCompare: "Add sprints to compare"
+            addToCompare: "Add sprints to compare",
+            noSprints: "No sprints"
         },
         dedication: {
             percentage: "{{percentage}}%",
