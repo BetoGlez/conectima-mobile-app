@@ -1,5 +1,6 @@
 import { IonCard, IonCol, IonGrid, IonRow, IonSelect, IonItem, IonSelectOption, IonLabel, IonButton } from "@ionic/react";
 import { useTranslation } from "react-i18next";
+import PreselectedCompareSprintsComponent from "../PreselectedCompareSprintsComponent/PreselectedCompareSprintsComponent";
 
 import "./AddCompareSprintsComponent.scss";
 
@@ -40,8 +41,13 @@ const AddCompareSprintsComponent: React.FC = () => {
                     </IonCol>
                 </IonRow>
                 <IonRow className="ion-margin-top">
-                    <IonCol className="ion-text-center ion-margin-top">
-                        <IonButton>{t("general.compare")}</IonButton>
+                    <IonCol>
+                        <PreselectedCompareSprintsComponent projectName={"Ipatia"} projectSprints={["v1.2.5", "v3.2.17", "v3.5.8"]}/>
+                    </IonCol>
+                </IonRow>
+                <IonRow className="ion-margin-top">
+                    <IonCol className="ion-text-center">
+                        <IonButton className="compare-btn">{t("general.compare")}</IonButton>
                     </IonCol>
                 </IonRow>
             </IonGrid>

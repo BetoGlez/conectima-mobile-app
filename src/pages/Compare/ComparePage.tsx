@@ -16,7 +16,7 @@ const ComparePage: React.FC = () => {
             </IonHeader>
             <IonContent color="light">
                 <IonHeader collapse="condense">
-                    <IonToolbar color="light" className="ion-margin-bottom">
+                    <IonToolbar color="light">
                         <IonTitle className="ion-margin-bottom" size="large">{t("pages.compare")}</IonTitle>
                     </IonToolbar>
                 </IonHeader>

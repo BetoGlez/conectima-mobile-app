@@ -12,9 +12,14 @@
     }
 
     .select-list {
+        font-size: 14px;
         color: var(--ion-color-secondary);
         padding-left: 8px;
         border: 1px solid var(--ion-color-primary);
         border-radius: 10px;
+    }
+
+    .compare-btn {
+        width: 50%;
     }
 }

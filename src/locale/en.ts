@@ -77,6 +77,7 @@ export const en = {
             devDeviation: "Dev team deviation",
             originalProgress: "Original progress",
             devProgress: "Dev team progress",
+            sprintsToCompare: "{{projectName}}: {{sprintsCount}} sprints to compare"
         },
         charts: {
             noChartSelected: "No chart has been selected, please select one form the list below",
