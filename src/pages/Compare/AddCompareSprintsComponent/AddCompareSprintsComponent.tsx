@@ -82,7 +82,7 @@ const AddCompareSprintsComponent: React.FC = () => {
                 </IonRow>
                 <IonRow>
                     <IonCol>
-                        <IonItem className="selectable-item" lines="none">
+                        <IonItem className="conectima-selectable-item" lines="none">
                             <IonLabel className="select-title" position="stacked">{t("projects.projects")}</IonLabel>
                             <IonSelect className="select-list" cancelText={t("general.cancel")} okText={t("general.select")}
                                 placeholder={t("projects.select")} disabled={projectsList.loading || !projectsList.data}
@@ -96,7 +96,7 @@ const AddCompareSprintsComponent: React.FC = () => {
                 </IonRow>
                 <IonRow>
                     <IonCol>
-                        <IonItem className="selectable-item" lines="none">
+                        <IonItem className="conectima-selectable-item" lines="none">
                             <IonLabel className="select-title" position="stacked">{t("sprints.sprints")}</IonLabel>
                             <IonSelect ref={sprintsSelector} className="select-list" cancelText={t("general.cancel")}
                                 okText={t("general.select")} disabled={sprintsList.loading || !sprintsList.data?.getSprints.length}

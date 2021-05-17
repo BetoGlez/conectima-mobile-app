@@ -49,6 +49,49 @@ ion-item {
             --padding-bottom: 5px;
         }
     }
+
+    &.conectima-stacked-input {
+        --padding-start: 0;
+        --padding-end: 0;
+        --inner-padding-start: 0;
+        --inner-padding-end: 0;
+
+        ion-label.input-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--ion-color-secondary);
+        }
+
+        ion-input.input-field {
+            --padding-start: 8px;
+
+            font-size: 14px;
+            color: var(--ion-color-secondary);
+            background-color: var(--color-white);
+            border: 1px solid var(--ion-color-primary);
+            border-radius: 10px;
+        }
+    }
+
+    &.conectima-selectable-item {
+        --padding-start: 0;
+        --padding-end: 0;
+        --inner-padding-start: 0;
+        --inner-padding-end: 0;
+
+        ion-label.select-title {
+            margin-bottom: 8px;
+            color: var(--ion-color-secondary);
+        }
+
+        ion-select.select-list {
+            font-size: 14px;
+            color: var(--ion-color-secondary);
+            padding-left: 8px;
+            border: 1px solid var(--ion-color-primary);
+            border-radius: 10px;
+        }
+    }
 }
 
 ion-toolbar {

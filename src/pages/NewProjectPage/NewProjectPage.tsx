@@ -1,4 +1,5 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonPage,
+    IonRow, IonTitle, IonToolbar } from "@ionic/react";
 
 import AppConfig from "../../app-constants";
 
@@ -19,6 +20,16 @@ const NewProjectPage: React.FC = () => {
                         <IonTitle size="large">New Project</IonTitle>
                     </IonToolbar>
                 </IonHeader>
+                <IonGrid>
+                    <IonRow>
+                        <IonCol>
+                            <IonItem className="conectima-stacked-input" lines="none" color="none">
+                                <IonLabel className="input-title" position="stacked">Project Name</IonLabel>
+                                <IonInput className="input-field" placeholder="What is the name of your project?"/>
+                            </IonItem>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
             </IonContent>
         </IonPage>
     );
