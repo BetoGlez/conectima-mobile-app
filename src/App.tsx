@@ -32,6 +32,7 @@ import AuthRoute from "./common/AuthRoute";
 import LoginPage from "./pages/Login/LoginPage";
 import HomePage from "./pages/Home/HomePage";
 import ProfileSelectorPage from "./pages/ProfileSelector/ProfileSelectorPage";
+import NewProjectPage from "./pages/NewProjectPage/NewProjectPage";
 import ChartsPage from "./pages/Charts/ChartsPage";
 
 const App: React.FC = () => {
@@ -54,6 +55,7 @@ const App: React.FC = () => {
                             </Route>
                             <AuthRoute path={AppConfig.APP_ROUTES.HOME} component={HomePage} />
                             <AuthRoute exact path={AppConfig.APP_ROUTES.PROFILE_SELECTOR} component={ProfileSelectorPage} />
+                            <AuthRoute exact path={AppConfig.APP_ROUTES.NEW_PROJECT} component={NewProjectPage} />
                             <AuthRoute exact path={AppConfig.APP_ROUTES.CHARTS} component={ChartsPage} />
                             <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
                         </IonRouterOutlet>

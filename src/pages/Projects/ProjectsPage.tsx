@@ -10,6 +10,7 @@ import { IGetProjectsCardsDataResponse } from "../../graphql/queries-response.mo
 import ProjectCardComponent from "./ProjectCardComponent/ProjectCardComponent";
 import NoDataComponent from "../../common/generalUiState/NoDataComponent/NoDataComponent";
 import LoadingComponent from "../../common/generalUiState/LoadingComponent/LoadingComponent";
+import AppConfig from "../../app-constants";
 
 const ProjectsPage: React.FC = () => {
 
@@ -32,7 +33,7 @@ const ProjectsPage: React.FC = () => {
                         </IonToolbar>
                     </IonHeader>
                     <IonFab vertical="top" horizontal="end" slot="fixed">
-                        <IonFabButton>
+                        <IonFabButton routerLink={AppConfig.APP_ROUTES.NEW_PROJECT}>
                             <IonIcon icon={addOutline} />
                         </IonFabButton>
                     </IonFab>

@@ -30,6 +30,7 @@ export default class AppConfig {
         ANALYTICS: "/home/analytics",
         CONFIGURE: "/home/configure",
         PROFILE_SELECTOR: "/profile-selector",
+        NEW_PROJECT: "/new-project",
         CHARTS: "/charts"
     };
 
