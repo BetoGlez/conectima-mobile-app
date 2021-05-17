@@ -7,9 +7,11 @@ import "./PreselectedCompareSprintsComponent.scss";
 interface IPreselectedCompareSprintsComponentProps {
     projectName: string;
     projectSprints: Array<string>;
+    removePreselectedSprint: (sprintVersion: string) => void;
 }
 
-const PreselectedCompareSprintsComponent: React.FC<IPreselectedCompareSprintsComponentProps> = ({projectName, projectSprints}) => {
+const PreselectedCompareSprintsComponent: React.FC<IPreselectedCompareSprintsComponentProps> = ({
+    projectName, projectSprints, removePreselectedSprint}) => {
 
     const { t } = useTranslation();
 
@@ -27,7 +29,7 @@ const PreselectedCompareSprintsComponent: React.FC<IPreselectedCompareSprintsCom
                     { projectSprints.map(sprint => (
                         <IonChip key={sprint} color="secondary">
                             <IonLabel>{sprint}</IonLabel>
-                            <IonIcon className="opacity-7" icon={closeCircleOutline} />
+                            <IonIcon className="opacity-7" icon={closeCircleOutline} onClick={() => removePreselectedSprint(sprint)} />
                         </IonChip>
                     ))}
                 </IonCol>

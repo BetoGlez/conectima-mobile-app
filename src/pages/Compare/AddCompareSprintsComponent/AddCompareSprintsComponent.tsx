@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IonCard, IonCol, IonGrid, IonRow, IonSelect, IonItem, IonSelectOption, IonLabel, IonButton } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { useLazyQuery, useQuery } from "@apollo/client";
@@ -10,6 +10,11 @@ import { GET_BASIC_PROJECTS_DATA, GET_BASIC_PROJECT_SPRINTS_DATA } from "../../.
 import { IGetBasicProjectsDataResponse, IGetBasicProjectSprintsDataResponse } from "../../../graphql/queries-response.model";
 import { IProjectIdPayload } from "../../../graphql/inputs-payload.model";
 
+interface IPreselectedProject {
+    id: string;
+    name: string;
+}
+
 const AddCompareSprintsComponent: React.FC = () => {
 
     const logger = useLogger("AddCompareSprintsComponent");
@@ -19,16 +24,52 @@ const AddCompareSprintsComponent: React.FC = () => {
     const [loadSprints, sprintsList] = useLazyQuery<IGetBasicProjectSprintsDataResponse, IProjectIdPayload>(
         GET_BASIC_PROJECT_SPRINTS_DATA);
 
+    const sprintsSelector = useRef<HTMLIonSelectElement>(null);
     const [preselectedSprints, setPreselectedSprints] = useState(new Array<string>());
+    const [preselectedProject, setPreselectedProject] = useState<IPreselectedProject | null>(null);
 
     const loadSprintsList = (projectId: string): void => {
-        logger.d("Selected project: ", projectId);
-        loadSprints({ variables: {projectId} });
+        const projects = projectsList.data?.getProjects;
+        if (projects) {
+            const selectedProject = projects.find(project => project.id === projectId);
+            if (selectedProject) {
+                logger.d("Selected project: ", selectedProject.name);
+                setPreselectedProject(selectedProject);
+                setPreselectedSprints(new Array<string>());
+                loadSprints({ variables: {projectId: selectedProject.id} });
+            }
+        }
     };
 
-    const handleSprintSelection = (sprintVersion: string): void => {
-        logger.d("Selected sprint: ", sprintVersion);
-        setPreselectedSprints(new Array(sprintVersion));
+    const handleSprintSelection = (sprintVersion: string | null): void => {
+        if (sprintVersion) {
+            const sprintIndex = preselectedSprints.findIndex(sprint => sprint === sprintVersion);
+            if (sprintIndex < 0) {
+                logger.d("Sprint not added previously, adding it... ", sprintVersion);
+                const newSprintList = [...preselectedSprints];
+                newSprintList.push(sprintVersion);
+                setPreselectedSprints(newSprintList);
+            }
+        }
+    };
+
+    const resetSprintSelector = (): void => {
+        sprintsSelector.current!.value = null;
+    };
+
+    const removePreselectedSprint = (sprintVersion: string): void => {
+        if (sprintVersion) {
+            logger.d("Removing sprint: ", sprintVersion);
+            const newSprintList = preselectedSprints.filter(sprint => sprint !== sprintVersion);
+            setPreselectedSprints(newSprintList);
+        }
+    };
+
+    const compareSprints = (): void => {
+        logger.d("Compare project: ", preselectedProject?.name);
+        logger.d("Compare sprints: ", preselectedSprints);
+        setPreselectedProject(null);
+        setPreselectedSprints(new Array<string>());
     };
 
     return (
@@ -57,9 +98,9 @@ const AddCompareSprintsComponent: React.FC = () => {
                     <IonCol>
                         <IonItem className="selectable-item" lines="none">
                             <IonLabel className="select-title" position="stacked">{t("sprints.sprints")}</IonLabel>
-                            <IonSelect className="select-list" cancelText={t("general.cancel")} okText={t("general.select")}
-                                disabled={sprintsList.loading || !sprintsList.data}
-                                onIonChange={(event) => handleSprintSelection(event.detail.value)}
+                            <IonSelect ref={sprintsSelector} className="select-list" cancelText={t("general.cancel")}
+                                okText={t("general.select")} disabled={sprintsList.loading || !sprintsList.data?.getSprints.length}
+                                onIonChange={(event) => handleSprintSelection(event.detail.value)} onClick={resetSprintSelector}
                                 placeholder={sprintsList.data?.getSprints && sprintsList.data.getSprints.length > 0 ?
                                     t("sprints.select") : t("sprints.noSprints")}>
                                 { sprintsList.data?.getSprints.map(sprint => (
@@ -69,14 +110,18 @@ const AddCompareSprintsComponent: React.FC = () => {
                         </IonItem>
                     </IonCol>
                 </IonRow>
-                <IonRow className="ion-margin-top">
-                    <IonCol>
-                        <PreselectedCompareSprintsComponent projectName={"Ipatia"} projectSprints={preselectedSprints}/>
-                    </IonCol>
-                </IonRow>
+                { preselectedProject &&
+                    <IonRow className="ion-margin-top">
+                        <IonCol>
+                            <PreselectedCompareSprintsComponent projectName={preselectedProject.name}
+                                projectSprints={preselectedSprints} removePreselectedSprint={removePreselectedSprint}/>
+                        </IonCol>
+                    </IonRow>
+                }
                 <IonRow className="ion-margin-top">
                     <IonCol className="ion-text-center">
-                        <IonButton disabled={preselectedSprints.length < 1} className="compare-btn">{t("general.compare")}</IonButton>
+                        <IonButton disabled={preselectedSprints.length < 1} className="compare-btn" onClick={compareSprints}>
+                            {t("general.compare")}</IonButton>
                     </IonCol>
                 </IonRow>
             </IonGrid>
