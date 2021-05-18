@@ -39,7 +39,14 @@ export const en = {
             dedication: "Dedication",
             startedOn: "Started on {{startDate}}",
             ongoingFor: "Ongoing for {{dayNumber}} days",
-            editProject: "Edit Project"
+            editProject: "Edit Project",
+            newProject: "New Project",
+            projectName: "Project Name",
+            whatProjectName: "What is the name of your project?",
+            linkSpreadsheet: "Link spreadsheet",
+            connectTrackingLegend: "Connect a google tracking sheet to sync project data",
+            trackingPrepared: "Tracking sheet prepared to start",
+            createProject: "Create project"
         },
         sprints: {
             sprints: "Sprints",

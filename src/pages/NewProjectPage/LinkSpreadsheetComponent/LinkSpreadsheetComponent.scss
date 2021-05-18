@@ -1,0 +1,22 @@
+.link-spreadsheet-component {
+    margin: 32px 0 0;
+
+    .card-title {
+        margin-bottom: 0;
+    }
+
+    .card-subtitle {
+        margin-top: 0;
+    }
+
+    .spreadsheet-img {
+        width: 60%;
+    }
+
+    .google-icon {
+        opacity: 0.7;
+        color: var(--green-1);
+        font-size: 48px;
+        margin-bottom: 6px;
+    }
+}

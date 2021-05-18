@@ -1,14 +1,20 @@
 import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonPage,
     IonRow, IonTitle, IonToolbar } from "@ionic/react";
+import { useTranslation } from "react-i18next";
 
+import "./NewProjectPage.scss";
+import LinkSpreadsheetComponent from "./LinkSpreadsheetComponent/LinkSpreadsheetComponent";
 import AppConfig from "../../app-constants";
 
 const NewProjectPage: React.FC = () => {
+
+    const { t } = useTranslation();
+
     return (
-        <IonPage>
+        <IonPage className="new-project-page">
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>New Project</IonTitle>
+                    <IonTitle>{t("projects.newProject")}</IonTitle>
                     <IonButtons>
                         <IonBackButton defaultHref={AppConfig.APP_ROUTES.PROJECTS} />
                     </IonButtons>
@@ -17,16 +23,21 @@ const NewProjectPage: React.FC = () => {
             <IonContent color="light" fullscreen>
                 <IonHeader collapse="condense">
                     <IonToolbar color="light">
-                        <IonTitle size="large">New Project</IonTitle>
+                        <IonTitle size="large">{t("projects.newProject")}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
-                <IonGrid>
+                <IonGrid className="content-grid">
                     <IonRow>
                         <IonCol>
                             <IonItem className="conectima-stacked-input" lines="none" color="none">
-                                <IonLabel className="input-title" position="stacked">Project Name</IonLabel>
-                                <IonInput className="input-field" placeholder="What is the name of your project?"/>
+                                <IonLabel className="input-title" position="stacked">{t("projects.projectName")}</IonLabel>
+                                <IonInput className="input-field" placeholder={t("projects.whatProjectName")}/>
                             </IonItem>
+                        </IonCol>
+                    </IonRow>
+                    <IonRow>
+                        <IonCol>
+                            <LinkSpreadsheetComponent />
                         </IonCol>
                     </IonRow>
                 </IonGrid>

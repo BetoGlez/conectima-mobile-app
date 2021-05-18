@@ -21,6 +21,7 @@ export default class AppConfig {
     public static readonly NO_DATA_IMAGE_URL = "/assets/images/no-data.svg";
     public static readonly PROJECT_SPRINT_IMAGE_URL = "/assets/images/project_team.svg";
     public static readonly ANALYTICS_SPRINT_IMAGE_URL = "/assets/images/sprint-analytics.svg";
+    public static readonly SPREADSHEET_IMAGE_URL = "/assets/images/spreadsheet.svg";
 
     public static readonly APP_ROUTES = {
         LOGIN: "/login",
