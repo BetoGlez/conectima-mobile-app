@@ -46,7 +46,9 @@ export const en = {
             linkSpreadsheet: "Link spreadsheet",
             connectTrackingLegend: "Connect a google tracking sheet to sync project data",
             trackingPrepared: "Tracking sheet prepared to start",
-            createProject: "Create project"
+            createProject: "Create project",
+            copyShareEmail: "Copy project share email",
+            addSheetId: "Copy your Google Sheet id here"
         },
         sprints: {
             sprints: "Sprints",

@@ -8,6 +8,8 @@ export default class AppConfig {
     public static readonly DEV_COST_STORAGE_KEY = process.env.REACT_APP_DEV_COST_STORAGE_KEY || "";
 
     public static readonly ABOUT_INFO_URL = "https://github.com/BetoGlez/conectima-mobile-app";
+    public static readonly SHEET_CONNECT_INSTRUCTIONS_VIDEO_ID = "WO3h7BF7Qdw";
+    public static readonly SHEET_PROJECT_SHARE_MAIL = process.env.REACT_APP_SHEET_PROJECT_SHARE_MAIL || "Introduce your configured mail :)";
 
     public static readonly DATE_FORMAT = "DD/MM/YYYY";
     public static readonly MIN_PASSWORD_LENGTH = 8;
@@ -21,7 +23,6 @@ export default class AppConfig {
     public static readonly NO_DATA_IMAGE_URL = "/assets/images/no-data.svg";
     public static readonly PROJECT_SPRINT_IMAGE_URL = "/assets/images/project_team.svg";
     public static readonly ANALYTICS_SPRINT_IMAGE_URL = "/assets/images/sprint-analytics.svg";
-    public static readonly SPREADSHEET_IMAGE_URL = "/assets/images/spreadsheet.svg";
 
     public static readonly APP_ROUTES = {
         LOGIN: "/login",

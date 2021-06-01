@@ -20,7 +20,7 @@ const NewProjectPage: React.FC = () => {
         validationSchema: NEW_PROJECT_VALIDATION_SCHEMA
     });
 
-    const createNewProject = (values: INewProjectForm, helpers: FormikHelpers<INewProjectForm>) => {
+    const createNewProject = (values: INewProjectForm, helpers: FormikHelpers<INewProjectForm>): void => {
         logger.d("Creating new project: ", values);
         helpers.resetForm();
     };
@@ -48,13 +48,14 @@ const NewProjectPage: React.FC = () => {
                                 <IonItem className="conectima-stacked-input" lines="none" color="none">
                                     <IonLabel className="input-title" position="stacked">{t("projects.projectName")}</IonLabel>
                                     <IonInput name="projectName" className="input-field" value={newProjectForm.values.projectName}
-                                        onIonChange={newProjectForm.handleChange} placeholder={t("projects.whatProjectName")}/>
+                                        onIonChange={newProjectForm.handleChange} type="text" placeholder={t("projects.whatProjectName")}/>
                                 </IonItem>
                             </IonCol>
                         </IonRow>
                         <IonRow>
                             <IonCol>
-                                <LinkSpreadsheetComponent />
+                                <LinkSpreadsheetComponent handleChange={newProjectForm.handleChange}
+                                    sheetIdValue={newProjectForm.values.spreadSheetId}/>
                             </IonCol>
                         </IonRow>
                         <IonRow className="ion-margin-top">

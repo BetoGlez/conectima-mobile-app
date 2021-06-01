@@ -9,14 +9,22 @@
         margin-top: 0;
     }
 
-    .spreadsheet-img {
-        width: 60%;
+    .instructions-video {
+        width: 90%;
+        border-radius: 10px;
     }
 
-    .google-icon {
-        opacity: 0.7;
-        color: var(--green-1);
-        font-size: 48px;
-        margin-bottom: 6px;
+    .sheet-id-input-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .copy-mail-btn {
+        font-size: 16px;
+        font-weight: 200;
+
+        ion-icon {
+            opacity: 0.5;
+        }
     }
 }

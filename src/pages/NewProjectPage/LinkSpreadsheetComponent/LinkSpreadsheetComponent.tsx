@@ -1,13 +1,22 @@
-import { IonCard, IonCol, IonGrid, IonIcon, IonRow } from "@ionic/react";
-import { logoGoogle } from "ionicons/icons";
+import { IonButton, IonCard, IonCol, IonGrid, IonInput, IonRow, IonItem, IonIcon, IonLabel } from "@ionic/react";
 import { useTranslation } from "react-i18next";
+import { copyOutline } from "ionicons/icons";
 
 import "./LinkSpreadsheetComponent.scss";
 import AppConfig from "../../../app-constants";
 
-const LinkSpreadsheetComponent: React.FC = () => {
+interface ILinkSpreadsheetComponentProps {
+    sheetIdValue: string;
+    handleChange: any;
+}
+
+const LinkSpreadsheetComponent: React.FC<ILinkSpreadsheetComponentProps> = ({ sheetIdValue, handleChange }) => {
 
     const { t } = useTranslation();
+
+    const copyEmailToClipboard = (): void => {
+        navigator.clipboard.writeText(AppConfig.SHEET_PROJECT_SHARE_MAIL);
+    };
 
     return (
         <IonCard className="link-spreadsheet-component">
@@ -24,12 +33,29 @@ const LinkSpreadsheetComponent: React.FC = () => {
                 </IonRow>
                 <IonRow>
                     <IonCol className="ion-text-center">
-                        <img className="spreadsheet-img" src={AppConfig.SPREADSHEET_IMAGE_URL} alt="spreadsheet"/>
+                        <iframe
+                            className="instructions-video"
+                            frameBorder="0"
+                            src={`https://www.youtube.com/embed/${AppConfig.SHEET_CONNECT_INSTRUCTIONS_VIDEO_ID}`}
+                            allowFullScreen
+                            allow="autoplay"
+                        />
+                    </IonCol>
+                </IonRow>
+                <IonRow className="ion-margin-top">
+                    <IonCol className="sheet-id-input-container">
+                        <IonItem className="conectima-input" lines="none">
+                            <IonInput name="spreadSheetId" color="secondary" type="text" placeholder={t("projects.addSheetId")}
+                                value={sheetIdValue} onIonChange={handleChange}/>
+                        </IonItem>
                     </IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol className="ion-text-center">
-                        <IonIcon className="google-icon" icon={logoGoogle}/>
+                        <IonButton className="copy-mail-btn" color="secondary" onClick={copyEmailToClipboard} fill="clear">
+                            <IonIcon icon={copyOutline} slot="start"/>
+                            <IonLabel>{t("projects.copyShareEmail")}</IonLabel>
+                        </IonButton>
                     </IonCol>
                 </IonRow>
             </IonGrid>
