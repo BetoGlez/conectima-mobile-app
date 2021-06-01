@@ -4,6 +4,7 @@ import { copyOutline } from "ionicons/icons";
 
 import "./LinkSpreadsheetComponent.scss";
 import AppConfig from "../../../app-constants";
+import { useToast } from "../../../hooks/popups";
 
 interface ILinkSpreadsheetComponentProps {
     sheetIdValue: string;
@@ -13,9 +14,11 @@ interface ILinkSpreadsheetComponentProps {
 const LinkSpreadsheetComponent: React.FC<ILinkSpreadsheetComponentProps> = ({ sheetIdValue, handleChange }) => {
 
     const { t } = useTranslation();
+    const { presentInfoToast } = useToast();
 
     const copyEmailToClipboard = (): void => {
         navigator.clipboard.writeText(AppConfig.SHEET_PROJECT_SHARE_MAIL);
+        presentInfoToast("projects.emailCopiedToClipboard");
     };
 
     return (

@@ -48,6 +48,7 @@ export const en = {
             trackingPrepared: "Tracking sheet prepared to start",
             createProject: "Create project",
             copyShareEmail: "Copy project share email",
+            emailCopiedToClipboard: "Project email copied to clipboard!",
             addSheetId: "Copy your Google Sheet id here"
         },
         sprints: {
