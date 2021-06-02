@@ -13,7 +13,9 @@ export const en = {
         },
         errors: {
             userNotFound: "There is no user registered with this credentials",
-            invalidCredentials: "The credentials you are using are incorrect"
+            invalidCredentials: "The credentials you are using are incorrect",
+            duplicatedProjectName: "This project name has been already chosen, try another",
+            errorConnectingSheet: "Error connecting Google Sheet, verify your sheet id and follow the instructions"
         },
         pages: {
             projects: "Projects",

@@ -40,6 +40,10 @@ export default class AppConfig {
         INFO: {
             USER_NOT_FOUND: "userNotFound",
             INVALID_CREDENTIALS: "invalidCredentials"
+        },
+        CREATE_PROJECT: {
+            DUPLICATED_NAME: "duplicatedProjectName",
+            ERROR_CONNECTING_SHEET: "errorConnectingSheet"
         }
     };
 

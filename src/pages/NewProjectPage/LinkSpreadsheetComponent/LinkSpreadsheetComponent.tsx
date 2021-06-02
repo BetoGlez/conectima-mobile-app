@@ -38,6 +38,7 @@ const LinkSpreadsheetComponent: React.FC<ILinkSpreadsheetComponentProps> = ({ sh
                     <IonCol className="ion-text-center">
                         <iframe
                             className="instructions-video"
+                            title="Sheet Connect Instructions Video"
                             frameBorder="0"
                             src={`https://www.youtube.com/embed/${AppConfig.SHEET_CONNECT_INSTRUCTIONS_VIDEO_ID}`}
                             allowFullScreen

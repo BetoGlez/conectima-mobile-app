@@ -15,3 +15,27 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const CREATE_PROJECT = gql`
+    mutation createProject($name: String!, $spreadSheetId: String!, startDate: String!) {
+        createProject(createProjectInput: {name: $name, spreadSheetId: $spreadSheetId, startDate: $startDate}) {
+            id
+            name
+            startDate
+            activeSprint {
+                id
+                version
+                statistics {
+                    id
+                    startDate
+                    releaseDate
+                }
+                dedications {
+                    user
+                    currentHours
+                    expectedHoursPerDay
+                }
+            }
+        }
+    }
+`;

@@ -11,3 +11,9 @@ export interface IGetSprintPayload {
     projectId: string;
     sprintVersion: string;
 }
+
+export interface ICreateProjectPayload {
+    name: string;
+    spreadSheetId: string;
+    startDate: string;
+}
