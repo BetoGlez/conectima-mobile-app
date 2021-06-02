@@ -1,28 +1,42 @@
 import { IonBackButton, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonPage,
     IonRow, IonTitle, IonToolbar } from "@ionic/react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router";
 import { FormikHelpers, useFormik } from "formik";
+import moment from "moment";
 
 import "./NewProjectPage.scss";
 import LinkSpreadsheetComponent from "./LinkSpreadsheetComponent/LinkSpreadsheetComponent";
 import { INewProjectForm, INITIAL_NEW_PROJECT_FORM, NEW_PROJECT_VALIDATION_SCHEMA } from "./NewProjectPage.constants";
 import { useLogger } from "../../hooks/logger";
 import AppConfig from "../../app-constants";
+import { useCreateProject } from "../../hooks/project-hooks";
 
 const NewProjectPage: React.FC = () => {
 
     const logger = useLogger("NewProjectPage");
     const { t } = useTranslation();
+    const history = useHistory();
 
+    const { createProject } = useCreateProject();
     const newProjectForm = useFormik<INewProjectForm>({
         initialValues: INITIAL_NEW_PROJECT_FORM,
         onSubmit: (values, helpers) => createNewProject(values, helpers),
         validationSchema: NEW_PROJECT_VALIDATION_SCHEMA
     });
 
-    const createNewProject = (values: INewProjectForm, helpers: FormikHelpers<INewProjectForm>): void => {
+    const createNewProject = async (values: INewProjectForm, helpers: FormikHelpers<INewProjectForm>): Promise<void> => {
         logger.d("Creating new project: ", values);
-        helpers.resetForm();
+        const newProjectResponse = await createProject({variables: {
+            name: values.projectName,
+            spreadSheetId: values.spreadSheetId,
+            startDate: moment().format(AppConfig.DATE_FORMAT)
+        }});
+        if (newProjectResponse?.data?.createProject && !newProjectResponse?.errors) {
+            logger.d("New project created: ", newProjectResponse.data.createProject);
+            helpers.resetForm();
+            history.goBack();
+        }
     };
 
     return (

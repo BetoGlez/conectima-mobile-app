@@ -14,7 +14,7 @@ export const useCreateProject = () => {
     const logger = useLogger("useCreateProject");
     const { presentInfoToast } = useToast();
 
-    const [createProject, { data, error, loading }] = useMutation<ICreateProjectResponse, ICreateProjectPayload>(CREATE_PROJECT, {
+    const [createProject, { loading }] = useMutation<ICreateProjectResponse, ICreateProjectPayload>(CREATE_PROJECT, {
         update: (cache, res) => handleProjectCreation(cache, res),
         onError: (err) => handleError(err)
     });
@@ -36,12 +36,14 @@ export const useCreateProject = () => {
     };
 
     const handleError = (err: ApolloError): void => {
-        if (Object.values(AppConfig.ERROR_CODES.CREATE_PROJECT).includes(err.message)) {
-            presentInfoToast(`errors.${err.message}`);
+        const gqlErrors = err.graphQLErrors[0].extensions;
+        const errorCode = gqlErrors?.errorCodes && gqlErrors?.errorCodes[0];
+        if (Object.values(AppConfig.ERROR_CODES.CREATE_PROJECT).includes(errorCode)) {
+            presentInfoToast(`errors.${errorCode}`);
         } else {
             logger.w("There was an unexpected project creation error", err.message);
         }
     };
 
-    return { createProject, isLoading: loading, data, error };
+    return { createProject, isLoading: loading };
 };
