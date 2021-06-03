@@ -1,6 +1,7 @@
 import { IonButton, IonCard, IonCol, IonGrid, IonInput, IonRow, IonItem, IonIcon, IonLabel } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { copyOutline } from "ionicons/icons";
+import ReactPlayer from "react-player";
 
 import "./LinkSpreadsheetComponent.scss";
 import AppConfig from "../../../app-constants";
@@ -35,15 +36,8 @@ const LinkSpreadsheetComponent: React.FC<ILinkSpreadsheetComponentProps> = ({ sh
                     </IonCol>
                 </IonRow>
                 <IonRow>
-                    <IonCol className="ion-text-center">
-                        <iframe
-                            className="instructions-video"
-                            title="Sheet Connect Instructions Video"
-                            frameBorder="0"
-                            src={`https://www.youtube.com/embed/${AppConfig.SHEET_CONNECT_INSTRUCTIONS_VIDEO_ID}`}
-                            allowFullScreen
-                            allow="autoplay"
-                        />
+                    <IonCol className="ion-text-center video-player-container">
+                        <ReactPlayer url={AppConfig.SHEET_CONNECT_INSTRUCTIONS_VIDEO} width="100%" height="150px" controls light/>
                     </IonCol>
                 </IonRow>
                 <IonRow className="ion-margin-top">
