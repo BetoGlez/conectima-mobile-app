@@ -51,7 +51,8 @@ export const en = {
             createProject: "Create project",
             copyShareEmail: "Copy project share email",
             emailCopiedToClipboard: "Project email copied to clipboard!",
-            addSheetId: "Copy your Google Sheet id here"
+            addSheetId: "Copy your Google Sheet id here",
+            creatingProjectAndSyncing: "Creating project and syncing google sheets data..."
         },
         sprints: {
             sprints: "Sprints",
