@@ -126,7 +126,7 @@ export const en = {
         },
         compare: {
             generalData: "General data",
-            velocityChart: "Velocity Chart",
+            velocityChart: "Velocity chart",
             general: "General",
             velocity: "Velocity"
         },

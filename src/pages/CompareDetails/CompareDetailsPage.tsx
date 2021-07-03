@@ -1,22 +1,20 @@
+import { useState } from "react";
 import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonLabel, IonPage, IonRow, IonSegment,
     IonSegmentButton, IonTitle, IonToolbar } from "@ionic/react";
-import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { CompareDetailsTab, ICompareDetailsPageLocationState } from "./CompareDetailsPage.constants";
 import AppConfig from "../../app-constants";
+import GeneralCompareComponent from "./GeneralCompareComponent/GeneralCompareComponent";
+import VelocityChartComponent from "./VelocityChartComponent/VelocityChartComponent";
 
 const CompareDetailsPage: React.FC = () => {
 
-    const {state} = useLocation<ICompareDetailsPageLocationState>();
+    const {state: navState} = useLocation<ICompareDetailsPageLocationState>();
     const { t } = useTranslation();
 
     const [selectedTab, setSelectedTab] = useState<CompareDetailsTab>("general");
-
-    useEffect(() => {
-        console.warn("State: ", state);
-    }, [state]);
 
     return (
         <IonPage>
@@ -48,6 +46,19 @@ const CompareDetailsPage: React.FC = () => {
                             </IonSegment>
                         </IonCol>
                     </IonRow>
+                    { navState && navState.selectedProjectId && navState.selectedSprints &&
+                        <IonRow>
+                            <IonCol>
+                                { selectedTab === "general" ?
+                                    <GeneralCompareComponent selectedProjectId={navState.selectedProjectId}
+                                        selectedSprints={navState.selectedSprints} />
+                                    :
+                                    <VelocityChartComponent selectedProjectId={navState.selectedProjectId}
+                                        selectedSprints={navState.selectedSprints} />
+                                }
+                            </IonCol>
+                        </IonRow>
+                    }
                 </IonGrid>
             </IonContent>
         </IonPage>
