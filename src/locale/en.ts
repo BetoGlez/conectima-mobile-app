@@ -124,6 +124,12 @@ export const en = {
                 cardDescription: "The simulated cost based on team members calculation"
             }
         },
+        compare: {
+            generalData: "General data",
+            velocityChart: "Velocity Chart",
+            general: "General",
+            velocity: "Velocity"
+        },
         configure: {
             settings: "Settings",
             general: "General",

@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { IonCard, IonCol, IonGrid, IonRow, IonSelect, IonItem, IonSelectOption, IonLabel, IonButton } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { useLazyQuery, useQuery } from "@apollo/client";
+import { useHistory } from "react-router-dom";
 
 import "./AddCompareSprintsComponent.scss";
 import { useLogger } from "../../../hooks/logger";
@@ -9,6 +10,8 @@ import PreselectedCompareSprintsComponent from "../PreselectedCompareSprintsComp
 import { GET_BASIC_PROJECTS_DATA, GET_BASIC_PROJECT_SPRINTS_DATA } from "../../../graphql/queries";
 import { IGetBasicProjectsDataResponse, IGetBasicProjectSprintsDataResponse } from "../../../graphql/queries-response.model";
 import { IProjectIdPayload } from "../../../graphql/inputs-payload.model";
+import { ICompareDetailsPageLocationState } from "../../CompareDetails/CompareDetailsPage.constants";
+import AppConfig from "../../../app-constants";
 
 interface IPreselectedProject {
     id: string;
@@ -19,6 +22,7 @@ const AddCompareSprintsComponent: React.FC = () => {
 
     const logger = useLogger("AddCompareSprintsComponent");
     const { t } = useTranslation();
+    const history = useHistory();
 
     const projectsList = useQuery<IGetBasicProjectsDataResponse>(GET_BASIC_PROJECTS_DATA);
     const [loadSprints, sprintsList] = useLazyQuery<IGetBasicProjectSprintsDataResponse, IProjectIdPayload>(
@@ -54,6 +58,10 @@ const AddCompareSprintsComponent: React.FC = () => {
         }
     };
 
+    const resetProjectSelector = (): void => {
+        projectSelector.current!.value = null;
+    };
+
     const resetSprintSelector = (): void => {
         sprintsSelector.current!.value = null;
     };
@@ -69,10 +77,16 @@ const AddCompareSprintsComponent: React.FC = () => {
     const compareSprints = (): void => {
         logger.d("Compare project: ", preselectedProject?.name);
         logger.d("Compare sprints: ", preselectedSprints);
-        setPreselectedProject(null);
-        setPreselectedSprints(new Array<string>());
-        projectSelector.current!.value = null;
-        resetSprintSelector();
+        const selectedProjectId = preselectedProject?.id;
+        const selectedSprints = preselectedSprints;
+        if (selectedProjectId && selectedSprints.length > 0) {
+            setPreselectedProject(null);
+            setPreselectedSprints(new Array<string>());
+            resetProjectSelector();
+            resetSprintSelector();
+            history.push({pathname: AppConfig.APP_ROUTES.COMPARE_DETAILS,
+                state: { selectedProjectId, selectedSprints } as ICompareDetailsPageLocationState});
+        }
     };
 
     return (

@@ -33,7 +33,8 @@ export default class AppConfig {
         CONFIGURE: "/home/configure",
         PROFILE_SELECTOR: "/profile-selector",
         NEW_PROJECT: "/new-project",
-        CHARTS: "/charts"
+        CHARTS: "/charts",
+        COMPARE_DETAILS: "/compare-detail"
     };
 
     public static readonly ERROR_CODES = {
