@@ -24,6 +24,7 @@ const AddCompareSprintsComponent: React.FC = () => {
     const [loadSprints, sprintsList] = useLazyQuery<IGetBasicProjectSprintsDataResponse, IProjectIdPayload>(
         GET_BASIC_PROJECT_SPRINTS_DATA);
 
+    const projectSelector = useRef<HTMLIonSelectElement>(null);
     const sprintsSelector = useRef<HTMLIonSelectElement>(null);
     const [preselectedSprints, setPreselectedSprints] = useState(new Array<string>());
     const [preselectedProject, setPreselectedProject] = useState<IPreselectedProject | null>(null);
@@ -70,6 +71,8 @@ const AddCompareSprintsComponent: React.FC = () => {
         logger.d("Compare sprints: ", preselectedSprints);
         setPreselectedProject(null);
         setPreselectedSprints(new Array<string>());
+        projectSelector.current!.value = null;
+        resetSprintSelector();
     };
 
     return (
@@ -84,9 +87,9 @@ const AddCompareSprintsComponent: React.FC = () => {
                     <IonCol>
                         <IonItem className="conectima-selectable-item" lines="none">
                             <IonLabel className="select-title" position="stacked">{t("projects.projects")}</IonLabel>
-                            <IonSelect className="select-list" cancelText={t("general.cancel")} okText={t("general.select")}
+                            <IonSelect ref={projectSelector} className="select-list" cancelText={t("general.cancel")}
                                 placeholder={t("projects.select")} disabled={projectsList.loading || !projectsList.data}
-                                onIonChange={(event) => loadSprintsList(event.detail.value)}>
+                                okText={t("general.select")} onIonChange={(event) => loadSprintsList(event.detail.value)}>
                                 { projectsList.data?.getProjects.map(project => (
                                     <IonSelectOption key={project.id} value={project.id}>{project.name}</IonSelectOption>
                                 ))}
