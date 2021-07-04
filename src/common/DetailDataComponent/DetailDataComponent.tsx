@@ -1,18 +1,22 @@
-import { IonItem, IonIcon, IonLabel } from "@ionic/react";
+import { IonIcon } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 
 import "./DetailDataComponent.scss";
 import { IDetailDataComponentProps } from "./DetailDataComponent.constants";
 
-const DetailDataComponent: React.FC<IDetailDataComponentProps> = ({ icon, text, textValues }) => {
+const DetailDataComponent: React.FC<IDetailDataComponentProps> = ({ icon, text, textValues, value, iconColor, isIconOpaque }) => {
 
     const { t } = useTranslation();
 
     return (
-        <IonItem className="data-detail" lines="none">
-            <IonIcon color="primary" slot="start" icon={icon} />
-            <IonLabel className="thin-text">{t(text, textValues)}</IonLabel>
-        </IonItem>
+        <div className="data-detail">
+            <IonIcon color={iconColor ? iconColor : "primary"} className={isIconOpaque ? "opacity-5" : ""}
+                icon={icon} />
+            <div className="detail-body">
+                <p className="thin-text">{t(text, textValues)}</p>
+                { value && <p className="value-text">{value}</p>}
+            </div>
+        </div>
     );
 };
 

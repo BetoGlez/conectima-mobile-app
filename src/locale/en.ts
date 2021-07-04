@@ -128,7 +128,15 @@ export const en = {
             generalData: "General data",
             velocityChart: "Velocity chart",
             general: "General",
-            velocity: "Velocity"
+            velocity: "Velocity",
+            showingXSprints: "Showing {{sprintsCount}} sprints",
+            orgEstimation: "Original estimation",
+            devEstimation: "Development estimation",
+            consumedTime: "Consumed time",
+            completeness: "Completeness",
+            simulatedCost: "Simulated cost",
+            hours: "{{hours}} h",
+            percentage: "{{percentage}} %",
         },
         configure: {
             settings: "Settings",

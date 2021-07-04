@@ -33,7 +33,7 @@ const CompareDetailsPage: React.FC = () => {
                     </IonToolbar>
                 </IonHeader>
                 <IonGrid>
-                    <IonRow>
+                    <IonRow className="ion-padding-top">
                         <IonCol offset="3" size="6">
                             <IonSegment value={selectedTab}
                                 onIonChange={e => setSelectedTab(e.detail.value as CompareDetailsTab)}>

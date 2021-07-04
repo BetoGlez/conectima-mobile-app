@@ -24,8 +24,8 @@ export const useCompareGeneralData = (projectId: string, selectedSprints: Array<
                     version: sprintData.version,
                     orgEstimation: sprintData.statistics.originalEstimationSp,
                     devEstimation: sprintData.statistics.devEstimationSp,
-                    completeness: sprintData.statistics.originalProgressPercentage,
-                    simulatedCost: developerHourCost * consumedTime,
+                    completeness: sprintData.statistics.originalProgressPercentage * 100,
+                    simulatedCost: parseFloat((developerHourCost * consumedTime).toFixed(2)),
                     consumedTime
                 } as IGeneralCompareSprintData;
             })
