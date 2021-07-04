@@ -41,7 +41,6 @@ export const en = {
             dedication: "Dedication",
             startedOn: "Started on {{startDate}}",
             ongoingFor: "Ongoing for {{dayNumber}} days",
-            editProject: "Edit Project",
             newProject: "New Project",
             projectName: "Project Name",
             whatProjectName: "What is the name of your project?",

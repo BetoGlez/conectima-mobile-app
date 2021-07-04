@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCol, IonGrid, IonRow } from "@ionic/react";
+import { IonCard, IonCol, IonGrid, IonRow } from "@ionic/react";
 import { calendarNumberOutline, refreshOutline, timeOutline } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 
@@ -50,11 +50,6 @@ const ProjectCardComponent: React.FC<IProjectCardComponentProps> = ({project}) =
                     <IonCol>
                         <DedicationListComponent dedications={project.activeSprint?.dedications}
                             totalDays={getDayNumberBetweenDates(activeSprintStats?.startDate, activeSprintStats?.releaseDate)}/>
-                    </IonCol>
-                </IonRow>
-                <IonRow className="ion-margin-bottom">
-                    <IonCol size="6" offset="3" className="ion-text-center">
-                        <IonButton fill="outline" expand="block">{t("projects.editProject")}</IonButton>
                     </IonCol>
                 </IonRow>
             </IonGrid>
