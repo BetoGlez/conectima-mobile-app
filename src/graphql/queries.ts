@@ -107,3 +107,21 @@ export const GET_DEVIATION_PROGRESS_STATS = gql`
         }
     }
 `;
+
+export const GET_SPRINTS_COMPARE_GENERAL_DATA = gql`
+    query getSprints($projectId: String!) {
+        getSprints(projectIdInput: {projectId: $projectId}) {
+            id
+            version
+            statistics {
+                id
+                originalEstimationSp
+                devEstimationSp
+                originalProgressPercentage
+            }
+            dedications {
+                currentHours
+            }
+        }
+    }
+`;

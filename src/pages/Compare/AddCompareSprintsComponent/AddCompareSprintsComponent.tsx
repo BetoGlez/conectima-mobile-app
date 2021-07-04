@@ -78,14 +78,15 @@ const AddCompareSprintsComponent: React.FC = () => {
         logger.d("Compare project: ", preselectedProject?.name);
         logger.d("Compare sprints: ", preselectedSprints);
         const selectedProjectId = preselectedProject?.id;
+        const selectedProjectName = preselectedProject?.name;
         const selectedSprints = preselectedSprints;
-        if (selectedProjectId && selectedSprints.length > 0) {
+        if (selectedProjectId && selectedProjectName && selectedSprints.length > 0) {
             setPreselectedProject(null);
             setPreselectedSprints(new Array<string>());
             resetProjectSelector();
             resetSprintSelector();
             history.push({pathname: AppConfig.APP_ROUTES.COMPARE_DETAILS,
-                state: { selectedProjectId, selectedSprints } as ICompareDetailsPageLocationState});
+                state: { selectedProjectId, selectedProjectName, selectedSprints } as ICompareDetailsPageLocationState});
         }
     };
 

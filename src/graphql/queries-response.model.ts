@@ -91,3 +91,19 @@ export interface IGetDeviationProgressSatats {
         };
     };
 }
+
+export interface IGetSprintsCompareGeneralData {
+    getSprints: Array<{
+        id: string;
+        version: string;
+        statistics: {
+            id: string;
+            originalEstimationSp: number;
+            devEstimationSp: number;
+            originalProgressPercentage: number;
+        };
+        dedications: Array<{
+            currentHours: number;
+        }>;
+    }>;
+}

@@ -51,10 +51,10 @@ const CompareDetailsPage: React.FC = () => {
                             <IonCol>
                                 { selectedTab === "general" ?
                                     <GeneralCompareComponent selectedProjectId={navState.selectedProjectId}
-                                        selectedSprints={navState.selectedSprints} />
+                                        selectedSprints={navState.selectedSprints} selectedProjectName={navState.selectedProjectName} />
                                     :
                                     <VelocityChartComponent selectedProjectId={navState.selectedProjectId}
-                                        selectedSprints={navState.selectedSprints} />
+                                        selectedSprints={navState.selectedSprints} selectedProjectName={navState.selectedProjectName} />
                                 }
                             </IonCol>
                         </IonRow>
