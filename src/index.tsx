@@ -1,4 +1,5 @@
 import React from "react";
+import { setupConfig } from "@ionic/react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
@@ -6,6 +7,10 @@ import reportWebVitals from "./reportWebVitals";
 
 import "@capacitor/core";
 import "./locale/i18n";
+
+setupConfig({
+    swipeBackEnabled: false
+});
 
 ReactDOM.render(
     <React.StrictMode>
