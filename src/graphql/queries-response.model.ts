@@ -107,3 +107,15 @@ export interface IGetSprintsCompareGeneralData {
         }>;
     }>;
 }
+
+export interface IGetSprintsVelocityChartData {
+    getSprints: Array<{
+        id: string;
+        version: string;
+        statistics: {
+            id: string;
+            originalEstimationSp: number;
+            originalProgressPercentage: number;
+        };
+    }>;
+}

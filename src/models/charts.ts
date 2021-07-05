@@ -29,3 +29,9 @@ export interface IDeviationProgressStats {
     originalProgressPercentage: number;
     devProgressPercentage: number;
 }
+
+export interface IVelocityChartData {
+    sprint: string;
+    commitedSp: number;
+    completedSp: number;
+}

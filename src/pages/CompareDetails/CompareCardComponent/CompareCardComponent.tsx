@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import "./CompareCardComponent.scss";
 import DetailDataComponent from "../../../common/DetailDataComponent/DetailDataComponent";
-import { IGeneralCompareSprintData } from "../../../models/general-compare.model";
+import { IGeneralCompareSprintData } from "../../../models/sprints-compare.model";
 
 export interface ICompareCardComponentProps {
     compareData: IGeneralCompareSprintData;

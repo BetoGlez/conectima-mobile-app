@@ -125,3 +125,17 @@ export const GET_SPRINTS_COMPARE_GENERAL_DATA = gql`
         }
     }
 `;
+
+export const GET_SPRINTS_VELOCITY_CHART_DATA = gql`
+    query getSprints($projectId: Sting!) {
+        getSprints(projectIdInput: {projectId: $projectId}) {
+            id
+            version
+            statistics {
+                id
+                originalEstimationSp
+                originalProgressPercentage
+            }
+        }
+    }
+`;

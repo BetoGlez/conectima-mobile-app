@@ -1,15 +1,14 @@
-import { IonCol, IonGrid, IonRow } from "@ionic/react";
+import VelocityChart from "../../../common/charts/VelocityChart/VelocityChart";
 
 import { ICompareDetailsComponentProps } from "../CompareDetailsPage.constants";
+import { IonCol, IonGrid, IonRow } from "@ionic/react";
 
 const VelocityChartComponent: React.FC<ICompareDetailsComponentProps> = ({selectedProjectId, selectedSprints}) => {
     return (
         <IonGrid>
             <IonRow>
                 <IonCol>
-                    <p>Velocity Chart</p>
-                    <p>{selectedProjectId}</p>
-                    <p>{selectedSprints.length}</p>
+                    <VelocityChart projectId={selectedProjectId} selectedSprints={selectedSprints} />
                 </IonCol>
             </IonRow>
         </IonGrid>
