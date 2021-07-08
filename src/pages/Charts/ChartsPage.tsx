@@ -10,7 +10,7 @@ import ActiveChartComponent from "./ActiveChartComponent/ActiveChartComponent";
 import ChartDescriptionComponent from "../../common/charts/ChartDescriptionComponent/ChartDescriptionComponent";
 import ChartTypeSelectorComponent from "../../common/charts/ChartTypeSelectorComponent/ChartTypeSelectorComponent";
 import ImageTextMessageComponent from "../../common/generalUiState/ImageTextMessageComponent/ImageTextMessageComponent";
-import { IChartType } from "../../models/charts";
+import { IChartType } from "../../models/charts.model";
 
 const ChartsPage: React.FC = () => {
 

@@ -1,7 +1,7 @@
 import BurndownChart from "../../../common/charts/BurndownChart/BurndownChart";
 import DeviationProgressStats from "../../../common/charts/DeviationProgressStats/DeviationProgressStats";
 import SimulatedCostsChart from "../../../common/charts/SimulatedCostsChart/SimulatedCostsChart";
-import { ChartCode } from "../../../models/charts";
+import { ChartCode } from "../../../models/charts.model";
 
 interface IActiveChartComponentPorps {
     projectId: string;

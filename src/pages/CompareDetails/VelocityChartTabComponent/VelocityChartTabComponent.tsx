@@ -1,13 +1,14 @@
 import VelocityChart from "../../../common/charts/VelocityChart/VelocityChart";
 
+import "./VelocityChartTabComponent.scss";
 import { ICompareDetailsComponentProps } from "../CompareDetailsPage.constants";
 import { IonCol, IonGrid, IonRow } from "@ionic/react";
 
-const VelocityChartComponent: React.FC<ICompareDetailsComponentProps> = ({selectedProjectId, selectedSprints}) => {
+const VelocityChartTabComponent: React.FC<ICompareDetailsComponentProps> = ({selectedProjectId, selectedSprints}) => {
     return (
-        <IonGrid>
+        <IonGrid className="velocity-chart-tab-component">
             <IonRow>
-                <IonCol>
+                <IonCol className="chart-container">
                     <VelocityChart projectId={selectedProjectId} selectedSprints={selectedSprints} />
                 </IonCol>
             </IonRow>
@@ -15,4 +16,4 @@ const VelocityChartComponent: React.FC<ICompareDetailsComponentProps> = ({select
     );
 };
 
-export default VelocityChartComponent;
+export default VelocityChartTabComponent;

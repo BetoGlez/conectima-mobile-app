@@ -1,6 +1,6 @@
 import { analyticsOutline, barChartOutline, statsChartOutline } from "ionicons/icons";
 
-import { IChartType } from "../../../models/charts";
+import { IChartType } from "../../../models/charts.model";
 
 export const CHART_TYPES: Array<IChartType> = [
     {

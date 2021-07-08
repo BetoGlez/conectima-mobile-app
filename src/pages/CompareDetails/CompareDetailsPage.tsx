@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { CompareDetailsTab, ICompareDetailsPageLocationState } from "./CompareDetailsPage.constants";
 import AppConfig from "../../app-constants";
 import GeneralCompareComponent from "./GeneralCompareComponent/GeneralCompareComponent";
-import VelocityChartComponent from "./VelocityChartComponent/VelocityChartComponent";
+import VelocityChartTabComponent from "./VelocityChartTabComponent/VelocityChartTabComponent";
 
 const CompareDetailsPage: React.FC = () => {
 
@@ -53,7 +53,7 @@ const CompareDetailsPage: React.FC = () => {
                                     <GeneralCompareComponent selectedProjectId={navState.selectedProjectId}
                                         selectedSprints={navState.selectedSprints} selectedProjectName={navState.selectedProjectName} />
                                     :
-                                    <VelocityChartComponent selectedProjectId={navState.selectedProjectId}
+                                    <VelocityChartTabComponent selectedProjectId={navState.selectedProjectId}
                                         selectedSprints={navState.selectedSprints} selectedProjectName={navState.selectedProjectName} />
                                 }
                             </IonCol>

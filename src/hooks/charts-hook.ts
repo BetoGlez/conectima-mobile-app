@@ -6,7 +6,7 @@ import { GET_BURNDOWN_CHART_DATA, GET_DEVIATION_PROGRESS_STATS, GET_SIMULATED_CO
 import { IGetSprintPayload } from "../graphql/inputs-payload.model";
 import { IGetBurndownChartDataResponse, IGetDeviationProgressSatats,
     IGetSimulatedCostsChartDataResponse } from "../graphql/queries-response.model";
-import { IBurndownChartData, IDeviationProgressStats, ISimulatedCostsChartData } from "../models/charts";
+import { IBurndownChartData, IDeviationProgressStats, ISimulatedCostsChartData } from "../models/charts.model";
 
 export const useBurndownChart = (projectId: string, sprintVersion: string) => {
     const {data, loading} = useQuery<IGetBurndownChartDataResponse, IGetSprintPayload>(GET_BURNDOWN_CHART_DATA, {

@@ -136,6 +136,8 @@ export const en = {
             simulatedCost: "Simulated cost",
             hours: "{{hours}} h",
             percentage: "{{percentage}} %",
+            commitedSp: "Commitment SP",
+            completedSp: "Completed SP"
         },
         configure: {
             settings: "Settings",

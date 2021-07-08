@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./ChartTypeSelectorComponent.scss";
 import { CHART_TYPES } from "./ChartTypeSelectorComponent.constants";
 import ChartTypeCardComponent from "../ChartTypeCardComponent/ChartTypeCardComponent";
-import { IChartType } from "../../../models/charts";
+import { IChartType } from "../../../models/charts.model";
 
 export interface IChartTypeSelectorComponentProps {
     setActiveChart: (chart: IChartType) => void;

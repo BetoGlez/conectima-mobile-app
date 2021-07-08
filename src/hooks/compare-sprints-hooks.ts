@@ -5,7 +5,7 @@ import { GET_SPRINTS_COMPARE_GENERAL_DATA, GET_SPRINTS_VELOCITY_CHART_DATA } fro
 import { IGetSprintsCompareGeneralData, IGetSprintsVelocityChartData } from "../graphql/queries-response.model";
 import { IProjectIdPayload } from "../graphql/inputs-payload.model";
 import { IGeneralCompareSprintData } from "../models/sprints-compare.model";
-import { IVelocityChartData } from "../models/charts";
+import { IVelocityChartData } from "../models/charts.model";
 
 export const useCompareGeneralData = (projectId: string, selectedSprints: Array<string>) => {
     const {developerHourCost} = useDevHourCost();
