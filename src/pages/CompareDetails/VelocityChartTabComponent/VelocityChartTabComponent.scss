@@ -1,10 +1,64 @@
 .velocity-chart-tab-component {
+    padding: 0;
+
+    .project-name-container {
+        padding-bottom: 0;
+        padding-left: 16px;
+
+        .project-name {
+            margin-top: 4px;
+            margin-bottom: 0;
+        }
+    }
+
+    .sprints-legend-container {
+        padding-top: 0;
+        padding-left: 16px;
+
+        .sprints-legend {
+            margin-top: 4px;
+        }
+    }
+
     .chart-container {
-        height: 420px;
+        height: 425px;
         width: 100%;
         background-color: var(--color-white);
         border-radius: 5px;
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .chart-description {
+        width: 100%;
+        min-height: 228px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--ion-color-dark);
+        padding: 16px;
+
+        .title {
+            color: var(--color-white);
+            margin: 0;
+        }
+
+        .chart-type {
+            color: var(--color-white);
+            margin-top: 4px;
+        }
+
+        .text-description {
+            color: var(--color-white);
+        }
+
+        .icon-container {
+            width: 100%;
+        }
+
+        .chart-icon {
+            font-size: 32px;
+            float: right;
+            color: var(--color-white);
+        }
     }
 }

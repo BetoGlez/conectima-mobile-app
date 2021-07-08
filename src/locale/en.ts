@@ -126,6 +126,9 @@ export const en = {
         compare: {
             generalData: "General data",
             velocityChart: "Velocity chart",
+            velocityDescription: "Shows the amount of value delivered in each sprint, enabling you to predict the amount of work " +
+            "the team can get done in future sprints. It is useful during your sprint planning meetings, to help you decide how " +
+            "much work you can feasibly commit to.",
             general: "General",
             velocity: "Velocity",
             showingXSprints: "Showing {{sprintsCount}} sprints",
@@ -137,7 +140,9 @@ export const en = {
             hours: "{{hours}} h",
             percentage: "{{percentage}} %",
             commitedSp: "Commitment SP",
-            completedSp: "Completed SP"
+            completedSp: "Completed SP",
+            comparedSprints: "Compared sprints",
+            comparingXSprints: "Comparing {{sprintsCount}} sprints"
         },
         configure: {
             settings: "Settings",

@@ -26,8 +26,7 @@ const VelocityChart: React.FC<IVelocityChartProps> = ({projectId, selectedSprint
             { velocityChartData.length > 0 &&
                 <ResponsiveContainer>
                     <BarChart data={velocityChartData}>
-                        <XAxis dataKey={SPRINT_DATA_KEY} label={t("compare.showingXSprints",
-                            {sprintsCount: selectedSprints.length}).toString()} height={X_AXIS_HEIGHT} />
+                        <XAxis dataKey={SPRINT_DATA_KEY} label={t("compare.comparedSprints").toString()} height={X_AXIS_HEIGHT} />
                         <YAxis width={Y_AXIS_WIDTH} />
                         <Tooltip formatter={formatTooltipValues}/>
                         <Legend formatter={legendFormatter} />

@@ -4,6 +4,7 @@ import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonL
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import "./CompareDetailsPage.scss";
 import { CompareDetailsTab, ICompareDetailsPageLocationState } from "./CompareDetailsPage.constants";
 import AppConfig from "../../app-constants";
 import GeneralCompareComponent from "./GeneralCompareComponent/GeneralCompareComponent";
@@ -17,7 +18,7 @@ const CompareDetailsPage: React.FC = () => {
     const [selectedTab, setSelectedTab] = useState<CompareDetailsTab>("general");
 
     return (
-        <IonPage>
+        <IonPage className="compare-details-page">
             <IonHeader>
                 <IonToolbar>
                     <IonTitle>{selectedTab === "general" ? t("compare.generalData"): t("compare.velocityChart")}</IonTitle>
@@ -32,7 +33,7 @@ const CompareDetailsPage: React.FC = () => {
                         <IonTitle size="large">{selectedTab === "general" ? t("compare.generalData"): t("compare.velocityChart")}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
-                <IonGrid>
+                <IonGrid className="main-grid">
                     <IonRow className="ion-padding-top">
                         <IonCol offset="3" size="6">
                             <IonSegment value={selectedTab}
@@ -48,7 +49,7 @@ const CompareDetailsPage: React.FC = () => {
                     </IonRow>
                     { navState && navState.selectedProjectId && navState.selectedSprints &&
                         <IonRow>
-                            <IonCol>
+                            <IonCol className="tabs-container">
                                 { selectedTab === "general" ?
                                     <GeneralCompareComponent selectedProjectId={navState.selectedProjectId}
                                         selectedSprints={navState.selectedSprints} selectedProjectName={navState.selectedProjectName} />
