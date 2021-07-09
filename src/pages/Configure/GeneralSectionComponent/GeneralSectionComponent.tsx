@@ -1,15 +1,20 @@
-import { IonRow, IonCol, IonList, IonItem, IonIcon, IonLabel, IonButton } from "@ionic/react";
+import { IonRow, IonCol, IonList, IonItem, IonIcon, IonLabel, IonButton, IonSpinner } from "@ionic/react";
 import { logoEuro, syncOutline } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 
 import "./GeneralSectionComponent.scss";
-import { useDevHourCost } from "../../../hooks/settings-hooks";
+import { useDevHourCost, useSyncProjects } from "../../../hooks/settings-hooks";
 
 const GeneralSectionComponent: React.FC = () => {
 
     const { t } = useTranslation();
 
     const { developerHourCost, selectDeveloperCostHour } = useDevHourCost();
+    const { syncAllProjects, isLoading } = useSyncProjects();
+
+    const syncProjects = async () => {
+        await syncAllProjects();
+    };
 
     return (
         <div className="general-section-component">
@@ -38,7 +43,12 @@ const GeneralSectionComponent: React.FC = () => {
                                 <p>{t("configure.syncSpreadsheets")}</p>
                                 <p className="thin-text">{t("configure.manualSync")}</p>
                             </IonLabel>
-                            <IonButton className="sync-button" fill="clear" slot="end">{t("configure.sync")}</IonButton>
+                            { !isLoading ?
+                                <IonButton className="sync-button" fill="clear" slot="end" onClick={syncProjects} disabled={isLoading} >
+                                    {t("configure.sync")}</IonButton>
+                                :
+                                <IonSpinner color="primary" slot="end"/>
+                            }
                         </IonItem>
                     </IonList>
                 </IonCol>

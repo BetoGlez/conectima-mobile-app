@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import { Storage } from "@capacitor/storage";
 import { useIonPicker } from "@ionic/react";
 import { useTranslation } from "react-i18next";
+import { ApolloError, useMutation } from "@apollo/client";
 
+import { useToast } from "./popups";
+import { useLogger } from "./logger";
 import AppConfig from "../app-constants";
+import { SYNC_ALL_PROJECTS } from "../graphql/mutations";
+import { ISyncAllProjects } from "../graphql/mutations-response.model";
 
 interface ISelectedCost {
     firstDigit: {
@@ -65,4 +70,25 @@ export const useDevHourCost = () => {
     };
 
     return { developerHourCost, selectDeveloperCostHour };
+};
+
+export const useSyncProjects = () => {
+
+    const logger = useLogger("useSyncProjects");
+    const { presentInfoToast } = useToast();
+
+    const [syncAllProjects, {loading}] = useMutation<ISyncAllProjects>(SYNC_ALL_PROJECTS, {
+        onCompleted: () => handleComplete(),
+        onError: (err) => handleError(err)
+    });
+
+    const handleComplete = () => {
+        presentInfoToast("configure.allProjectsSynced");
+    };
+
+    const handleError = (err: ApolloError) => {
+        logger.e("There was an error while syncing all the projects: ", err);
+    };
+
+    return { syncAllProjects, isLoading: loading };
 };

@@ -39,3 +39,77 @@ export const CREATE_PROJECT = gql`
         }
     }
 `;
+
+export const SYNC_ALL_PROJECTS = gql`
+    mutation syncAllProjects {
+        syncAllProjects {
+            id
+            name
+            spreadSheetId
+            startDate
+            activeSprint {
+                id
+                version
+                issueCount
+                statistics {
+                    id
+                    originalEstimationSp
+                    devEstimationSp
+                    originalEstimationHours
+                    devEstimationHours
+                    startDate
+                    releaseDate
+                    workHoursPerDay
+                    remainingWorkDays
+                    originalDeviationPercentage
+                    devDeviationPercentage
+                    originalProgressPercentage
+                    devProgressPercentage
+                }
+                dedications {
+                    user
+                    currentHours
+                    expectedHoursPerDay
+                }
+                spsProgress {
+                    date
+                    sp
+                }
+            }
+            sprints {
+                id
+                version
+                issueCount
+                statistics {
+                    id
+                    originalEstimationSp
+                    devEstimationSp
+                    originalEstimationHours
+                    devEstimationHours
+                    startDate
+                    releaseDate
+                    workHoursPerDay
+                    remainingWorkDays
+                    originalDeviationPercentage
+                    devDeviationPercentage
+                    originalProgressPercentage
+                    devProgressPercentage
+                }
+                dedications {
+                    user
+                    currentHours
+                    expectedHoursPerDay
+                }
+                spsProgress {
+                    date
+                    sp
+                }
+            }
+            dedications {
+                user
+                currentHours
+                expectedHoursPerDay
+            }
+        }
+    }
+`;

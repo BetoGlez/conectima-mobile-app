@@ -153,7 +153,8 @@ export const en = {
             sync: "Sync",
             appInfo: "App information",
             version: "Version",
-            more: "More"
+            more: "More",
+            allProjectsSynced: "All the projects have been synced"
         }
     }
 };
