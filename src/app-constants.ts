@@ -4,11 +4,11 @@ export default class AppConfig {
 
     public static readonly APP_VERSION = version;
     public static readonly APOLLOR_SERVER_URL = process.env.REACT_APP_APOLLOR_SERVER_URL || "http://localhost:5000";
-    public static readonly TOKEN_STORAGE_KEY = process.env.REACT_APP_TOKEN_STORAGE_KEY || "";
-    public static readonly DEV_COST_STORAGE_KEY = process.env.REACT_APP_DEV_COST_STORAGE_KEY || "";
+    public static readonly TOKEN_STORAGE_KEY = process.env.REACT_APP_TOKEN_STORAGE_KEY || "token_storage";
+    public static readonly DEV_COST_STORAGE_KEY = process.env.REACT_APP_DEV_COST_STORAGE_KEY || "dev_cost_storage";
 
     public static readonly ABOUT_INFO_URL = "https://github.com/BetoGlez/conectima-mobile-app";
-    public static readonly SHEET_CONNECT_INSTRUCTIONS_VIDEO = "https://youtu.be/yOHHLeneDCM";
+    public static readonly SHEET_CONNECT_INSTRUCTIONS_VIDEO = "https://youtu.be/nhh9Lw4-6ho";
     public static readonly SHEET_PROJECT_SHARE_MAIL = process.env.REACT_APP_SHEET_PROJECT_SHARE_MAIL || "Introduce your configured mail :)";
 
     public static readonly DATE_FORMAT = "DD/MM/YYYY";
