@@ -59,6 +59,9 @@ const App: React.FC = () => {
                             <AuthRoute exact path={AppConfig.APP_ROUTES.NEW_PROJECT} component={NewProjectPage} />
                             <AuthRoute exact path={AppConfig.APP_ROUTES.CHARTS} component={ChartsPage} />
                             <AuthRoute exact path={AppConfig.APP_ROUTES.COMPARE_DETAILS} component={CompareDetailsPage} />
+                            <Route exact path={AppConfig.APP_ROUTES.EMPTY}>
+                                <Redirect to={AppConfig.APP_ROUTES.HOME} />
+                            </Route>
                             <Redirect to={AppConfig.APP_ROUTES.LOGIN} />
                         </IonRouterOutlet>
                     </IonReactRouter>

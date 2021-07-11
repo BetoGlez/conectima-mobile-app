@@ -25,6 +25,7 @@ export default class AppConfig {
     public static readonly ANALYTICS_SPRINT_IMAGE_URL = "/assets/images/sprint-analytics.svg";
 
     public static readonly APP_ROUTES = {
+        EMPTY: "/",
         LOGIN: "/login",
         HOME: "/home",
         PROJECTS: "/home/projects",
