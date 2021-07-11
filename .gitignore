@@ -10,8 +10,6 @@
 
 # production
 /build
-/ios
-/android
 /.gradle
 
 # misc
