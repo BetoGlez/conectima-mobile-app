@@ -4,6 +4,7 @@ import "./ChartTypeSelectorComponent.scss";
 import { CHART_TYPES } from "./ChartTypeSelectorComponent.constants";
 import ChartTypeCardComponent from "../ChartTypeCardComponent/ChartTypeCardComponent";
 import { IChartType } from "../../../models/charts.model";
+import { useAuth } from "../../../hooks/authentication";
 
 export interface IChartTypeSelectorComponentProps {
     setActiveChart: (chart: IChartType) => void;
@@ -11,6 +12,7 @@ export interface IChartTypeSelectorComponentProps {
 
 const ChartTypeSelectorComponent: React.FC<IChartTypeSelectorComponentProps> = ({setActiveChart}) => {
 
+    const { activeUser } = useAuth();
     const [selectedChart, setSelectedChart] = useState<IChartType>();
 
     const selectChart = (chart: IChartType): void => {
@@ -20,10 +22,13 @@ const ChartTypeSelectorComponent: React.FC<IChartTypeSelectorComponentProps> = (
 
     return(
         <div className="chart-type-selector">
-            { CHART_TYPES.map(chart =>
-                <ChartTypeCardComponent key={chart.code} isActive={(selectedChart?.code === chart.code)} title={chart.cardTitle}
-                    description={chart.cardDescription} icon={chart.icon} selectChart={() => selectChart(chart)}/>
-            )}
+            { CHART_TYPES
+                .filter(chart => !((activeUser?.role?.roleName === "developer") && (chart.code === "SCC")))
+                .map(chart =>
+                    <ChartTypeCardComponent key={chart.code} isActive={(selectedChart?.code === chart.code)} title={chart.cardTitle}
+                        description={chart.cardDescription} icon={chart.icon} selectChart={() => selectChart(chart)}/>
+                )
+            }
         </div>
     );
 };

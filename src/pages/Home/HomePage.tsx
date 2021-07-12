@@ -8,10 +8,13 @@ import ComparePage from "../Compare/ComparePage";
 import AnalyticsPage from "../Analytics/AnalyticsPage";
 import ConfigurePage from "../Configure/ConfigurePage";
 import AppConfig from "../../app-constants";
+import { useAuth } from "../../hooks/authentication";
 
 const HomePage: React.FC = () => {
 
     const { t } = useTranslation();
+
+    const { activeUser } = useAuth();
 
     return (
         <IonTabs>
@@ -27,10 +30,12 @@ const HomePage: React.FC = () => {
                     <IonIcon icon={folderOpenOutline}/>
                     <IonLabel>{t("pages.projects")}</IonLabel>
                 </IonTabButton>
-                <IonTabButton tab="compare-page" href={AppConfig.APP_ROUTES.COMPARE}>
-                    <IonIcon icon={gitCompareOutline}/>
-                    <IonLabel>{t("pages.compare")}</IonLabel>
-                </IonTabButton>
+                { activeUser?.role?.roleName === "manager" &&
+                    <IonTabButton tab="compare-page" href={AppConfig.APP_ROUTES.COMPARE}>
+                        <IonIcon icon={gitCompareOutline}/>
+                        <IonLabel>{t("pages.compare")}</IonLabel>
+                    </IonTabButton>
+                }
                 <IonTabButton tab="analytics-page" href={AppConfig.APP_ROUTES.ANALYTICS}>
                     <IonIcon icon={analyticsOutline}/>
                     <IonLabel>{t("pages.analytics")}</IonLabel>
