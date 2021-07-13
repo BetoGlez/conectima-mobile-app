@@ -47,7 +47,7 @@ export const useDevHourCost = () => {
     };
 
     const getDeveloperHourCost = async (): Promise<number> => {
-        let developerCostPerHour = 0;
+        let developerCostPerHour = AppConfig.DEFAULT_DEVELOPER_HOUR_COST_EUROS;
         const { value } = await Storage.get({key: AppConfig.DEV_COST_STORAGE_KEY});
         if (value) {
             developerCostPerHour = parseFloat(value);

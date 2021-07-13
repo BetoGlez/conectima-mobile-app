@@ -14,6 +14,7 @@ export default class AppConfig {
     public static readonly DATE_FORMAT = "DD/MM/YYYY";
     public static readonly MIN_PASSWORD_LENGTH = 8;
     public static readonly TOAST_INFO_DURATION_MS = 3000;
+    public static readonly DEFAULT_DEVELOPER_HOUR_COST_EUROS = 20;
 
     public static readonly ONE_SECOND_IN_MS = 1000;
 
